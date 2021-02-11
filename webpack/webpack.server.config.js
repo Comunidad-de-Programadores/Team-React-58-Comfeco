@@ -24,6 +24,4 @@ const config = merge(master, {
   target: 'node',
 });
 
-console.log(config);
-
 module.exports = config;
