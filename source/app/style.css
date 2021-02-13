@@ -127,7 +127,7 @@ body {
     font-size: 1rem;
 }
 
-.btn-input {
+.btn_input{
     margin: 10px 40px 20px 40px;
     height: 40px;
     border-radius: 10px;
@@ -161,7 +161,6 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    border: 1px solid red;
     background-color: #c0c0c0;
     align-items: center;
 }
