@@ -1,0 +1,9 @@
+.header {
+  border-bottom: 0.2rem solid gray;
+}
+
+.header>img {
+  width: 255px;
+  height: 60px;
+  margin: 20px 0;
+}
