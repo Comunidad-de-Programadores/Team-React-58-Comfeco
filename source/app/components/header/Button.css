@@ -1,0 +1,17 @@
+.basic{
+    background: var(--gray-5);
+    border-radius: 1rem;
+    border: hidden;
+    color: var(--white);
+    font-size: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    width: 10rem;
+}
+
+@media (min-width: 768px) {
+    .basic {
+        height: 3rem;
+        width: 11.5rem;
+    }
+}
