@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.input {
+  padding: .5em;
+  margin-bottom: 1em;
+}
+
+.errorMessage {
+  background-color: red;
+  color:#fff;
+  margin-bottom: 1em;
+}

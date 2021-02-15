@@ -2,6 +2,7 @@
 /* eslint-disable no-shadow */
 import { useState } from 'react';
 import { getEmailError, getPasswordError, getUserNameError } from 'app/helpers/validators';
+import { useHistory } from 'react-router';
 import apiConnect from '../apiConnect';
 
 const useLogin = () => {
@@ -9,6 +10,7 @@ const useLogin = () => {
   const [inputWithErrors, setInputWithErrors] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setLoading] = useState(false);
+  const history = useHistory();
 
   /**
    * set error message and hides after five seconds
@@ -65,12 +67,12 @@ const useLogin = () => {
   const handleStartSession = async () => {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const response = await apiConnect({ url: '/users/login', mothod: 'post', data: values });
+    const response = await apiConnect({ url: '/user/login', method: 'post', data: values });
     if (response.status === 'error') {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
     } else {
-      console.log(response);
+      history.replace('/landing');
     }
   };
 
