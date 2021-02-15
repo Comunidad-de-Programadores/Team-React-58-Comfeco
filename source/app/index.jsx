@@ -15,6 +15,10 @@ const App = () => (
       <Route path="/login" exact component={Login} />
       <Route path="/register" exact component={Register} />
       <Route path="/auth" exact component={Auth} />
+
+      {/* only for test */}
+      <Route path="/testlogin" exact component={Auth} />
+      <Route path="/testregister" exact component={Auth} />
     </Switch>
     <Footer />
   </div>
