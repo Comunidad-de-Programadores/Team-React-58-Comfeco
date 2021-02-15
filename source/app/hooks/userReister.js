@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 /* eslint-disable no-shadow */
 import { useState } from 'react';
-import { getEmailError, getPasswordError, getUserNameError } from 'app/helpers/validators';
+import { getEmailError, getFullNameError, getPasswordError, getUserNameError } from 'app/helpers/validators';
 
-const useLogin = () => {
+const useRegister = () => {
   const [values, setValues] = useState({}); // state of form
   const [inputWithErrors, setInputWithErrors] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -45,14 +45,34 @@ const useLogin = () => {
    * @return {boolean} validations statis
    */
   const validateInputs = () => {
-    if (getEmailError(values.usernameoremail) && getUserNameError(values.usernameoremail)) {
-      setInputWithErrors(['usernameoremail']);
-      handleErrorMessage('correo o nombre de usuario no valido');
+    if (getUserNameError(values.username)) {
+      handleErrorMessage(getUserNameError(values.username));
+      setInputWithErrors(['username']);
+      return false;
+    }
+    if (getFullNameError(values.fullname)) {
+      handleErrorMessage(getFullNameError(values.fullname));
+      setInputWithErrors(['fullname']);
+      return false;
+    }
+    if (getFullNameError(values.fullname)) {
+      handleErrorMessage(getFullNameError(values.fullname));
+      setInputWithErrors(['fullname']);
+      return false;
+    }
+    if (getEmailError(values.email)) {
+      handleErrorMessage(getEmailError(values.email));
+      setInputWithErrors(['email']);
       return false;
     }
     if (getPasswordError(values.password)) {
-      setInputWithErrors(['password']);
       handleErrorMessage(getPasswordError(values.password));
+      setInputWithErrors(['password']);
+      return false;
+    }
+    if (values.password !== values.confirmpassword) {
+      handleErrorMessage('Las contraseñas no coinciden');
+      setInputWithErrors(['password', 'confirmpassword']);
       return false;
     }
     return true;
@@ -61,10 +81,10 @@ const useLogin = () => {
   /**
    * start session and set errors if exist
    */
-  const handleStartSession = async () => {
+  const handleStartRegister = async () => {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const response = { error: true, errorMessage: 'los datos son incorrectos' };
+    const response = { error: true, errorMessage: 'el correo ya esta registrado' };
     if (response.error) {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
@@ -74,7 +94,7 @@ const useLogin = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const isValid = validateInputs();
-    if (isValid) handleStartSession();
+    if (isValid) handleStartRegister();
   };
 
   return {
@@ -90,4 +110,4 @@ const useLogin = () => {
   };
 };
 
-export default useLogin;
+export default useRegister;
