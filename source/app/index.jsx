@@ -6,6 +6,7 @@ import Login from './pages/login';
 
 import './style.css';
 import Footer from './components/footer';
+import Auth from './pages/auth';
 
 const App = () => (
   <div>
@@ -13,6 +14,7 @@ const App = () => (
     <Switch>
       <Route path="/login" exact component={Login} />
       <Route path="/register" exact component={Register} />
+      <Route path="/auth" exact component={Auth} />
     </Switch>
     <Footer />
   </div>
