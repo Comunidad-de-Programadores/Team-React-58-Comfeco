@@ -42,7 +42,7 @@ const configMaster = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
