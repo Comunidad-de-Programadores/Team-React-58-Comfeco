@@ -1,44 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
 :root{
     --white: #ffffff;
+    --black: #000000;
+    --cyan: #00dbd5;
+    --dark-green: #005755;
+    --gray: #95b1af;
+    --ligth-purple: #a2c3ff;
+    --purple: #688ddd;
 
-    --gray-1: #f3f3f3;
-    --gray-2: #e3e3e3;
-    --gray-3: #c4c4c4;
-    --gray-4: #777879;
-    --gray-5: #555555;
-    --gray-6: #2e2e2e;
-
-    --pink-1: #ecadf6;
-    --pink-2: #e480e5;
-    --pink-3: #d740da;
-    --pink-4: #b824bb;
-    --pink-5: #8a178c;
-    --pink-6: #69156a;
-
-    --purple-1: #d7b7ff;
-    --purple-2: #b983ff;
-    --purple-3: #9349dd;
-    --purple-4: #7535b6;
-    --purple-5: #521e87;
-    --purple-6: #390f64;
-
-    --amber-1: #ffe499;
-    --amber-2: #ffd767;
-    --amber-3: #ffcb38;
-    --amber-4: #ffc41f;
-    --amber-5: #f1b406;
-    --amber-6: #d39c00;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html {
-    position: relative;
     min-height: 100%;
+    position: relative;
 }
 
 body {
@@ -46,20 +28,36 @@ body {
 }
 
 button{
-    cursor: pointer;
     border: none;
+    cursor: pointer;
     outline:none;
+
 }
 
 input{
-    border-radius: 10px;
-    border: 2px solid gray;
+    border: none;
+    border-bottom: 2px solid gray;
     font-size: 1.rem;
     margin: 0.5rem;
-    outline:none;
+    outline: none;
     padding: 0.5rem;
+    width: 15rem;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus{
+    border-bottom: 2px solid var(--cyan);
 }
 
 p{
     margin: 1rem
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }

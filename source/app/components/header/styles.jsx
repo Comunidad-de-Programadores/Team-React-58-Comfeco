@@ -5,17 +5,20 @@ import Button from './Button';
 import styles from './styles.css';
 
 const Header = () => (
-  <header className={styles.mainHeader}>
-    <picture className={styles.mainHeader__logo}>
-      <source media="(min-width: 768px)" srcSet={logo1} sizes="" />
-      <img src={isotipo} alt="" srcSet="" />
-    </picture>
+  <>
+    <header className={styles.mainHeader}>
+      <picture className={styles.mainHeader__logo}>
+        <source media="(min-width: 768px)" srcSet={logo1} sizes="" />
+        <img src={isotipo} alt="" srcSet="" />
+      </picture>
 
-    <div className={styles.mainHeader__buttons}>
-      <Button type="button">Iniciar Sesión</Button>
-    </div>
+      <div className={styles.mainHeader__buttons}>
+        <Button type="button">Iniciar Sesión</Button>
+      </div>
 
-  </header>
+    </header>
+    <hr className={styles.mainHeader__underline} />
+  </>
 );
 
 export default Header;

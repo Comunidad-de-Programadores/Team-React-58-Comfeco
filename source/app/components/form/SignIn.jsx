@@ -4,7 +4,7 @@ import styles from './SignIn.css';
 const SignIn = () => (
   <form className={styles.signInForm}>
 
-    <h2 className={styles.signInForm__title}>Registro</h2>
+    <h1 className={styles.signInForm__title}>Registro</h1>
 
     <div className={styles.signInForm__content}>
 
