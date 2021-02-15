@@ -15,17 +15,17 @@ const SignIn = () => (
 
       <div className={styles.formGroup}>
         <i className="fas fa-envelope" aria-hidden="true" />
-        <input type="email" placeholder="Correo electronico" />
+        <input name="email" type="email" placeholder="Correo electronico" />
       </div>
 
       <div className={styles.formGroup}>
         <i className="fas fa-lock" aria-hidden="true" />
-        <input type="password" placeholder="Contraseña" />
+        <input name="password" type="password" placeholder="Contraseña" />
       </div>
 
       <div className={styles.formGroup}>
         <i className="fas fa-lock" aria-hidden="true" />
-        <input type="password" placeholder="Corfirmar Contraseña" />
+        <input name="password" type="password" placeholder="Corfirmar Contraseña" />
       </div>
 
       <button type="submit">Crear una cuenta</button>

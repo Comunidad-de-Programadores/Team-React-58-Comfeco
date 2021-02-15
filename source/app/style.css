@@ -59,5 +59,6 @@ li{
 
 a{
   text-decoration: none;
-  color: black;
+  color: var(--dark-green);
+  text-shadow: 0px 0px 0.5px var(--cyan);
 }

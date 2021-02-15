@@ -2,6 +2,7 @@
 /* eslint-disable no-shadow */
 import { useState } from 'react';
 import { getEmailError, getFullNameError, getPasswordError, getUserNameError } from 'app/helpers/validators';
+import apiConnect from '../apiConnect';
 
 const useRegister = () => {
   const [values, setValues] = useState({}); // state of form
@@ -84,10 +85,16 @@ const useRegister = () => {
   const handleStartRegister = async () => {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const response = { error: true, errorMessage: 'el correo ya esta registrado' };
-    if (response.error) {
+    const response = await apiConnect({
+      url: '/users/register',
+      method: 'pots',
+      data: values,
+    });
+    if (response.status === 'error') {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
+    } else {
+      console.log(response);
     }
   };
 

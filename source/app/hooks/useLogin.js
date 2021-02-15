@@ -2,6 +2,7 @@
 /* eslint-disable no-shadow */
 import { useState } from 'react';
 import { getEmailError, getPasswordError, getUserNameError } from 'app/helpers/validators';
+import apiConnect from '../apiConnect';
 
 const useLogin = () => {
   const [values, setValues] = useState({}); // state of form
@@ -64,10 +65,12 @@ const useLogin = () => {
   const handleStartSession = async () => {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const response = { error: true, errorMessage: 'los datos son incorrectos' };
-    if (response.error) {
+    const response = await apiConnect({ url: '/users/login', mothod: 'post', data: values });
+    if (response.status === 'error') {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
+    } else {
+      console.log(response);
     }
   };
 
