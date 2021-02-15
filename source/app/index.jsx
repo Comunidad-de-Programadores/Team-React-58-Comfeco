@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from 'app/components/header/styles';
+import Header from 'app/components/header';
 import { Switch, Route } from 'react-router';
 import Register from './pages/register';
 import Login from './pages/login';
