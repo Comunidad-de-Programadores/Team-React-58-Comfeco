@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SignIn.css';
+import styles from './styles.css';
 
 const SignIn = () => (
   <form className={styles.signInForm}>

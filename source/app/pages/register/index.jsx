@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from 'app/components/form/SignIn';
+import SignIn from 'app/components/signIn';
 import styles from './styles.css';
 
 const Login = () => (
