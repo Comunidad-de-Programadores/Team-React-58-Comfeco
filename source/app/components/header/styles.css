@@ -36,7 +36,6 @@
 }
 
 .mainHeader__underline{
-    /* position: absolute; */
     width: 100%;
     height: 0.3rem;
     background: linear-gradient(to right, var(--dark-green), var(--cyan));
