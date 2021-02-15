@@ -2,10 +2,10 @@ import React from 'react';
 import SignIn from 'app/components/signIn';
 import styles from './styles.css';
 
-const Login = () => (
+const Register = () => (
   <main className={styles.mainContent}>
     <SignIn />
   </main>
 );
 
-export default Login;
+export default Register;
