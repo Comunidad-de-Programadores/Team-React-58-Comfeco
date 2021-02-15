@@ -9,9 +9,10 @@ import './style.css';
 import Footer from './components/footer';
 import Auth from './pages/auth';
 import Landing from './pages/landing';
+import SessionProvider from './components/sessionProvider';
 
 const App = () => (
-  <div>
+  <SessionProvider>
     <Header />
     <Switch>
       <Route path="/login" exact component={Login} />
@@ -24,7 +25,7 @@ const App = () => (
       <Route path="/example-register" exact component={ExampleRegister} />
     </Switch>
     <Footer />
-  </div>
+  </SessionProvider>
 
 );
 
