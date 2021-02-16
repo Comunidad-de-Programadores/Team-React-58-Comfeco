@@ -1,7 +1,6 @@
-/* eslint-disable max-len */
-/* eslint-disable no-shadow */
 import { useState } from 'react';
 import { getEmailError, getFullNameError, getPasswordError, getUserNameError } from 'app/helpers/validators';
+import { useHistory } from 'react-router';
 import apiConnect from '../apiConnect';
 
 const useRegister = () => {
@@ -9,12 +8,13 @@ const useRegister = () => {
   const [inputWithErrors, setInputWithErrors] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setLoading] = useState(false);
+  const history = useHistory();
 
   /**
    * set error message and hides after five seconds
    */
-  const handleErrorMessage = (errorMessage) => {
-    setErrorMessage(errorMessage);
+  const handleErrorMessage = (errorText) => {
+    setErrorMessage(errorText);
     setTimeout(() => {
       setErrorMessage(null);
     }, 5000);
@@ -42,7 +42,7 @@ const useRegister = () => {
   };
 
   /**
-   * validate inputs and set set errors
+   * validate inputs and set errors
    * @return {boolean} validations statis
    */
   const validateInputs = () => {
@@ -86,15 +86,15 @@ const useRegister = () => {
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const response = await apiConnect({
-      url: '/users/register',
-      method: 'pots',
+      url: '/user/register',
+      method: 'post',
       data: values,
     });
     if (response.status === 'error') {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
     } else {
-      console.log(response);
+      history.replace('/landing');
     }
   };
 
