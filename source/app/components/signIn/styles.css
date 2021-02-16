@@ -20,14 +20,18 @@
 
 .formGroup{
     margin-bottom: 0.5rem;
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray);
 }
+
+
 .signInForm__policies{
     text-align: center;
 }
 
 button{
     margin: 1rem 0;
-    background: var(--dark-green);
+
     border-radius: 1rem;
     border: hidden;
     color: var(--white);

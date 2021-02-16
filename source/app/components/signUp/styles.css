@@ -27,7 +27,6 @@
 
 button{
     margin: 1rem 0;
-    background: var(--dark-green);
     border-radius: 1rem;
     border: hidden;
     color: var(--white);

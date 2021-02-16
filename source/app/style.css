@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 :root{
     --white: #ffffff;
     --black: #000000;
     --cyan: #00dbd5;
-    --dark-green: #005755;
+    --dark-blue: #003660;
     --gray: #95b1af;
     --ligth-purple: #a2c3ff;
     --purple: #688ddd;
@@ -31,22 +31,23 @@ button{
     border: none;
     cursor: pointer;
     outline:none;
-
+    background: var(--dark-blue);
 }
 
 input{
     border: none;
-    border-bottom: 2px solid gray;
     font-size: 1.rem;
     margin: 0.5rem;
     outline: none;
     padding: 0.5rem;
     width: 15rem;
     transition: all 0.2s ease-in-out;
+    font-weight: 300;
+    
 }
 
 input:focus{
-    border-bottom: 2px solid var(--cyan);
+    border: none;
 }
 
 p{

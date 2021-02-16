@@ -1,0 +1,92 @@
+.wrapper{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+.cotainer__Form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    width: 60vw;
+    box-shadow: 5px 5px 13px -1px rgba(0,0,0,0.49);
+    /* border: 1px solid green; */
+}
+
+.wrapper__form__signUp{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    /* border: 1px solid violet; */
+    visibility: hidden;
+
+}
+
+.form__poligono{
+    position: absolute;
+    right: 40%;
+    height: inherit;
+    /* visibility: hidden; */
+}
+
+
+.polygonSection{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;    
+    border: 1px solid yellow;
+}
+
+.loginImg{
+    width: 100%;
+    height: 25vh;
+    z-index: 99999;
+    opacity: 70%;
+    margin-right: 10%;
+}
+
+
+/*------------------------------------------*/
+/*--Form section--*/
+/*------------------------------------------*/
+
+.form__Section{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid blue; */
+}
+
+
+/*------------------------------------------*/
+/*--mod sign in--*/
+/*------------------------------------------*/
+
+.wrapper__form__signIn{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* border: 1px solid violet; */
+    overflow: hidden;
+    /* visibility: hidden; */
+}
+
+.wrapper__form__signIn > .form__poligono{
+    position: absolute;
+    left: 25vmax;
+    height: inherit;
+    
+}
+
+.signInImg{
+    width: 100%;
+    height: 25vh;
+    z-index: 99999;
+    opacity: 70%;
+    margin-left: 10%;
+}
