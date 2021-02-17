@@ -11,6 +11,7 @@ import Auth from './pages/auth';
 import Landing from './pages/landing';
 import SessionProvider from './components/sessionProvider';
 import RecoverAccount from './components/recoverAccount';
+import TermsConditions from './components/termsConditions';
 
 const App = () => (
   <SessionProvider>
@@ -25,6 +26,7 @@ const App = () => (
       {/* only for examples */}
       <Route path="/example-login" exact component={ExapleLogin} />
       <Route path="/example-register" exact component={ExampleRegister} />
+      <Route path="/termsconditions" exact component={TermsConditions} />
     </Switch>
     <Footer />
   </SessionProvider>
