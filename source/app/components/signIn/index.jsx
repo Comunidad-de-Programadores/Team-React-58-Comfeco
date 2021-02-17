@@ -29,27 +29,27 @@ const SignIn = () => {
 
           <div className={styles.formGroup}>
             <i className="fas fa-user" aria-hidden="true" />
-            <Input placeholder="Nick" {...inputProps} name="username" />
+            <Input placeholder="Nick" {...inputProps} name="username" type="text" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-user" aria-hidden="true" />
-            <Input placeholder="Nombre completo" {...inputProps} name="fullname" />
+            <Input placeholder="Nombre completo" {...inputProps} name="fullname" type="text" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-envelope" aria-hidden="true" />
-            <Input placeholder="Correo" {...inputProps} name="email" />
+            <Input placeholder="Correo" {...inputProps} name="email" type="email" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-lock" aria-hidden="true" />
-            <Input placeholder="Contraseña" {...inputProps} name="password" />
+            <Input placeholder="Contraseña" {...inputProps} name="password" type="password" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-lock" aria-hidden="true" />
-            <Input placeholder="Confirmar contraseña" {...inputProps} name="confirmpassword" />
+            <Input placeholder="Confirmar contraseña" {...inputProps} name="confirmpassword" type="password" />
           </div>
 
           <button type="submit">Crear una cuenta</button>

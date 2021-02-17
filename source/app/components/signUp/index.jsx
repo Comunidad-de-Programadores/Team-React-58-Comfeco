@@ -30,12 +30,12 @@ const SignUp = () => {
 
             <div className={styles.formGroup}>
               <i className="fas fa-envelope" aria-hidden="true" />
-              <Input placeholder="Correo" {...inputProps} name="usernameoremail" />
+              <Input placeholder="Correo" {...inputProps} name="usernameoremail" type="email" />
             </div>
 
             <div className={styles.formGroup}>
               <i className="fas fa-lock" aria-hidden="true" />
-              <Input placeholder="Contraseña" {...inputProps} name="password" />
+              <Input placeholder="Contraseña" {...inputProps} name="password" type="password" />
             </div>
 
             <button type="submit">Ingresar</button>
