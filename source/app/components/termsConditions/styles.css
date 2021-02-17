@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+.termsConditions__content{
+  margin-left: 1rem;
+}
+
 .termsConditions__item{
   list-style-type: disc;
   list-style-position: inside;

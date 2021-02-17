@@ -1,0 +1,48 @@
+.mainContent{
+  padding: 0 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.privacyDataProtection{
+  margin: 1rem 0;
+  max-height: 80vh;
+  overflow-y: scroll;
+  max-width: 1000px;
+}
+
+.privacyDataProtection__title{
+  text-align: center;
+}
+
+.privacyDataProtection__content, .privacyDataProtection__subList{
+  margin-left: 1rem;
+}
+.privacyDataProtection__item{
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+.privacyDataProtection__subListItem{
+  list-style-type: lower-latin;
+  list-style-position: outside;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.privacyDataProtection__subListItem::marker{
+  text-shadow : 0 0 1px var(--black) ;
+}
+
+h2{
+  display: inline;
+}
+
+@media (min-width: 640px) {
+  .privacyDataProtection{
+    margin: 1rem;
+  }
+}

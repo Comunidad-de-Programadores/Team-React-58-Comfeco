@@ -13,7 +13,7 @@ const TermsConditions = () => (
           tempora dolore maxime perferendis sunt id ipsa voluptates
         </p>
 
-        <ul className={styles.termsConditions__wrapper}>
+        <ul className={styles.termsConditions__content}>
           <li className={styles.termsConditions__item}>
             <h2>Subtitulo</h2>
             <p>
