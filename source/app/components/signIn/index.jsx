@@ -1,5 +1,6 @@
 import React from 'react';
 import useRegister from 'app/hooks/userReister';
+import { Link } from 'react-router-dom';
 import Input from '../input';
 import styles from './styles.css';
 
@@ -57,11 +58,11 @@ const SignIn = () => {
           <p className={styles.signInForm__policies}>
             Al registrarse estas aceptando los
             {' '}
-            <a href="/" target="blank">Términos y Condiciones</a>
+            <Link to="/termsConditions" target="_blank">Términos y Condiciones</Link>
             {' '}
             y la
             {' '}
-            <a href="/">Politica de privacidad y proteccion de datos</a>
+            <Link to="/privacyDataProtection" target="_blank">Politica de privacidad y proteccion de datos</Link>
             {' '}
             de COMFECO
           </p>
