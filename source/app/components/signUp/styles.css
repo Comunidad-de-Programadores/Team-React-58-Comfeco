@@ -20,6 +20,8 @@
 
 .formGroup{
     margin-bottom: 0.5rem;
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray);
 }
 .signInForm__policies{
     text-align: center;

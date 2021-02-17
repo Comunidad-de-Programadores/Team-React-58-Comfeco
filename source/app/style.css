@@ -28,6 +28,7 @@ body {
 }
 
 button{
+    font-weight: 700;
     border: none;
     cursor: pointer;
     outline:none;
