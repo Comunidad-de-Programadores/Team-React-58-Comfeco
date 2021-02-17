@@ -1,7 +1,7 @@
 import React from 'react';
 import SignUp from '../../components/signUp/index';
 import styles from './style.css';
-import poligono from '../../images/poligonoAsset.svg'
+import poligono from '../../images/poligonoAsset.svg';
 import loginImg from '../../images/login2.svg';
 import signInImg from '../../images/signIn.svg';
 import SignIn from '../../components/signIn/index';
@@ -17,11 +17,11 @@ const Auth = () => (
       /*------------------------------------------*/}
       <div className={styles.wrapper__form__signUp}>
 
-        <img className={styles.form__poligono} src={poligono} alt="poligono"/>
+        <img className={styles.form__poligono} src={poligono} alt="poligono" />
 
         {/* Section Poligono */}
         <div className={styles.polygonSection}>
-          <img className={styles.loginImg} src={loginImg} alt="login"/>
+          <img className={styles.loginImg} src={loginImg} alt="login" />
         </div>
         {/* section form */}
         <div className={styles.form__Section}>
@@ -35,7 +35,7 @@ const Auth = () => (
       /*------------------------------------------*/}
       <div className={styles.wrapper__form__signIn}>
 
-        <img className={styles.form__poligono} src={poligono} alt="poligono"/>
+        <img className={styles.form__poligono} src={poligono} alt="poligono" />
 
         {/* section form */}
         <div className={styles.form__Section}>
@@ -44,7 +44,7 @@ const Auth = () => (
 
         {/* Section Poligono */}
         <div className={styles.polygonSection}>
-          <img className={styles.signInImg} src={signInImg} alt="login"/>
+          <img className={styles.signInImg} src={signInImg} alt="login" />
         </div>
 
       </div>
