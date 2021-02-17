@@ -19,13 +19,7 @@
 }
 
 .formGroup{
-<<<<<<< HEAD
-    margin-bottom: 0.5rem;
-    color: var(--gray);
-    border-bottom: 1px solid var(--gray);
-=======
   margin-bottom: 0.5rem;
->>>>>>> 7af91afea923f15ea2752e285d02cd5ba8735037
 }
 .signInForm__policies{
   text-align: center;
