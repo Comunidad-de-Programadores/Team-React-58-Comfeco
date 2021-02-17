@@ -1,5 +1,5 @@
-import useLogin from 'app/hooks/useLogin';
 import React from 'react';
+import useLogin from 'app/hooks/useLogin';
 import Input from '../input';
 import styles from './styles.css';
 
@@ -8,7 +8,7 @@ const SignUp = () => {
 
   return (
 
-    <form className={styles.signInForm} onSubmit={handleSubmit}>
+    <form className={styles.signUpForm} onSubmit={handleSubmit}>
 
       {isLoading && (
         <h3>iniciando session</h3>
@@ -16,17 +16,21 @@ const SignUp = () => {
 
       {!isLoading && (
         <>
-          <h1 className={styles.signInForm__title}>Iniciar Sesión</h1>
+          <h1 className={styles.signUpForm__title}>Iniciar Sesión</h1>
 
           {errorMessage && (
-            <div className={styles.errorMessage}>{errorMessage}</div>
+            <div className={styles.errorMessage}>
+              <i className="fas fa-exclamation fa-2x" />
+              {' '}
+              {errorMessage}
+            </div>
           )}
 
-          <div className={styles.signInForm__content}>
+          <div className={styles.signUpForm__content}>
 
             <div className={styles.formGroup}>
               <i className="fas fa-envelope" aria-hidden="true" />
-              <Input placeholder="Correo electronico" {...inputProps} name="usernameoremail" />
+              <Input placeholder="Correo" {...inputProps} name="usernameoremail" />
             </div>
 
             <div className={styles.formGroup}>
