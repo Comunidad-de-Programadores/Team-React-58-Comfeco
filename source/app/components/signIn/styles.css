@@ -1,48 +1,51 @@
 .signInForm {
-    padding: 1.5rem 0;
-    align-items:center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 20rem;
+  padding: 1.5rem 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 20rem;
 }
 
-.signInForm__title{
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.signInForm__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.signInForm__content{
-    align-items:center;
-    display: inherit;
-    flex-direction: column;
+.signInForm__content {
+  align-items: center;
+  display: inherit;
+  flex-direction: column;
 }
 
-.formGroup{
-    margin-bottom: 0.5rem;
-    color: var(--gray);
-    border-bottom: 1px solid var(--gray);
+.formGroup {
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+  border-bottom: 1px solid var(--gray);
 }
 
-
-.signInForm__policies{
-    text-align: center;
+.signInForm__policies {
+  text-align: center;
 }
 
-button{
-    margin: 1rem 0;
-
-    border-radius: 1rem;
-    border: hidden;
-    color: var(--white);
-    font-size: 1rem;
-    height: 2.5rem;
-    padding: 0.5rem 2rem;
+button {
+  margin: 1rem 0;
+  border-radius: 1rem;
+  border: hidden;
+  color: var(--white);
+  font-size: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem 2rem;
 }
 
+.errorMessage {
+  background-color: red;
+  color:#fff;
+  margin-bottom: 1em;
+}
 
 @media (min-width: 640px) {
-    .signInForm{
-        height: 75vh;
-    }
+  .signInForm {
+      height: 75vh;
+  }
 }

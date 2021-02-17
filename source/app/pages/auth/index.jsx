@@ -38,6 +38,7 @@ const Auth = () => {
       /*------------------------------------------*/}
         <div className={styles.wrapper__form__signUp}>
 
+<<<<<<< HEAD
           {/* Section Poligono */}
           <div className={styles.polygonSection}>
             {/* <img className={styles.loginImg} src={loginImg} alt="login" /> */}
@@ -47,6 +48,13 @@ const Auth = () => {
             <SignUp />
           </div>
 
+=======
+        <img className={styles.form__poligono} src={poligono} alt="poligono" />
+
+        {/* Section Poligono */}
+        <div className={styles.polygonSection}>
+          <img className={styles.loginImg} src={loginImg} alt="login" />
+>>>>>>> 7af91afea923f15ea2752e285d02cd5ba8735037
         </div>
 
         {/*------------------------------------------*/
@@ -54,16 +62,26 @@ const Auth = () => {
       /*------------------------------------------*/}
         <div className={styles.wrapper__form__signIn}>
 
+<<<<<<< HEAD
           {/* section form */}
           <div className={styles.form__Section}>
             <SignIn />
           </div>
+=======
+        <img className={styles.form__poligono} src={poligono} alt="poligono" />
+>>>>>>> 7af91afea923f15ea2752e285d02cd5ba8735037
 
           {/* Section Poligono */}
           <div className={styles.polygonSection}>
             
           </div>
 
+<<<<<<< HEAD
+=======
+        {/* Section Poligono */}
+        <div className={styles.polygonSection}>
+          <img className={styles.signInImg} src={signInImg} alt="login" />
+>>>>>>> 7af91afea923f15ea2752e285d02cd5ba8735037
         </div>
 
       </div>

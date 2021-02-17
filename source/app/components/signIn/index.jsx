@@ -1,49 +1,71 @@
+import useRegister from 'app/hooks/userReister';
 import React from 'react';
+import Input from '../input';
 import styles from './styles.css';
 
-const SignIn = () => (
-  <form className={styles.signInForm}>
+const SignIn = () => {
+  const { errorMessage, handleSubmit, inputProps, isLoading } = useRegister();
 
-    <h1 className={styles.signInForm__title}>Registro</h1>
+  return (
+    <form className={styles.signInForm} onSubmit={handleSubmit}>
 
-    <div className={styles.signInForm__content}>
+      {isLoading && (
+        <h3>Cargando</h3>
+      )}
 
-      <div className={styles.formGroup}>
-        <i className="fas fa-user" aria-hidden="true" />
-        <input name="nick" type="text" placeholder="Nick" />
-      </div>
+      {!isLoading && (
+      <>
 
-      <div className={styles.formGroup}>
-        <i className="fas fa-envelope" aria-hidden="true" />
-        <input name="email" type="email" placeholder="Correo electronico" />
-      </div>
+        <h1 className={styles.signInForm__title}>Registro</h1>
 
-      <div className={styles.formGroup}>
-        <i className="fas fa-lock" aria-hidden="true" />
-        <input name="password" type="password" placeholder="Contraseña" />
-      </div>
+        {errorMessage && (<div className={styles.errorMessage}>{errorMessage}</div>)}
 
-      <div className={styles.formGroup}>
-        <i className="fas fa-lock" aria-hidden="true" />
-        <input name="password" type="password" placeholder="Corfirmar Contraseña" />
-      </div>
+        <div className={styles.signInForm__content}>
 
-      <button type="submit">Crear una cuenta</button>
+          <div className={styles.formGroup}>
+            <i className="fas fa-user" aria-hidden="true" />
+            <Input className={styles.input} placeholder="Nick" {...inputProps} name="username" />
+          </div>
 
-      <p className={styles.signInForm__policies}>
-        Al registrarse estas aceptando los
-        {' '}
-        <a href="/" target="blank">Términos y Condiciones</a>
-        {' '}
-        y la
-        {' '}
-        <a href="/">Politica de privacidad y proteccion de datos</a>
-        {' '}
-        de COMFECO
-      </p>
-    </div>
+          <div className={styles.formGroup}>
+            <i className="fas fa-user" aria-hidden="true" />
+            <Input className={styles.input} placeholder="Nombre completo" {...inputProps} name="fullname" />
+          </div>
 
-  </form>
-);
+          <div className={styles.formGroup}>
+            <i className="fas fa-envelope" aria-hidden="true" />
+            <Input className={styles.input} placeholder="Correo" {...inputProps} name="email" />
+          </div>
+
+          <div className={styles.formGroup}>
+            <i className="fas fa-lock" aria-hidden="true" />
+            <Input className={styles.input} placeholder="contraseña" {...inputProps} name="password" />
+          </div>
+
+          <div className={styles.formGroup}>
+            <i className="fas fa-lock" aria-hidden="true" />
+            <Input className={styles.input} placeholder="confirmar contraseña" {...inputProps} name="confirmpassword" />
+          </div>
+
+          <button type="submit">Crear una cuenta</button>
+
+          <p className={styles.signInForm__policies}>
+            Al registrarse estas aceptando los
+            {' '}
+            <a href="/" target="blank">Términos y Condiciones</a>
+            {' '}
+            y la
+            {' '}
+            <a href="/">Politica de privacidad y proteccion de datos</a>
+            {' '}
+            de COMFECO
+          </p>
+        </div>
+      </>
+      )}
+
+    </form>
+  );
+};
 
 export default SignIn;
