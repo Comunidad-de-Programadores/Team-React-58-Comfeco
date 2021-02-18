@@ -10,6 +10,9 @@ import Footer from './components/footer';
 import Auth from './pages/auth';
 import Landing from './pages/landing';
 import SessionProvider from './components/sessionProvider';
+import RecoverAccount from './components/recoverAccount';
+import TermsConditions from './components/termsConditions';
+import PrivacyDataProtection from './components/privacyDataProtection';
 
 const App = () => (
   <SessionProvider>
@@ -19,10 +22,13 @@ const App = () => (
       <Route path="/register" exact component={Register} />
       <Route path="/auth" exact component={Auth} />
       <Route path="/landing" exact component={Landing} />
+      <Route path="/recoveraccount" exact component={RecoverAccount} />
 
       {/* only for examples */}
       <Route path="/example-login" exact component={ExapleLogin} />
       <Route path="/example-register" exact component={ExampleRegister} />
+      <Route path="/termsconditions" exact component={TermsConditions} />
+      <Route path="/privacyDataProtection" exact component={PrivacyDataProtection} />
     </Switch>
     <Footer />
   </SessionProvider>

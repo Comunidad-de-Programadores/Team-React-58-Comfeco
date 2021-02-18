@@ -61,7 +61,7 @@
 }
 
 .facebook, .twitter, .github{
-  color: var(--dark-green);
+  color: var(--dark-blue);
   transition: all 0.4s ease-in-out;
 }
 
