@@ -58,11 +58,11 @@ const SignIn = () => {
           <p className={styles.signInForm__policies}>
             Al registrarse estas aceptando los
             {' '}
-            <Link to="/termsConditions" target="_blank">Términos y Condiciones</Link>
+            <Link to="/terms-conditions" target="_blank">Términos y Condiciones</Link>
             {' '}
             y la
             {' '}
-            <Link to="/privacyDataProtection" target="_blank">Politica de privacidad y proteccion de datos</Link>
+            <Link to="/privacy-data-protection" target="_blank">Politica de privacidad y proteccion de datos</Link>
             {' '}
             de COMFECO
           </p>
