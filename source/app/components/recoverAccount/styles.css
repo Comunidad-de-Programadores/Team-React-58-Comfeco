@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 65vh;
+  justify-content: center;
 }
 
 .recoverPasswordForm {
@@ -41,4 +43,37 @@ button {
   font-size: 1rem;
   height: 2.5rem;
   padding: 0.5rem 2rem;
+}
+
+.successMessage{
+  text-align: center;
+}
+
+.errorMessage {
+  align-items: center;
+  background-color: var(--purple);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 3px 1px var(--cyan);
+  color:#ffffff;
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  padding: 0.5rem;
+}
+
+.errorMessage i{
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .mainContent{
+    min-height: 77vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .mainContent{
+    min-height: 82vh;
+  }
 }
