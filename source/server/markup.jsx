@@ -14,7 +14,7 @@ const Markup = ({ content, states }) => (
     </head>
     <body>
       <div id="render_target" dangerouslySetInnerHTML={{ __html: content }} />
-      <script src={`${__webpack_public_path__}/app.js`} />
+      <script src={`${__webpack_public_path__}app.js`} />
       <script dangerouslySetInnerHTML={{ __html: states }} />
     </body>
   </html>
