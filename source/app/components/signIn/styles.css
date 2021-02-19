@@ -60,7 +60,8 @@ button {
   .signInForm {
       height: 75vh;
   }
-.errorMessage i{
-  margin-right: 1rem;
-  margin-left: 0.5rem;
+  .errorMessage i{
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+  }
 }
