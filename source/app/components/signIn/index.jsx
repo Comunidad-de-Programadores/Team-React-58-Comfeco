@@ -1,5 +1,6 @@
-import useRegister from 'app/hooks/userReister';
 import React from 'react';
+import useRegister from 'app/hooks/userReister';
+import { Link } from 'react-router-dom';
 import Input from '../input';
 import styles from './styles.css';
 
@@ -15,36 +16,41 @@ const SignIn = () => {
 
       {!isLoading && (
       <>
-
         <h1 className={styles.signInForm__title}>Registro</h1>
 
-        {errorMessage && (<div className={styles.errorMessage}>{errorMessage}</div>)}
+        {errorMessage && (
+        <div className={styles.errorMessage}>
+          <i className="fas fa-exclamation fa-2x" />
+          {' '}
+          {errorMessage}
+        </div>
+        )}
 
         <div className={styles.signInForm__content}>
 
           <div className={styles.formGroup}>
             <i className="fas fa-user" aria-hidden="true" />
-            <Input className={styles.input} placeholder="Nick" {...inputProps} name="username" />
+            <Input placeholder="Nick" {...inputProps} name="username" type="text" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-user" aria-hidden="true" />
-            <Input className={styles.input} placeholder="Nombre completo" {...inputProps} name="fullname" />
+            <Input placeholder="Nombre completo" {...inputProps} name="fullname" type="text" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-envelope" aria-hidden="true" />
-            <Input className={styles.input} placeholder="Correo" {...inputProps} name="email" />
+            <Input placeholder="Correo" {...inputProps} name="email" type="email" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-lock" aria-hidden="true" />
-            <Input className={styles.input} placeholder="contraseña" {...inputProps} name="password" />
+            <Input placeholder="Contraseña" {...inputProps} name="password" type="password" />
           </div>
 
           <div className={styles.formGroup}>
             <i className="fas fa-lock" aria-hidden="true" />
-            <Input className={styles.input} placeholder="confirmar contraseña" {...inputProps} name="confirmpassword" />
+            <Input placeholder="Confirmar contraseña" {...inputProps} name="confirmpassword" type="password" />
           </div>
 
           <button type="submit">Crear una cuenta</button>
@@ -52,11 +58,11 @@ const SignIn = () => {
           <p className={styles.signInForm__policies}>
             Al registrarse estas aceptando los
             {' '}
-            <a href="/" target="blank">Términos y Condiciones</a>
+            <Link to="/terms-conditions" target="_blank">Términos y Condiciones</Link>
             {' '}
             y la
             {' '}
-            <a href="/">Politica de privacidad y proteccion de datos</a>
+            <Link to="/privacy-data-protection" target="_blank">Politica de privacidad y proteccion de datos</Link>
             {' '}
             de COMFECO
           </p>

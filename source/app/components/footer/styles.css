@@ -50,7 +50,7 @@
 
     .footer::after{
       content: "";
-      background-color: var(--dark-green);
+      background-color: var(--cyan);
       bottom: 0;
       height: 4rem;
       left: 0;
@@ -61,7 +61,7 @@
 }
 
 .facebook, .twitter, .github{
-  color: var(--dark-green);
+  color: var(--dark-blue);
   transition: all 0.4s ease-in-out;
 }
 

@@ -1,18 +1,29 @@
-.signInForm {
+.mainContent{
+  padding: 0 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 65vh;
+  justify-content: center;
+}
+
+.recoverPasswordForm {
   padding: 1.5rem 0;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 20rem;
+  max-width: 30rem;
 }
 
-.signInForm__title {
+.recoverPasswordForm__title {
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
-.signInForm__content {
+.recoverPasswordForm__content {
   align-items: center;
   display: inherit;
   flex-direction: column;
@@ -24,16 +35,6 @@
   border-bottom: 1px solid var(--gray);
 }
 
-.signInForm__policies {
-  text-align: center;
-}
-
-.signInForm__policies a {
-  color: var(--dark-blue);
-  text-shadow: 0px 0px 0.5px var(--cyan);
-  font-weight: bold;
-}
-
 button {
   margin: 1rem 0;
   border-radius: 1rem;
@@ -42,6 +43,10 @@ button {
   font-size: 1rem;
   height: 2.5rem;
   padding: 0.5rem 2rem;
+}
+
+.successMessage{
+  text-align: center;
 }
 
 .errorMessage {
@@ -56,11 +61,19 @@ button {
   padding: 0.5rem;
 }
 
-@media (max-width: 740px) {
-  .signInForm {
-      height: 75vh;
-  }
 .errorMessage i{
   margin-right: 1rem;
   margin-left: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .mainContent{
+    min-height: 77vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .mainContent{
+    min-height: 82vh;
+  }
 }

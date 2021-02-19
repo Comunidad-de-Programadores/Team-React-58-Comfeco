@@ -3,7 +3,7 @@ import { string, array, object } from 'prop-types';
 
 import React from 'react';
 
-const Input = ({ name, values, inputWithErrors, ...otherProps }) => {
+const Input = ({ name, values, inputWithErrors, type, ...otherProps }) => {
   const value = values[name];
   const error = inputWithErrors.includes(name);
   const styleForError = { borderColor: 'red' };
@@ -14,6 +14,7 @@ const Input = ({ name, values, inputWithErrors, ...otherProps }) => {
       name={name}
       value={value || ''}
       style={error ? styleForError : {}}
+      type={type}
     />
   );
 };
@@ -28,6 +29,7 @@ Input.propTypes = {
   values: object,
   name: string,
   inputWithErrors: array,
+  type: string.isRequired,
 };
 
 export default Input;

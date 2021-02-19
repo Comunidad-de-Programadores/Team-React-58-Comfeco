@@ -7,13 +7,10 @@ import signInImg from '../../images/signIn.svg';
 import SignIn from '../../components/signIn/index';
 
 const Auth = () => {
-
   const [addClass, setAddClass] = useState(false);
 
   const handleAddClass = () => {
-
     setAddClass(!addClass);
-
   };
 
   return (
@@ -21,7 +18,7 @@ const Auth = () => {
     <div className={styles.wrapper}>
 
       {/* container form */}
-      <div className={ `${styles.cotainer__Form} ${addClass ? styles.signUp__mode : ''}` }>
+      <div className={`${styles.cotainer__Form} ${addClass ? styles.signUp__mode : ''}`}>
 
         {/* boton y parrafo del poligono svg en el form */}
         <div className={styles.wrapper__buttonPolygon__loginMode} >
@@ -70,7 +67,6 @@ const Auth = () => {
 
           {/* Section Poligono */}
           <div className={styles.polygonSection} />
-
         </div>
 
       </div>

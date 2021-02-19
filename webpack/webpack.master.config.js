@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV;
 
 const configMaster = {
   output: {
-    publicPath: env === 'production' ? 'domineproduction' : 'http://localhost:8080/public',
+    publicPath: env === 'production' ? 'https://comunidad-fest.vercel.app/public/' : 'http://localhost:8080/public/',
   },
   mode: env,
   module: {
