@@ -23,7 +23,7 @@ const App = () => (
       <Route path="/register" exact component={Register} />
       <Route path="/auth" exact component={Auth} />
       <Route path="/landing" exact component={Landing} />
-      <Route path="/recoveraccount" exact component={RecoverAccount} />
+      <Route path="/recover-account" exact component={RecoverAccount} />
       <Route path="/create-new-password/:token" component={CreateNewPassword} />
 
       {/* only for examples */}
