@@ -24,7 +24,7 @@ const App = () => (
       <Route path="/auth" exact component={Auth} />
       <Route path="/landing" exact component={Landing} />
       <Route path="/recoveraccount" exact component={RecoverAccount} />
-      <Route path="/create-new-password" component={CreateNewPassword} />
+      <Route path="/create-new-password/:token" component={CreateNewPassword} />
 
       {/* only for examples */}
       <Route path="/example-login" exact component={ExapleLogin} />
