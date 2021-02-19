@@ -19,12 +19,8 @@ const handleRequest = async (request, response) => {
   response.end();
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  const server = createServer(handleRequest);
+const server = createServer(handleRequest);
 
-  server.listen(3000, () => {
-    console.log('server render stared at port 3000');
-  });
-}
-
-export default handleRequest;
+server.listen(3000, () => {
+  console.log('server render stared at port 3000');
+});
