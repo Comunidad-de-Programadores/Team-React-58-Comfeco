@@ -19,7 +19,7 @@ const handleRequest = async (request, response) => {
   response.end();
 };
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   const server = createServer(handleRequest);
 
   server.listen(3000, () => {
