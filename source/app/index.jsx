@@ -13,6 +13,7 @@ import SessionProvider from './components/sessionProvider';
 import RecoverAccount from './components/recoverAccount';
 import TermsConditions from './components/termsConditions';
 import PrivacyDataProtection from './components/privacyDataProtection';
+import CreateNewPassword from './pages/createNewPassword';
 
 const App = () => (
   <SessionProvider>
@@ -23,6 +24,7 @@ const App = () => (
       <Route path="/auth" exact component={Auth} />
       <Route path="/landing" exact component={Landing} />
       <Route path="/recoveraccount" exact component={RecoverAccount} />
+      <Route path="/create-new-password" component={CreateNewPassword} />
 
       {/* only for examples */}
       <Route path="/example-login" exact component={ExapleLogin} />
