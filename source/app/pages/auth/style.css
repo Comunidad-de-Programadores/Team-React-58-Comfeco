@@ -9,11 +9,10 @@
     display: flex;
     align-items: center;
     margin: 30px 0;
-    min-width: 70vw;
+    min-width: 1500px;
     box-shadow: 5px 5px 13px -1px rgba(0,0,0,0.49);
-    height: 100%;
+    height: 800px;
     overflow: hidden;
-    border: 1px solid green;
 }
 
 .wrapper__form__signUp{
@@ -32,7 +31,7 @@
 
 .wrapper__poligono{
     position: absolute;
-    right: 50%;
+    right: 45%;
     height: inherit;
     z-index: 3;
     transition: 0.5s ease-in-out;
@@ -46,73 +45,89 @@
     align-items: center;
     width: 50%;
     height: inherit;    
-    border: 1px solid red;
+
 }
 
 .loginImg{
     opacity: 1;
-    height: 25vh;
+    height: 35%;
     position: absolute;
     opacity: 70%;
-    right: 64%;
+    right: 63%;
     z-index: 99999;
     transition: 0.1s 0.2s ease-in-out;
 }
 
 .signInImg{
     
-    height: 25vh;
+    height: 35%;
     z-index: 99999;
     opacity: 0;
-    left: 67%;
+    left: 66%;
     position: absolute;
     transition: 0.1s 0.2s ease-in-out;
     transform: translateX(-400%);
 }
 
-.button__submit{
-    position: absolute;
-    top: 15%;
-    margin: 0;
-    left: 15%;
-    z-index: 99999999;
+/*------------------------------------------*/
+/*--boton del svg form--*/
+/*------------------------------------------*/
 
+.button__submit{
+    margin: 0;
     transition: 0.1s 0.2s ease-in-out;
+    margin-top: 5px;
 }
 
 .paragraph__button{
-    position: absolute;
-    z-index: 9999999999;
     color: white;
-    top: 8%;
-    left: 16%;
+    
+    margin: 0;
+}
+
+.wrapper__buttonPolygon__loginMode{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 9999999;
+    top: 10%;
+    left: 15%;
     transform: translateX(-0%);
     transition: 0.1s 0.2s ease-in-out;
 }
 
-.button__submit__signUp__mode{
+
+
+.button__submit__signIn__mode{
     opacity: 1;
-    position: absolute;
-    top: 15%;
     margin: 0;
-    right: 15%;
-    z-index: 99999999;
 
-    transition: 0.1s 0.2s ease-in-out;
-    transform: translateX(400%);
 }
 
-.paragraph__button__submit__signUp__mode{
-    opacity: 0;
-    position: absolute;
-    z-index: 9999999999;
+.paragraph__button__submit__signIn__mode{
+    margin: 0;
+    opacity: 1;
     color: white;
-    top: 8%;
-    right: 13%;
-    transform: translateX(400%);
-    transition: 0.1s 0.2s ease-in-out;
+    margin-bottom: 5px;
 }
 
+.wrapper__buttonPolygon__signInMode{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 99999999;
+    top: 10%;
+    right: 15%;
+    transition: 0.1s 0.2s ease-in-out;
+    transform: translateX(500%);
+}
+
+
+/*------------------------------------------*/
+/*-- final estilos boton del svg form--*/
+/*------------------------------------------*/
 
 /*------------------------------------------*/
 /*--Form section--*/
@@ -138,7 +153,7 @@
     z-index: 1;
     opacity: 0;
     transition: 0.5s 0.3s ease-in-out;
-    transform: translateX(100%);
+    transform: translateX(-100%);
 }
 
 /* animation */
@@ -151,11 +166,11 @@
 .signUp__mode > .wrapper__form__signUp{
     z-index: 1;
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 
 .signUp__mode > .wrapper__poligono{
-    transform: translateX(100%);
+    transform: translateX(95%);
     
 }
 
@@ -188,11 +203,137 @@
     transform: translateX(-400%);
 }
 
+.signUp__mode > .wrapper__buttonPolygon__loginMode{
+    transform: translateX(-500%);
+}
 
-/* .wrapper__form__signIn > .form__poligono{
-    position: absolute;
-    left: 25vmax;
-    height: inherit;
+
+.signUp__mode > .wrapper__buttonPolygon__signInMode{
+    transform: translateX(0%);
+}
+
+
+
+/*------------------------------------------*/
+/*--mediaQuery--*/
+/*------------------------------------------*/
+
+@media only screen and (max-width: 1500px) {
+    .cotainer__Form{
+        min-width: 1200px;
+        height: 700px;
+    }
+    .loginImg{
+        height: 30%;
+    }
     
-} */
+    .signInImg{
+        height: 30%;
+    }
 
+    .wrapper__buttonPolygon__loginMode{
+        left: 13%;
+    }
+
+
+    .wrapper__buttonPolygon__signInMode{
+        right: 13%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cotainer__Form{
+        min-width: 1000px;
+        height: 650px;
+        
+    }
+
+    .loginImg{
+        height: 29%;
+        right: 63%;
+    }
+    
+    .signInImg{
+        height: 27%;
+        left: 67%;
+    }
+
+    .wrapper__buttonPolygon__loginMode{
+        left: 13%;
+    }
+
+
+    .wrapper__buttonPolygon__signInMode{
+        right: 10%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .cotainer__Form{
+        min-width: 768px;
+        height: 600px;
+    }
+
+    .wrapper__poligono{
+        right: 40%;
+    }
+
+    .signUp__mode > .wrapper__poligono{
+        transform: translateX(90%);
+    }
+
+    .loginImg{
+        height: 25%;
+        right: 61%;
+    }
+    
+    .signInImg{
+        height: 25%;
+        left: 64%;
+    }
+
+    .wrapper__buttonPolygon__loginMode{
+        left: 10%;
+    }
+
+
+    .wrapper__buttonPolygon__signInMode{
+        right: 10%;
+    }
+    
+}
+
+@media only screen and (max-width: 767px) {
+    .cotainer__Form{
+        width: 100%;
+    }
+    .loginImg{
+        display: none;
+    }
+    
+    .signInImg{
+        display: none;
+    }
+
+    .wrapper__buttonPolygon__loginMode{
+        display: none;
+    }
+
+
+    .wrapper__buttonPolygon__signInMode{
+        display: none;
+    }
+
+    .wrapper__poligono{
+        display: none;
+    }
+
+    .polygonSection{
+        display: none;
+    }
+
+    .form__Section{
+        width: 100%;
+    }
+    
+}

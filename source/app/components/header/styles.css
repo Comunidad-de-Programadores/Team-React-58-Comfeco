@@ -1,16 +1,14 @@
 .mainHeader{
     align-items: center;
     background-color: var(--white);
-    box-shadow: 0px 0px 3px 4px var(--cyan);
+    
     display: flex;
     flex-wrap: nowrap;
-    justify-content:center;
-    align-items: center;
-    height: 4rem;
+    height: 7vmin;
+    padding: 0 2vw;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 3vw;
     width: 100%;
+    margin: 1vh 0px;
 }
 
 .mainHeader__logo{
@@ -18,13 +16,12 @@
 }
 
 .mainHeader__logo img{
-    padding: 0.5rem 0;
     height:inherit;
+
 }
 
 .mainHeader__buttons i{
     background-color: transparent;
-    padding: 0.7rem;
     border-radius: 100%;
     color:var(--gray-6);
     transition: all 0.5s ease-in-out;
@@ -41,29 +38,47 @@
     background: linear-gradient(to right, var(--dark-blue), var(--cyan));
 }
 
-@media (min-width: 640px) {
+/*------------------------------------------*/
+/*--media Query--*/
+/*------------------------------------------*/
+
+@media (max-width: 1500px) {
     .mainHeader{
-        height: 5rem;
+        height: 6vmin;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .mainHeader{
+        height: 5vmin;
+    }
+
+
+}
+
+@media (max-width: 640px) {
+    .mainHeader{
+        
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .mainHeader{
-        height: 6rem;
+        
     }
 
     .mainHeader__logo img{
-        padding: 1rem 0;
+        
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
     .mainHeader{
-        height: 6.5rem;
+        
     }
 
     .mainHeader__logo{
-        display: inherit;
-        align-items: center;
+        
     }
 }

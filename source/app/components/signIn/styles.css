@@ -44,7 +44,7 @@ button {
   margin-bottom: 1em;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 740px) {
   .signInForm {
       height: 75vh;
   }

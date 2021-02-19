@@ -26,20 +26,12 @@ body {
   line-height: 1.5;
 }
 
-<<<<<<< HEAD
 button{
     font-weight: 700;
     border: none;
     cursor: pointer;
     outline:none;
     background: var(--dark-blue);
-=======
-button {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  background: var(--dark-blue);
->>>>>>> 7af91afea923f15ea2752e285d02cd5ba8735037
 }
 
 input {
@@ -50,6 +42,10 @@ input {
   padding: 0.5rem;
   width: 15rem;
   transition: all 0.2s ease-in-out;
+  font-weight: 700;
+}
+
+input::placeholder {
   font-weight: 300;
 }
 
