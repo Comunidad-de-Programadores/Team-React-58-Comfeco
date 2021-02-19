@@ -43,7 +43,7 @@ const useRestorePassword = () => {
     setIsLoading(true);
 
     const response = await apiConnect({
-      url: 'user/restorepassword',
+      url: '/user/restorepassword',
       method: 'post',
       data: values,
     });
