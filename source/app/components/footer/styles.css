@@ -50,7 +50,7 @@
 
     .footer::after{
       content: "";
-      background-color: var(--dark-green);
+      background-color: var(--cyan);
       bottom: 0;
       height: 4rem;
       left: 0;

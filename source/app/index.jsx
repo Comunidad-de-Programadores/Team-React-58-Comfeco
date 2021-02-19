@@ -29,8 +29,8 @@ const App = () => (
       {/* only for examples */}
       <Route path="/example-login" exact component={ExapleLogin} />
       <Route path="/example-register" exact component={ExampleRegister} />
-      <Route path="/termsconditions" exact component={TermsConditions} />
-      <Route path="/privacyDataProtection" exact component={PrivacyDataProtection} />
+      <Route path="/terms-conditions" exact component={TermsConditions} />
+      <Route path="/privacy-data-protection" exact component={PrivacyDataProtection} />
     </Switch>
     <Footer />
   </SessionProvider>

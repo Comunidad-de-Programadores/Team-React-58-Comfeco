@@ -7,7 +7,7 @@ import styles from './styles.css';
 
 const Header = () => {
   const location = useLocation().pathname;
-  const locationToShow = '/recoverAccount';
+  const locationToShow = '/recover-account';
 
   return (
     <>
@@ -19,7 +19,7 @@ const Header = () => {
 
         <div className={styles.mainHeader__buttons}>
           {location === locationToShow && (
-          <Link to="/login">
+          <Link to="/auth">
             <Button type="button">Iniciar Sesión</Button>
           </Link>
           )}
