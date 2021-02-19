@@ -6,8 +6,9 @@
   "scripts": {
     "watch:server": "set NODE_ENV=development&& webpack --config webpack/webpack.server.config.js",
     "watch:client": "set NODE_ENV=development&& webpack-dev-server --config webpack/webpack.client.config.js",
-    "serverRender": "set NODE_ENV=development&& nodemon build/server.js --watch build/server.js",
-    "start": "concurrently \"npm run watch:server\" \"npm run watch:client\" \"npm run serverRender\""
+    "serverRender": "set NODE_ENV=development&& nodemon api/server.js --watch api/server.js",
+    "start": "concurrently \"npm run watch:server\" \"npm run watch:client\" \"npm run serverRender\"",
+    "deploy": "set NODE_ENV=production&& webpack --config webpack/webpack.server.config.js && webpack --config webpack/webpack.client.config.js && vercel --prod"
   },
   "author": "react-team-58",
   "license": "ISC",

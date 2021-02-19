@@ -33,7 +33,7 @@ const RecoverAccount = () => {
 
                   <div className={styles.formGroup}>
                     <i className="fas fa-envelope" aria-hidden="true" />
-                    <Input name="email" placeholder="Correo" type="email" {...inputProps} />
+                    <Input name="email" placeholder="Correo" type="text" {...inputProps} />
                   </div>
 
                   <button type="submit">Enviar</button>

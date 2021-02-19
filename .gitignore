@@ -2,3 +2,5 @@
 /build
 /stories
 /node_modules
+/api
+.vercel

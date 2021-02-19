@@ -6,7 +6,7 @@ const master = require('./webpack.master.config');
 const config = merge(master, {
   entry: ['regenerator-runtime/runtime', path.resolve(__dirname, '../source/server/index.jsx')],
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../api'),
     filename: 'server.js',
     libraryTarget: 'commonjs',
   },
