@@ -49,13 +49,13 @@ const useRestorePassword = () => {
     });
 
     if (response.status === 'error') {
-      // handleErrorMessage(response.errorMessage);
-      // setIsLoading(false);
+      handleErrorMessage(response.errorMessage);
+      setIsLoading(false);
+    } else {
       setSuccess(true);
       setTimeout(() => {
         history.replace('/landing');
       }, 3000);
-    } else {
     }
   };
 
