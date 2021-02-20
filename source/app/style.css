@@ -23,7 +23,8 @@ html {
 }
 
 body {
-  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 96px;
 }
 
 button{

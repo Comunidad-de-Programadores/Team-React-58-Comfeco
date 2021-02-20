@@ -58,7 +58,7 @@ button {
 
 @media (max-width: 740px) {
   .signInForm {
-      height: 75vh;
+      height: 85%;
   }
   .errorMessage i{
     margin-right: 1rem;

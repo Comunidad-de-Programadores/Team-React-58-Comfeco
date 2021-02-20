@@ -10,7 +10,7 @@
     align-items: center;
     margin: 30px 0;
     min-width: 1500px;
-    box-shadow: 5px 5px 13px -1px rgba(0,0,0,0.49);
+    box-shadow: 2px 3px 15px -4px rgba(0,0,0,0.49);
     height: 800px;
     overflow: hidden;
 }
@@ -306,7 +306,16 @@
 @media only screen and (max-width: 767px) {
     .cotainer__Form{
         width: 100%;
+        height: 600px;
+        transition-delay: 0.5s;
+        transition-timing-function: ease-in-out;
     }
+
+    .cotainer__Form.signUp__mode{
+        width: 100%;
+        height: 680px;
+    }
+
     .loginImg{
         display: none;
     }
@@ -316,13 +325,28 @@
     }
 
     .wrapper__buttonPolygon__loginMode{
-        display: none;
+
+        left: 36%;
+        bottom: 45px;
+        justify-content: flex-end;
+    }
+
+    .wrapper__buttonPolygon__loginMode > p{
+        color: black;
+        font-weight: 400;
     }
 
 
     .wrapper__buttonPolygon__signInMode{
-        display: none;
+
+       right: 38%;
+       bottom: 30px;
+       justify-content: flex-end;
     }
+
+    .wrapper__buttonPolygon__signInMode > p{
+        color: black;
+     }
 
     .wrapper__poligono{
         display: none;

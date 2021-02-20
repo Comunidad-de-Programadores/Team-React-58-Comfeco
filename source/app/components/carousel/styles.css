@@ -1,0 +1,40 @@
+.wrapper__carousel{
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.wrapper__carousel::before{
+    z-index: 999999;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background: linear-gradient(to right, rgb(7, 38, 61)  0%, rgba(255, 255, 255, 0 ) 50%, rgba(255, 255, 255, 0 ) 55%, rgba(7, 38, 61) 100%);
+}
+
+.container__box{
+    border: 1px solid green;
+    margin: 5px 15px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 5px;
+    width: 300px;
+}
+
+.container__box > img{
+    position: absolute;
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+}
