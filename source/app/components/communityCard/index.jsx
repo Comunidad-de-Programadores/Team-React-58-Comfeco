@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.css';
 import logo from '../../images/Isotipo-brand.png';
 
-const index = () => (
+const CommunityCard = () => (
   <div className={styles.community}>
     <header className={styles.community__header}>
       <h3 className={styles.community__tittle}>Communidades</h3>
@@ -51,4 +51,4 @@ const index = () => (
   </div>
 );
 
-export default index;
+export default CommunityCard;

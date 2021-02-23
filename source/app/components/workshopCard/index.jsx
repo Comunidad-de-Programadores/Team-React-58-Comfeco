@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './styles.css';
 
-const index = () => {
+const WorkshopCard = () => {
   let today = new Date();
 
   today = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
@@ -116,4 +116,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default WorkshopCard;
