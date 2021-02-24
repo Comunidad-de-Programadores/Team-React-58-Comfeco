@@ -8,22 +8,21 @@ const useCountdown = (deadline) => {
     seconds: 0,
   });
 
-  const timeLeftUpdate = setInterval(() => {
-    const total = Date.parse(deadline) - Date.parse(new Date());
-    const seconds = Math.floor((total / 1000) % 60);
-    const minutes = Math.floor(total / 1000 / 60) % 60;
-    const hours = Math.floor(total / 1000 / 60 / 60) % 24;
-    const days = Math.floor(total / 1000 / 60 / 60 / 24);
+  useEffect(() => {
+    const timeLeftUpdate = setInterval(() => {
+      const total = Date.parse(deadline) - Date.parse(new Date());
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor(total / 1000 / 60) % 60;
+      const hours = Math.floor(total / 1000 / 60 / 60) % 24;
+      const days = Math.floor(total / 1000 / 60 / 60 / 24);
 
-    setTimeLeft({ ...timeLeft, seconds, minutes, hours, days });
-  }, 1000);
+      setTimeLeft({ ...timeLeft, seconds, minutes, hours, days });
+    }, 1000);
 
-  useEffect(
-    () => () => {
+    return () => {
       clearInterval(timeLeftUpdate);
-    },
-    [timeLeft]
-  );
+    };
+  }, []);
 
   return timeLeft;
 };
