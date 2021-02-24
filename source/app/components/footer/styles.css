@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--dark-blue);
+  background-color: #293241;
   height: 96px;
   width: 100%;
   display: grid;
@@ -9,6 +9,7 @@
                        "seccion2"
                        "social";
   align-items: center;
+  color: #ffff;
 }
 
 
@@ -42,6 +43,9 @@
   margin: 0.5rem;
 }
 
+.social__item > a > i::before{
+  color: #ffff;
+}
 
 
 @media (min-width: 640px) {

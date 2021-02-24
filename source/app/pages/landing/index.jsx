@@ -1,5 +1,7 @@
-import Carousel from 'app/components/carousel';
+import CarouselCreadores from 'app/components/carousel/index-creadores';
+import CarouselSponsors from 'app/components/carousel/index-sponsors';
 import React from 'react';
+
 
 const Landing = () => (
   <>
@@ -7,9 +9,15 @@ const Landing = () => (
       Bienvenido a fest code
     </h1>
 
-    <div style={{ width: '50%' }}>
+    <div style={{ width: '50%', margin: 'auto' }}>
 
-      <Carousel />
+      <CarouselCreadores />
+
+    </div>
+
+    <div style={{ width: '50%', margin: 'auto', marginTop: '100px' }}>
+
+      <CarouselSponsors />
 
     </div>
   </>

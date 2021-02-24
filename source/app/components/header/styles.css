@@ -1,6 +1,6 @@
 .mainHeader{
     align-items: center;
-    background-color: var(--white);
+    background-color:#f5f3f4;
     
     display: flex;
     flex-wrap: nowrap;

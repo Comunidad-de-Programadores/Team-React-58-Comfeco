@@ -53,6 +53,8 @@
     "react-fetch-ssr": "^3.0.5",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "regenerator-runtime": "^0.13.7"
+    "react-slick": "^0.28.0",
+    "regenerator-runtime": "^0.13.7",
+    "slick-carousel": "^1.8.1"
   }
 }
