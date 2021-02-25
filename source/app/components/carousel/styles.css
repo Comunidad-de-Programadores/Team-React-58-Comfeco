@@ -78,7 +78,28 @@
     transform: translateY(0%);
 }
 
+.red::before{
+    color: black !important;
+}
 
+
+.center > .slick-track > .slick-current{
+    border: 1px solid red !important;
+}
+
+.current__0{
+    border: 1px solid red !important;
+}
+
+.colorRed{
+    border: 1px solid red;
+}
+
+.centerActivate{
+    
+    border-radius: 30px;
+    
+}
 /*------------------------------------------*/
 /*--carousel Sponsors--*/
 /*------------------------------------------*/

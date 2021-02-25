@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import styles from './styles.css';
 import img1 from '../../images/carouselCreadores/img-1.png';
@@ -10,17 +10,39 @@ import img6 from '../../images/carouselCreadores/img-6.png';
 import img7 from '../../images/carouselCreadores/img-7.png';
 import img8 from '../../images/carouselCreadores/img-8.png';
 
+
+
+
+
+
+
 const CarouselCreadores = () => {
+
+  const [currentSlide, setCurrentSlide] = useState({
+    nextSlide: 0,
+    currentSlide2: 0
+  });
+
+  const {nextSlide, currentSlide2} = currentSlide;
+
+  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={() => {props.onClick(); console.log(nextSlide)}} />)
+
+  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />)
+
   const settings = {
-    className: 'center',
+    className: `${styles.center}`,
     dots: true,
     centerMode: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    /* autoplay: true,
+    autoplaySpeed: 3000, */
+    pauseOnHover: true,
+    nextArrow: <SampleNextArrow />,
+    beforeChange: (current, next) => setCurrentSlide({nextSlide: next}),
+    prevArrow: <SamplePrevArrow />,
   };
 
   return (
@@ -28,9 +50,10 @@ const CarouselCreadores = () => {
     <div className={styles.wrapper__carousel}>
       <Slider {...settings}>
         {/* img1 */}
+
         <div className={styles.card__cotainer}>
 
-          <div className={styles.wrapper__imgCard}>
+          <div className={`${styles.wrapper__imgCard} ${nextSlide === 0 ? styles.centerActivate : ''}`}>
             <div className={styles.overlay__img}>
               <div className={styles.box__rrss__overlay__img}>
                 <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
