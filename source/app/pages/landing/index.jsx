@@ -1,26 +1,18 @@
 import CarouselCreadores from 'app/components/carousel/index-creadores';
 import CarouselSponsors from 'app/components/carousel/index-sponsors';
 import React from 'react';
-
+import styles from './styles.css';
 
 const Landing = () => (
-  <>
-    <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '10vh' }}>
-      Bienvenido a fest code
-    </h1>
-
-    <div style={{ width: '50%', margin: 'auto' }}>
-
+  <div className={styles.wrapper}>
+    <div className={styles.column}>
+      communities Card
+    </div>
+    <div className={styles.content}>
       <CarouselCreadores />
-
-    </div>
-
-    <div style={{ width: '50%', margin: 'auto', marginTop: '100px' }}>
-
       <CarouselSponsors />
-
     </div>
-  </>
+  </div>
 );
 
 export default Landing;
