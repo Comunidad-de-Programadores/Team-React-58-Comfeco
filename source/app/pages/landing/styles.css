@@ -4,14 +4,21 @@
   max-width: 1500px;
   margin: auto;
   justify-content: space-between;
+  padding-top: 2em;
 }
 
 .content {
-  width: 74%;
-  background-color: blue;
+  width: 70%;
 }
 
 .column {
   width: 25%;
-  background-color: red;
+}
+.carrouselWrapper{
+  margin-bottom: 3em;
+}
+.title {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
