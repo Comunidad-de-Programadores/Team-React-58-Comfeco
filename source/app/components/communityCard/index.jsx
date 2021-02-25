@@ -13,7 +13,7 @@ const CommunityCard = () => {
       {!isLoading && (
         <>
           <header className={styles.community__header}>
-            <h3 className={styles.community__tittle}>Communidades</h3>
+            <h3 className={styles.community__tittle}>Comunidades</h3>
             <a className={styles.community__link} href="/">
               Ver más
             </a>
@@ -27,9 +27,9 @@ const CommunityCard = () => {
                 </div>
                 <h4 className={styles.communityItem__title}>{item.name}</h4>
 
-                <a className={styles.community__link} href="/">
+                <boton className={styles.community__link} href="/">
                   Unirme
-                </a>
+                </boton>
                 <hr />
               </li>
             ))}
