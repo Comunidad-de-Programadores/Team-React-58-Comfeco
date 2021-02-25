@@ -1,54 +1,43 @@
 import React from 'react';
-import styles from './styles.css';
+import useCommunities from 'app/hooks/useCommunities';
 import logo from '../../images/Isotipo-brand.png';
+import styles from './styles.css';
 
-const CommunityCard = () => (
-  <div className={styles.community}>
-    <header className={styles.community__header}>
-      <h3 className={styles.community__tittle}>Communidades</h3>
-      <a className={styles.community__button} href="/">
-        Ver más
-      </a>
-    </header>
+const CommunityCard = () => {
+  const { data, isLoading } = useCommunities();
 
-    <ul className={styles.community__grid}>
-      <li className={styles.community__item}>
-        <div className={styles.communityItem__logo}>
-          <img src={logo} alt="communityLogo" />
-        </div>
-        <h4 className={styles.communityItem__title}>Comunidad de Programadores</h4>
+  return (
+    <div className={styles.community}>
+      {isLoading && <div>Cargando...</div>}
 
-        <a className={styles.community__button} href="/">
-          Unirme
-        </a>
-      </li>
-      <hr />
+      {!isLoading && (
+        <>
+          <header className={styles.community__header}>
+            <h3 className={styles.community__tittle}>Communidades</h3>
+            <a className={styles.community__link} href="/">
+              Ver más
+            </a>
+          </header>
 
-      <li className={styles.community__item}>
-        <div className={styles.communityItem__logo}>
-          <img src={logo} alt="communityLogo" />
-        </div>
-        <h4 className={styles.communityItem__title}>El lenguaje de los programadores</h4>
+          <ul className={styles.community__grid}>
+            {data.map((item) => (
+              <li className={styles.community__item} key={item.id}>
+                <div className={styles.communityItem__logo}>
+                  <img src={logo} alt="communityLogo" />
+                </div>
+                <h4 className={styles.communityItem__title}>{item.name}</h4>
 
-        <a className={styles.community__button} href="/">
-          Unirme
-        </a>
-      </li>
-      <hr />
-
-      <li className={styles.community__item}>
-        <div className={styles.communityItem__logo}>
-          <img src={logo} alt="communityLogo" />
-        </div>
-        <h4 className={styles.communityItem__title}>Latam Dev</h4>
-
-        <a className={styles.community__button} href="/">
-          Unirme
-        </a>
-      </li>
-      <hr />
-    </ul>
-  </div>
-);
+                <a className={styles.community__link} href="/">
+                  Unirme
+                </a>
+                <hr />
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  );
+};
 
 export default CommunityCard;
