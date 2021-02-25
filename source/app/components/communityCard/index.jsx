@@ -27,9 +27,9 @@ const CommunityCard = () => {
                 </div>
                 <h4 className={styles.communityItem__title}>{item.name}</h4>
 
-                <boton className={styles.community__link} href="/">
+                <button className={styles.community__link} type="button">
                   Unirme
-                </boton>
+                </button>
                 <hr />
               </li>
             ))}
