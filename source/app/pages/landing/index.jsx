@@ -3,6 +3,7 @@ import CarouselCreadores from 'app/components/carousel/index-creadores';
 import CarouselSponsors from 'app/components/carousel/index-sponsors';
 import CommunitiesCard from 'app/components/communityCard'
 import React from 'react';
+import Countdown from '../../components/countdown';
 import styles from './styles.css';
 
 const Landing = () => (
@@ -18,6 +19,9 @@ const Landing = () => (
         </div>
         <div className={styles.carrouselWrapper}>
           <CarouselSponsors />
+        </div>
+        <div className={styles.carrouselWrapper}>
+          <Countdown />
         </div>
       </div>
     </div>
