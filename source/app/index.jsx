@@ -14,6 +14,8 @@ import RecoverAccount from './components/recoverAccount';
 import TermsConditions from './components/termsConditions';
 import PrivacyDataProtection from './components/privacyDataProtection';
 import CreateNewPassword from './pages/createNewPassword';
+import CommunityCard from './components/communityCard';
+import WorkshopCard from './components/workshopCard';
 
 const App = () => (
   <SessionProvider>
@@ -31,10 +33,11 @@ const App = () => (
       <Route path="/example-register" exact component={ExampleRegister} />
       <Route path="/terms-conditions" exact component={TermsConditions} />
       <Route path="/privacy-data-protection" exact component={PrivacyDataProtection} />
+      <Route path="/community" exact component={CommunityCard} />
+      <Route path="/workshop" exact component={WorkshopCard} />
     </Switch>
     <Footer />
   </SessionProvider>
-
 );
 
 export default App;

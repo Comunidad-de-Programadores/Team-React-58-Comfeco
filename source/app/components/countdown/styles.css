@@ -1,0 +1,25 @@
+.countdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown__title {
+  text-align: center;
+}
+.countdown__content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.time__value {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.time__description {
+  font-size: 1.5rem;
+  /* font-weight: 600; */
+  text-align: center;
+}
