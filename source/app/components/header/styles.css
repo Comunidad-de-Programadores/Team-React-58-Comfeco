@@ -1,84 +1,42 @@
-.mainHeader{
-    align-items: center;
-    background-color:#f5f3f4;
-    
-    display: flex;
-    flex-wrap: nowrap;
-    height: 7vmin;
-    padding: 0 2vw;
-    justify-content: space-between;
-    width: 100%;
-    margin: 1vh 0px;
+.mainHeader {
+  display: flex;
+  flex-direction: column;
 }
 
-.mainHeader__logo{
-    height:inherit;
+.wrapper {
+  align-items: center;
+  background-color: #f5f3f4;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 7vmin;
+  padding: 0 2vw;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1vh 0px;
 }
 
-.mainHeader__logo img{
-    height:inherit;
-
+.mainHeader__logo {
+  height: inherit;
 }
 
-.mainHeader__buttons i{
-    background-color: transparent;
-    border-radius: 100%;
-    color:var(--gray-6);
-    transition: all 0.5s ease-in-out;
+.mainHeader__logo img {
+  height: inherit;
 }
 
-.mainHeader__buttons i:hover{
-    color:var(--pink-2);
-    background-color: var(--purple-5);
+.mainHeader__buttons i {
+  background-color: transparent;
+  border-radius: 100%;
+  color: var(--gray-6);
+  transition: all 0.5s ease-in-out;
 }
 
-.mainHeader__underline{
-    width: 100%;
-    height: 0.3rem;
-    background: linear-gradient(to right, var(--dark-blue), var(--cyan));
+.mainHeader__buttons i:hover {
+  color: var(--pink-2);
+  background-color: var(--purple-5);
 }
 
-/*------------------------------------------*/
-/*--media Query--*/
-/*------------------------------------------*/
-
-@media (max-width: 1500px) {
-    .mainHeader{
-        height: 6vmin;
-    }
-
-}
-
-@media (max-width: 1200px) {
-    .mainHeader{
-        height: 5vmin;
-    }
-
-
-}
-
-@media (max-width: 640px) {
-    .mainHeader{
-        
-    }
-}
-
-@media (max-width: 768px) {
-    .mainHeader{
-        
-    }
-
-    .mainHeader__logo img{
-        
-    }
-}
-
-@media (max-width: 1024px) {
-    .mainHeader{
-        
-    }
-
-    .mainHeader__logo{
-        
-    }
+.mainHeader__underline {
+  width: 100%;
+  height: 0.3rem;
+  background: linear-gradient(to right, var(--dark-blue), var(--cyan));
 }

@@ -10,8 +10,8 @@ const Header = () => {
   const locationToShow = '/recover-account';
 
   return (
-    <>
-      <header className={styles.mainHeader}>
+    <header className={styles.mainHeader}>
+      <div className={styles.wrapper}>
         <picture className={styles.mainHeader__logo}>
           <source media="(min-width: 768px)" srcSet={logo1} />
           <img src={isotipo} alt="comfeco" />
@@ -19,15 +19,14 @@ const Header = () => {
 
         <div className={styles.mainHeader__buttons}>
           {location === locationToShow && (
-          <Link to="/auth">
-            <Button type="button">Iniciar Sesión</Button>
-          </Link>
+            <Link to="/auth">
+              <Button type="button">Iniciar Sesión</Button>
+            </Link>
           )}
         </div>
-
-      </header>
+      </div>
       <hr className={styles.mainHeader__underline} />
-    </>
+    </header>
   );
 };
 
