@@ -272,7 +272,7 @@
 
 @media only screen and (max-width: 1000px) {
     .cotainer__Form{
-        min-width: 768px;
+        min-width: auto;
         height: 600px;
     }
 
@@ -328,7 +328,8 @@
 
     .wrapper__buttonPolygon__loginMode{
 
-        left: 36%;
+        left: 0;
+        right: 0;
         bottom: 45px;
         justify-content: flex-end;
         top: initial;
@@ -342,7 +343,8 @@
 
     .wrapper__buttonPolygon__signInMode{
         top: initial;
-        right: 38%;
+        right: 0;
+        left: 0;
         bottom: 30px;
         justify-content: flex-end;
     }
