@@ -308,14 +308,14 @@
 @media only screen and (max-width: 767px) {
     .cotainer__Form{
         width: 100%;
-        height: 600px;
+        height: 650px;
         transition-delay: 0.5s;
         transition-timing-function: ease-in-out;
     }
 
     .cotainer__Form.signUp__mode{
         width: 100%;
-        height: 680px;
+        height: 750px;
     }
 
     .loginImg{
@@ -331,6 +331,7 @@
         left: 36%;
         bottom: 45px;
         justify-content: flex-end;
+        top: initial;
     }
 
     .wrapper__buttonPolygon__loginMode > p{
@@ -340,10 +341,10 @@
 
 
     .wrapper__buttonPolygon__signInMode{
-
-       right: 38%;
-       bottom: 30px;
-       justify-content: flex-end;
+        top: initial;
+        right: 38%;
+        bottom: 30px;
+        justify-content: flex-end;
     }
 
     .wrapper__buttonPolygon__signInMode > p{
