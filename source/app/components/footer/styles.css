@@ -1,84 +1,51 @@
 .footer {
   background-color: #293241;
-  height: 96px;
   width: 100%;
   display: grid;
-  position: absolute;
-  bottom: 0;
-  grid-template-areas: "seccion1"
-                       "seccion2"
-                       "social";
+  grid-template-areas:
+    'seccion1'
+    'seccion2'
+    'social';
   align-items: center;
   color: #ffff;
 }
 
-
-.footer__seccion1{
+.footer__seccion1 {
   grid-area: seccion1;
   font-size: 1.1rem;
   text-align: center;
 }
 
-.footer__seccion2{
+.footer__seccion2 {
   grid-area: seccion2;
   text-align: center;
 }
 
-.footer__social{
+.footer__social {
   grid-area: social;
 }
 
-.social__grid{
+.social__grid {
   height: 100%;
   display: flex;
-
   flex-direction: row;
   flex-wrap: wrap;
-  /* align-items: center; */
   justify-content: center;
   padding: 1rem;
 }
 
-.social__item{
+.social__item {
   margin: 0.5rem;
 }
 
-.social__item > a > i::before{
+.social__item > a > i::before {
   color: #ffff;
-}
-
-
-@media (min-width: 640px) {
-    .footer{
-      grid-template-areas: "seccion1 seccion2 social";
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 2fr));
-    }
-
-    .footer::after{
-      content: "";
-      background-color: var(--cyan);
-      bottom: 0;
-      height: 4rem;
-      left: 0;
-      position: absolute;
-      width: 100%;
-      z-index: -1;
-    }
-}
-
-.facebook, .twitter, .github{
-  color: var(--dark-blue);
   transition: all 0.4s ease-in-out;
 }
 
-.facebook:hover{
-  color: #4867aa;
-}
-
-.twitter:hover{
-  color: #00a2f3;
-}
-
-.github:hover{
-  color: black;
+@media (min-width: 640px) {
+  .footer {
+    grid-template-areas: 'seccion1 seccion2 social';
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 2fr));
+  }
 }
