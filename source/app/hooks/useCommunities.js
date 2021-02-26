@@ -1,8 +1,49 @@
+/* eslint-disable no-underscore-dangle */
 import apiConnect from 'app/apiConnect';
-import { useEffect, useState } from 'react';
+import sessionContext from 'app/context/session';
+import { useContext, useEffect, useState } from 'react';
 
 const useCommunities = () => {
+  const { session } = useContext(sessionContext);
+
   const [state, setState] = useState({ isLoading: false, data: [] });
+
+  const handleJoinCommunity = async (communityId) => {
+    const { token, _id } = session;
+
+    const response = await apiConnect({
+      method: 'post',
+      url: '/user/community',
+      data: { communityId, session: { _id } },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.status === 'error') {
+      console.error(response.errorMessage);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const handleLeaveCommunity = async (communityId) => {
+    const { token, _id } = session;
+    const response = await apiConnect({
+      method: 'delete',
+      url: '/user/community',
+      data: { communityId, session: { _id } },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.status === 'error') {
+      console.error(response.errorMessage);
+    } else {
+      console.log(response);
+    }
+  };
 
   useEffect(() => {
     const getCommunities = async () => {
@@ -20,7 +61,7 @@ const useCommunities = () => {
     getCommunities();
   }, []);
 
-  return state;
+  return { state, handleJoinCommunity, handleLeaveCommunity, session };
 };
 
 export default useCommunities;

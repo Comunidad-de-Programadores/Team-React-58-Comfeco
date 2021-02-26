@@ -3,7 +3,7 @@ import sessionContext from 'app/context/session';
 import { object, array, oneOfType } from 'prop-types';
 
 const SessionProvider = ({ children }) => {
-  const [state, setState] = useState(null);
+  const [state, setState] = useState({ communities: [] });
 
   return (
     <sessionContext.Provider value={{ session: state, setSession: setState }}>
