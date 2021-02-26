@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-shadow */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import sessionContext from 'app/context/session';
 import { getEmailError, getPasswordError, getUserNameError } from 'app/helpers/validators';
 import { useHistory } from 'react-router';
 import apiConnect from '../apiConnect';
@@ -11,6 +12,7 @@ const useLogin = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const history = useHistory();
+  const { setSession } = useContext(sessionContext);
 
   /**
    * set error message and hides after five seconds
@@ -39,7 +41,7 @@ const useLogin = () => {
    */
   const handleRemoveError = (event) => {
     setInputWithErrors(
-      inputWithErrors.filter((currentError) => currentError !== event.target.name),
+      inputWithErrors.filter((currentError) => currentError !== event.target.name)
     );
   };
 
@@ -72,6 +74,7 @@ const useLogin = () => {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
     } else {
+      setSession({ ...response });
       history.replace('/landing');
     }
   };
