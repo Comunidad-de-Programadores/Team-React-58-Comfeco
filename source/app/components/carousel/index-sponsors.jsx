@@ -15,51 +15,45 @@ import img11 from '../../images/carouselSponsors/img-11.png';
 
 
 const CarouselSponsors = () => {
+
+  const CarouselCard = ({index, nextSlide, imgCardSlide, twitter = "#", github = "#"}) => (
+
+    <div className={styles.card__cotainer}>
+      <img className={styles.img__carousel} src={imgCardSlide} alt=""/>
+    </div>
+  
+  );
+
+  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+
+  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+
+
   const settings = {
     dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 3,
     speed: 500,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
 
   return (
 
     <div className={styles.wrapper__carousel__sponsors}>
       <Slider {...settings}>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img1} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img2} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img3} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img4} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img5} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img6} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img7} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img8} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img9} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img10} alt=""/>
-        </div>
-        <div className={styles.card__cotainer}>
-          <img className={styles.img__carousel} src={img11} alt=""/>
-        </div>
+        <CarouselCard imgCardSlide={img1}/>
+        <CarouselCard imgCardSlide={img2}/>
+        <CarouselCard imgCardSlide={img3}/>
+        <CarouselCard imgCardSlide={img4}/>
+        <CarouselCard imgCardSlide={img5}/>
+        <CarouselCard imgCardSlide={img6}/>
+        <CarouselCard imgCardSlide={img7}/>
+        <CarouselCard imgCardSlide={img8}/>
+        <CarouselCard imgCardSlide={img9}/>
+        <CarouselCard imgCardSlide={img10}/>
+        <CarouselCard imgCardSlide={img11}/>
       </Slider>
     </div>
 

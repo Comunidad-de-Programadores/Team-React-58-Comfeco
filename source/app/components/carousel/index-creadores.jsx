@@ -9,25 +9,43 @@ import img5 from '../../images/carouselCreadores/img-5.png';
 import img6 from '../../images/carouselCreadores/img-6.png';
 import img7 from '../../images/carouselCreadores/img-7.png';
 import img8 from '../../images/carouselCreadores/img-8.png';
-
-
-
-
-
-
+/* import CarouselCard from '../../hooks/useCarousel'; */
 
 const CarouselCreadores = () => {
-
   const [currentSlide, setCurrentSlide] = useState({
     nextSlide: 0,
-    currentSlide2: 0
   });
 
-  const {nextSlide, currentSlide2} = currentSlide;
+  const { nextSlide } = currentSlide;
 
-  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={() => {props.onClick(); console.log(nextSlide)}} />)
+  const CarouselCard = ({index, nextSlide, imgCardSlide, twitter = "#", github = "#"}) => (
 
-  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />)
+    <div className={styles.card__cotainer}>
+  
+      <div className={`${styles.wrapper__imgCard} ${nextSlide === index ? styles.centerActivate : ''}`}>
+        <div className={styles.overlay__img}>
+          <div className={styles.box__rrss__overlay__img}>
+            <a href={twitter} target="blank">
+              <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
+            </a>
+          </div>
+          <div className={styles.box__rrss__overlay__img}>
+            <a href={github} target="blank">
+              <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
+            </a>
+          </div>
+        </div>
+        <img className={styles.img__carousel} src={imgCardSlide} alt="" />
+      </div>
+  
+    </div>
+  
+  );
+
+
+  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+
+  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
 
   const settings = {
     className: `${styles.center}`,
@@ -36,12 +54,13 @@ const CarouselCreadores = () => {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    speed: 500,
-    /* autoplay: true,
-    autoplaySpeed: 3000, */
+    speed: 100,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    lazyLoad: true,
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
-    beforeChange: (current, next) => setCurrentSlide({nextSlide: next}),
+    beforeChange: (current, next) => setCurrentSlide({ nextSlide: next }),
     prevArrow: <SamplePrevArrow />,
   };
 
@@ -49,142 +68,16 @@ const CarouselCreadores = () => {
 
     <div className={styles.wrapper__carousel}>
       <Slider {...settings}>
-        {/* img1 */}
 
-        <div className={styles.card__cotainer}>
+        <CarouselCard index={0} nextSlide={nextSlide} imgCardSlide={img1} />
+        <CarouselCard index={1} nextSlide={nextSlide} imgCardSlide={img2} />
+        <CarouselCard index={2} nextSlide={nextSlide} imgCardSlide={img3} />
+        <CarouselCard index={3} nextSlide={nextSlide} imgCardSlide={img4} />
+        <CarouselCard index={4} nextSlide={nextSlide} imgCardSlide={img5} />
+        <CarouselCard index={5} nextSlide={nextSlide} imgCardSlide={img6} />
+        <CarouselCard index={6} nextSlide={nextSlide} imgCardSlide={img7} />
+        <CarouselCard index={7} nextSlide={nextSlide} imgCardSlide={img8} />
 
-          <div className={`${styles.wrapper__imgCard} ${nextSlide === 0 ? styles.centerActivate : ''}`}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img1} alt="" />
-          </div>
-
-        </div>
-
-        {/* img2 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img2} alt="" />
-          </div>
-
-        </div>
-
-        {/* img3 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img3} alt="" />
-          </div>
-
-        </div>
-
-        {/* img4 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img4} alt="" />
-          </div>
-
-        </div>
-
-        {/* img5 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img5} alt="" />
-          </div>
-
-        </div>
-
-        {/* img6 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img6} alt="" />
-          </div>
-
-        </div>
-
-        {/* img7 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img7} alt="" />
-          </div>
-
-        </div>
-
-        {/* img8 */}
-        <div className={styles.card__cotainer}>
-
-          <div className={styles.wrapper__imgCard}>
-            <div className={styles.overlay__img}>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
-              </div>
-              <div className={styles.box__rrss__overlay__img}>
-                <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`} />
-              </div>
-            </div>
-            <img className={styles.img__carousel} src={img8} alt="" />
-          </div>
-
-        </div>
       </Slider>
     </div>
 
