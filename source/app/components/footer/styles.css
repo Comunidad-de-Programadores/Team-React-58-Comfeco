@@ -52,9 +52,10 @@
     .footer{
       grid-template-areas: "seccion1 seccion2 social";
       grid-template-columns: repeat(auto-fit, minmax(14rem, 2fr));
+      height: auto;
     }
 
-    .footer::after{
+    /* .footer::after{
       content: "";
       background-color: var(--cyan);
       bottom: 0;
@@ -63,7 +64,7 @@
       position: absolute;
       width: 100%;
       z-index: -1;
-    }
+    } */
 }
 
 .facebook, .twitter, .github{
