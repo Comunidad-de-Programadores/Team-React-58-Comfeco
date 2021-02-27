@@ -1,16 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import useCommunities from 'app/hooks/useCommunities';
-import sessionContext from 'app/context/session';
 import logo from '../../images/Isotipo-brand.png';
 import styles from './styles.css';
 
 const CommunityCard = () => {
   const { handleJoinCommunity, handleLeaveCommunity, state } = useCommunities();
-  const {
-    session: { communities },
-  } = useContext(sessionContext);
 
-  const { data, isLoading } = state;
+  const { data: communities, isLoading } = state;
 
   return (
     <div className={styles.community}>
@@ -26,17 +22,17 @@ const CommunityCard = () => {
           </header>
 
           <ul className={styles.community__grid}>
-            {data.map((item) => (
-              <li className={styles.community__item} key={item.id}>
+            {communities.map((community) => (
+              <li className={styles.community__item} key={community.id}>
                 <div className={styles.communityItem__logo}>
                   <img src={logo} alt="communityLogo" />
                 </div>
-                <h4 className={styles.communityItem__title}>{item.name}</h4>
+                <h4 className={styles.communityItem__title}>{community.name}</h4>
 
                 <button
                   className={styles.community__link}
                   onClick={() => {
-                    handleJoinCommunity(item.id);
+                    handleJoinCommunity(community.id);
                   }}
                   type="button"
                 >
@@ -46,7 +42,7 @@ const CommunityCard = () => {
                 <button
                   className={styles.community__link}
                   onClick={() => {
-                    handleLeaveCommunity(item.id);
+                    handleLeaveCommunity(community.id);
                   }}
                   type="button"
                 >

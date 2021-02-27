@@ -13,7 +13,6 @@ const Footer = () => (
     </div>
 
     <div className={styles.footer__social}>
-
       <ul className={styles.social__grid}>
         <li className={styles.social__item}>
           <a href="/">
@@ -32,7 +31,6 @@ const Footer = () => (
             <i className={`${'fab fa-github fa-3x'} ${styles.github}`}></i>
           </a>
         </li>
-
       </ul>
     </div>
   </footer>

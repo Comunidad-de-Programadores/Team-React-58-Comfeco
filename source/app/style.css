@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 :root {
   --white: #ffffff;
@@ -14,7 +14,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -24,16 +24,15 @@ html {
 
 body {
   margin: 0;
-  margin-bottom: 96px;
   background: #f5f3f4;
 }
 
-button{
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    outline:none;
-    background: #293241;
+button {
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: #293241;
 }
 
 input {
@@ -70,6 +69,12 @@ a {
   text-shadow: 0px 0px 0.5px var(--cyan);
 }
 
-div.slick-slider{
+div.slick-slider {
   border: 1px solid red;
+}
+
+.wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr auto;
 }
