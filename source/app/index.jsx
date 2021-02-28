@@ -16,6 +16,7 @@ import CreateNewPassword from './pages/createNewPassword';
 import CommunityCard from './components/communityCard';
 import WorkshopCard from './components/workshopCard';
 import style from './style.css';
+import EventsCard from './components/eventsCard';
 
 const App = () => (
   <SessionProvider>
@@ -36,6 +37,7 @@ const App = () => (
         <Route path="/privacy-data-protection" exact component={PrivacyDataProtection} />
         <Route path="/community" exact component={CommunityCard} />
         <Route path="/workshop" exact component={WorkshopCard} />
+        <Route path="/events" exact component={EventsCard} />
       </Switch>
       <Footer />
     </div>
