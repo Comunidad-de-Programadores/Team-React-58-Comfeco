@@ -1,0 +1,20 @@
+.badgesCard {
+  padding: 1rem 1.5rem;
+  background-color: gray;
+}
+
+.badgesCard__title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.badgesCard__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.badgesCard__logo {
+  max-width: 6rem;
+  margin: 0 1rem;
+}

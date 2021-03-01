@@ -17,6 +17,7 @@ import CommunityCard from './components/communityCard';
 import WorkshopCard from './components/workshopCard';
 import style from './style.css';
 import EventsCard from './components/eventsCard';
+import BadgesCard from './components/badgesCard';
 
 const App = () => (
   <SessionProvider>
@@ -38,6 +39,7 @@ const App = () => (
         <Route path="/community" exact component={CommunityCard} />
         <Route path="/workshop" exact component={WorkshopCard} />
         <Route path="/events" exact component={EventsCard} />
+        <Route path="/badges" exact component={BadgesCard} />
       </Switch>
       <Footer />
     </div>
