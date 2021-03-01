@@ -4,9 +4,7 @@ import logo from '../../images/Isotipo-brand.png';
 import styles from './styles.css';
 
 const CommunityCard = () => {
-  const { handleJoinCommunity, handleLeaveCommunity, state } = useCommunities();
-
-  const { data: communities, isLoading } = state;
+  const { communities, isLoading, handleJoinCommunity, handleLeaveCommunity } = useCommunities();
 
   return (
     <div className={styles.community}>
@@ -29,26 +27,29 @@ const CommunityCard = () => {
                 </div>
                 <h4 className={styles.communityItem__title}>{community.name}</h4>
 
-                <button
-                  className={styles.community__link}
-                  onClick={() => {
-                    handleJoinCommunity(community.id);
-                  }}
-                  type="button"
-                >
-                  Unirme
-                </button>
+                {!community.joined && (
+                  <button
+                    className={styles.community__link}
+                    onClick={() => {
+                      handleJoinCommunity(community.id);
+                    }}
+                    type="button"
+                  >
+                    Unirme
+                  </button>
+                )}
 
-                <button
-                  className={styles.community__link}
-                  onClick={() => {
-                    handleLeaveCommunity(community.id);
-                  }}
-                  type="button"
-                >
-                  Salir
-                </button>
-
+                {community.joined && (
+                  <button
+                    className={styles.community__link}
+                    onClick={() => {
+                      handleLeaveCommunity(community.id);
+                    }}
+                    type="button"
+                  >
+                    Salir
+                  </button>
+                )}
                 <hr />
               </li>
             ))}
