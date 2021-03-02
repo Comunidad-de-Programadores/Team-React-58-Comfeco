@@ -1,0 +1,34 @@
+.activityCard {
+  margin-bottom: 1rem;
+}
+
+.activityCard__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.activityCard__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityCard__item {
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.activity__message {
+  font-size: 0.9rem;
+}
+
+.activity__img {
+  min-width: 3rem;
+  margin: 0 1rem;
+  max-width: 6rem;
+}
