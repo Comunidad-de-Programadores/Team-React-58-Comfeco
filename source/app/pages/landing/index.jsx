@@ -4,6 +4,7 @@ import CarouselSponsors from 'app/components/carousel/index-sponsors';
 import CommunitiesCard from 'app/components/communityCard';
 import Countdown from '../../components/countdown';
 import styles from './styles.css';
+import FormEditPerfil from 'app/components/formEditPerfil/index';
 
 const Landing = () => (
   <div className={styles.wrapper}>
@@ -20,6 +21,9 @@ const Landing = () => (
       </div>
       <div className={styles.carrouselWrapper}>
         <Countdown />
+      </div>
+      <div>
+        <FormEditPerfil />
       </div>
     </div>
   </div>

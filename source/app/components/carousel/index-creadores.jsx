@@ -9,7 +9,7 @@ import img5 from '../../images/carouselCreadores/img-5.png';
 import img6 from '../../images/carouselCreadores/img-6.png';
 import img7 from '../../images/carouselCreadores/img-7.png';
 import img8 from '../../images/carouselCreadores/img-8.png';
-/* import CarouselCard from '../../hooks/useCarousel'; */
+
 
 const CarouselCreadores = () => {
   const [currentSlide, setCurrentSlide] = useState({

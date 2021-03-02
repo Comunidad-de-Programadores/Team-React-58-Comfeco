@@ -13,7 +13,7 @@ const Header = () => {
     <header className={styles.mainHeader}>
       <div className={styles.wrapper}>
         <picture className={styles.mainHeader__logo}>
-          <source media="(min-width: 768px)" srcSet={logo1} />
+          <source media="" srcSet={logo1} />
           <img src={isotipo} alt="comfeco" />
         </picture>
 
@@ -25,7 +25,6 @@ const Header = () => {
           )}
         </div>
       </div>
-      <hr className={styles.mainHeader__underline} />
     </header>
   );
 };

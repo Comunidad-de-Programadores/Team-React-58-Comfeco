@@ -17,6 +17,7 @@ import CommunityCard from './components/communityCard';
 import WorkshopCard from './components/workshopCard';
 import style from './style.css';
 
+
 const App = () => (
   <SessionProvider>
     <div className={style.wrapper}>
