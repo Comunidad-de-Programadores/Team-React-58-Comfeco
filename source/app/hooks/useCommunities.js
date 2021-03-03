@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import apiConnect from 'app/apiConnect';
 import sessionContext from 'app/context/session';
 import { useContext, useEffect, useState } from 'react';
@@ -12,14 +11,14 @@ const useCommunities = () => {
 
   const handleJoinCommunity = async (communityId) => {
     if (!session) {
-      history.replace('/auth');
+      history.push('/auth');
     } else {
-      const { token, _id } = session;
+      const { token } = session;
 
       const response = await apiConnect({
         method: 'post',
         url: '/user/community',
-        data: { communityId, session: { _id } },
+        data: { communityId },
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -35,11 +34,11 @@ const useCommunities = () => {
   };
 
   const handleLeaveCommunity = async (communityId) => {
-    const { token, _id } = session;
+    const { token } = session;
     const response = await apiConnect({
       method: 'delete',
       url: '/user/community',
-      data: { communityId, session: { _id } },
+      data: { communityId },
       headers: {
         Authorization: `Bearer ${token}`,
       },
