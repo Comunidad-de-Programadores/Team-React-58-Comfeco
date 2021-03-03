@@ -63,6 +63,17 @@ const useCommunities = () => {
           : { ...item, joined: false }
       );
     }
+
+    const localSession = JSON.parse(localStorage.getItem('session'));
+
+    if (localSession) {
+      return data.map((item) =>
+        localSession.communities.includes(item.id)
+          ? { ...item, joined: true }
+          : { ...item, joined: false }
+      );
+    }
+
     return data.map((item) => ({ ...item, joined: false }));
   };
 
