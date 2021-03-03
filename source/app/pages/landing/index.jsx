@@ -22,9 +22,6 @@ const Landing = () => (
       <div className={styles.carrouselWrapper}>
         <Countdown />
       </div>
-      <div>
-        <FormEditPerfil />
-      </div>
     </div>
   </div>
 );
