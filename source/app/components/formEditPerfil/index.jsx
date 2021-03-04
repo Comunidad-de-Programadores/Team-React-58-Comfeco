@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarEditPerfil from '../navBarEditPerfil/index';
+import PerfilCard from '../perfilCard';
 import styles from './styles.css';
 
 const FormEditPerfil = () => {
@@ -12,6 +13,7 @@ const FormEditPerfil = () => {
                 /*--Seccion Nombre y foto de perfil--*/
                 /*------------------------------------------*/}
                 <div className={styles.container}>
+                    <PerfilCard />
                     <h1>Editar Perfil</h1>
                     <div className={styles.wrapper__circle__nickpic}>
                         <div className={styles.circle__nickpic}>
@@ -46,8 +48,8 @@ const FormEditPerfil = () => {
                                 <h4>Genero</h4>
                                 <select name="Genero">
                                     <option value="1" selected disabled>Selecciona un Genero</option>
-                                    <option value="1">Hombre</option>
-                                    <option value="2">Mujer</option>
+                                    <option value="2">Hombre</option>
+                                    <option value="3">Mujer</option>
                                 </select>
                             </div>
                             <div className={`${styles.form__group} ${styles.form__threeItems}`}>
@@ -58,21 +60,21 @@ const FormEditPerfil = () => {
                                 <h4>Pais</h4>
                                 <select name="pais">
                                     <option value="1" selected disabled>Selecciona un Pais</option>
-                                    <option value="1">Argentina</option>
-                                    <option value="2">España</option>
-                                    <option value="3">México</option>
-                                    <option value="4">Guatemala</option>
-                                    <option value="5">Honduras</option>
+                                    <option value="2">Argentina</option>
+                                    <option value="3">España</option>
+                                    <option value="4">México</option>
+                                    <option value="5">Guatemala</option>
+                                    <option value="6">Honduras</option>
                                     <option value="7">El Salvador</option>
                                     <option value="8">Venezuela</option>
                                     <option value="9">Colombia</option>
                                     <option value="10">Cuba</option>
                                     <option value="11">Bolivia</option>
-                                    <option value="13">Perú</option>
-                                    <option value="14">Ecuador</option>
-                                    <option value="15">Paraguay</option>
-                                    <option value="16">Uruguay</option>
-                                    <option value="17">Chile</option>
+                                    <option value="12">Perú</option>
+                                    <option value="13">Ecuador</option>
+                                    <option value="14">Paraguay</option>
+                                    <option value="15">Uruguay</option>
+                                    <option value="16">Chile</option>
                                 </select>
                             </div>
                         </div>
