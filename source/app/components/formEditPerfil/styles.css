@@ -163,7 +163,7 @@ input:focus{
         border: 1px solid red;
     } */
     .container{
-        border: 1px solid green;
+        padding: 10px;
     }
     .wrapper__form__row{
         display: flex;
