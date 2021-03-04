@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper__container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    margin-top: 10px;
+}
+
+.container > h1{
+
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+}
+
+.wrapper__circle__nickpic{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.circle__nickpic{
+    border-radius: 50%;
+    border: 4px solid gray;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.overlay__nickpic{
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: rgb(180, 180, 180);
+    position: absolute;
+}
+
+/*------------------------------------------*/
+/*--Form--*/
+/*------------------------------------------*/
+
+form{
+    margin-top: 20px;
+}
+
+.form__group > select{
+    width: 100%;
+    height: 35px;
+}
+
+input{
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: gray !important;
+    margin: 0 !important;
+    border-radius: 5px;
+    width: 100% !important;
+    height: 35px;
+    color: white;
+    padding-left: 10px;
+}
+
+input::placeholder{
+    color: white;
+}
+
+
+input:focus{
+    border: none;
+    outline: none;
+}
+
+.wrapper__form__row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form__twoItems{
+    width: 50%;
+}
+
+.wrapper__form__row > .form__twoItems:first-child{
+    margin-right: 15px;
+}
+
+.form__threeItems{
+    width: 32%;
+}
+
+.social__media{
+    display: flex;
+    align-items: center;
+}
+
+.social__media > input{
+    width: 60% !important;
+    justify-self: flex-end !important;
+}
+
+.social__media > .wrapper__social__media__icon{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.social__media > .wrapper__social__media__icon > h4{
+    font-size: 1rem;
+}
+
+.social__media > .wrapper__social__media__icon > i{
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+
+.completeItem{
+    width: 100%;
+}
+
+.completeItem > input{
+    height: 100px;
+}
+
+.completeItem > h4{
+    margin-bottom: 5px;
+}
+
+
+.biography{
+    width: 100%;
+}
+
+.biography > textarea{
+    width: 100%;
+    border-radius: 5px;
+    height: 70px;
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    resize: none;
+}
+
+.biography > textarea::placeholder{
+    color: #ffffff;
+}
+
+
+/*------------------------------------------*/
+/*--Media Querys--*/
+/*------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+    /* .wrapper__container{
+        border: 1px solid red;
+    } */
+    .container{
+        padding: 10px;
+    }
+    .wrapper__form__row{
+        display: flex;
+        flex-direction: column;
+    }
+    .form__group{
+        width: 100%;
+    }
+    .social__media{
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .social__media:last-child{
+        margin-bottom: 0px;
+    }
+
+    .social__media > input{
+        width: 50% !important;
+    }
+
+    .social__media > .wrapper__social__media__icon{
+        width: 50%;
+    }
+}

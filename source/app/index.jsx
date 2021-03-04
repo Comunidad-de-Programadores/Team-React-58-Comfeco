@@ -19,6 +19,7 @@ import style from './style.css';
 import EventsCard from './components/eventsCard';
 import BadgesCard from './components/badgesCard';
 import ActivityCard from './components/activityCard';
+import FormEditPerfil from './components/formEditPerfil';
 
 const App = () => (
   <SessionProvider>
@@ -42,6 +43,7 @@ const App = () => (
         <Route path="/events" exact component={EventsCard} />
         <Route path="/badges" exact component={BadgesCard} />
         <Route path="/activity" exact component={ActivityCard} />
+        <Route path="/edit-perfil" exact component={FormEditPerfil} />
       </Switch>
       <Footer />
     </div>

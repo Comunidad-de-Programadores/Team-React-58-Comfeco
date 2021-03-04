@@ -1,5 +1,5 @@
 .footer {
-  background-color: #293241;
+  background-color: #1a202c;
   width: 100%;
   display: grid;
   grid-template-areas:
@@ -7,7 +7,7 @@
     'seccion2'
     'social';
   align-items: center;
-  color: #ffff;
+  color: #FFCF40;
 }
 
 .footer__seccion1 {
@@ -39,7 +39,7 @@
 }
 
 .social__item > a > i::before {
-  color: #ffff;
+  color: #FFCF40;
   transition: all 0.4s ease-in-out;
 }
 

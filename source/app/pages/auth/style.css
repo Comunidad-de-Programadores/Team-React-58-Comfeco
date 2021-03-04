@@ -272,7 +272,7 @@
 
 @media only screen and (max-width: 1000px) {
     .cotainer__Form{
-        min-width: auto;
+        width: 100%;
         height: 600px;
     }
 
