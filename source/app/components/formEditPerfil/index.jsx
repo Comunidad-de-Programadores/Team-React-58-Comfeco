@@ -40,7 +40,7 @@ const FormEditPerfil = () => {
                             <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                                 <h4>Genero</h4>
                                 <select name="Genero">
-                                    <option value="1">Selecciona un Genero</option>
+                                    <option value="1" selected disabled>Selecciona un Genero</option>
                                     <option value="1">Hombre</option>
                                     <option value="2">Mujer</option>
                                 </select>
@@ -52,6 +52,7 @@ const FormEditPerfil = () => {
                             <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                                 <h4>Pais</h4>
                                 <select name="pais">
+                                    <option value="1" selected disabled>Selecciona un Pais</option>
                                     <option value="1">Argentina</option>
                                     <option value="2">España</option>
                                     <option value="3">México</option>
@@ -67,7 +68,6 @@ const FormEditPerfil = () => {
                                     <option value="15">Paraguay</option>
                                     <option value="16">Uruguay</option>
                                     <option value="17">Chile</option>
-                                    <option value="1" selected>Selecciona un Pais</option>
                                 </select>
                             </div>
                         </div>

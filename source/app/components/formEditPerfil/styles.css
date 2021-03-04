@@ -154,3 +154,29 @@ input:focus{
 }
 
 
+/*------------------------------------------*/
+/*--Media Querys--*/
+/*------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+    /* .wrapper__container{
+        border: 1px solid red;
+    } */
+    .container{
+        border: 1px solid green;
+    }
+    .wrapper__form__row{
+        display: flex;
+        flex-direction: column;
+    }
+    .form__group{
+        width: 100%;
+    }
+    .social__media{
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .social__media:last-child{
+        margin-bottom: 0px;
+    }
+}
