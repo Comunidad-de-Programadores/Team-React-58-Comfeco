@@ -1,25 +1,24 @@
-/* eslint-disable no-underscore-dangle */
 import apiConnect from 'app/apiConnect';
-import sessionContext from 'app/context/session';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import useSession from './useSession';
 
 const useCommunities = () => {
-  const { session, setSession } = useContext(sessionContext);
+  const { session, setSession } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const [communities, setCommunities] = useState([]);
   const history = useHistory();
 
   const handleJoinCommunity = async (communityId) => {
     if (!session) {
-      history.replace('/auth');
+      history.push('/auth');
     } else {
-      const { token, _id } = session;
+      const { token } = session;
 
       const response = await apiConnect({
         method: 'post',
         url: '/user/community',
-        data: { communityId, session: { _id } },
+        data: { communityId },
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -35,11 +34,11 @@ const useCommunities = () => {
   };
 
   const handleLeaveCommunity = async (communityId) => {
-    const { token, _id } = session;
+    const { token } = session;
     const response = await apiConnect({
       method: 'delete',
       url: '/user/community',
-      data: { communityId, session: { _id } },
+      data: { communityId },
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -64,6 +63,17 @@ const useCommunities = () => {
           : { ...item, joined: false }
       );
     }
+
+    const localSession = JSON.parse(localStorage.getItem('session'));
+
+    if (localSession) {
+      return data.map((item) =>
+        localSession.communities.includes(item.id)
+          ? { ...item, joined: true }
+          : { ...item, joined: false }
+      );
+    }
+
     return data.map((item) => ({ ...item, joined: false }));
   };
 
