@@ -14,6 +14,9 @@ const FormEditPerfil = () => {
                     <div className={styles.wrapper__circle__nickpic}>
                         <div className={styles.circle__nickpic}>
                             item
+                        <div className={styles.overlay__nickpic}>
+                            <i className={`${'fas fa-camera'} `}></i>
+                        </div>
                         </div>
                     </div>
                     {/*------------------------------------------*/

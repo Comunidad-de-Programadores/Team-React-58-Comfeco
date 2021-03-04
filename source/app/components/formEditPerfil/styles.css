@@ -24,7 +24,6 @@
 
 .wrapper__circle__nickpic{
     width: 100%;
-
     height: auto;
     display: flex;
     justify-content: center;
@@ -38,6 +37,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.overlay__nickpic{
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: rgb(180, 180, 180);
+    position: absolute;
 }
 
 /*------------------------------------------*/
@@ -178,5 +191,13 @@ input:focus{
     }
     .social__media:last-child{
         margin-bottom: 0px;
+    }
+
+    .social__media > input{
+        width: 50% !important;
+    }
+
+    .social__media > .wrapper__social__media__icon{
+        width: 50%;
     }
 }
