@@ -1,10 +1,12 @@
 import React from 'react';
+import NavBarEditPerfil from '../navBarEditPerfil/index';
 import styles from './styles.css';
 
 const FormEditPerfil = () => {
     return (
         <>
-            <div>
+        <div>
+            <NavBarEditPerfil />
             <div className={styles.wrapper__container}>
                 {/*------------------------------------------*/
                 /*--Seccion Nombre y foto de perfil--*/
