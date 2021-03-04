@@ -1,10 +1,10 @@
 import apiConnect from 'app/apiConnect';
-import sessionContext from 'app/context/session';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import useSession from './useSession';
 
 const useCommunities = () => {
-  const { session, setSession } = useContext(sessionContext);
+  const { session, setSession } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const [communities, setCommunities] = useState([]);
   const history = useHistory();
