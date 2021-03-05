@@ -5,6 +5,7 @@ import useProfile from 'app/hooks/useProfile';
 import React from 'react';
 import Input from '../input';
 import NavBarEditPerfil from '../navBarEditPerfil/index';
+import PerfilCard from '../perfilCard';
 import styles from './styles.css';
 
 const FormEditPerfil = () => {
