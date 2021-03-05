@@ -1,10 +1,10 @@
 import apiConnect from 'app/apiConnect';
-import { useEffect, useState } from 'react';
+import { useFetch, useState } from 'react-fetch-ssr';
 import { useHistory } from 'react-router';
 import useSession from './useSession';
 
 const useCommunities = () => {
-  const { session, setSession } = useSession();
+  const { session, refreshSession } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const [communities, setCommunities] = useState([]);
   const history = useHistory();
@@ -27,7 +27,7 @@ const useCommunities = () => {
       if (response.status === 'error') {
         console.error(response.errorMessage);
       } else {
-        setSession({ ...session, communities: [...session.communities, communityId] });
+        await refreshSession();
         console.info(response);
       }
     }
@@ -47,10 +47,7 @@ const useCommunities = () => {
     if (response.status === 'error') {
       console.error(response.errorMessage);
     } else {
-      setSession({
-        ...session,
-        communities: session.communities.filter((item) => item !== communityId),
-      });
+      await refreshSession();
       console.info(response);
     }
   };
@@ -63,22 +60,11 @@ const useCommunities = () => {
           : { ...item, joined: false }
       );
     }
-
-    const localSession = JSON.parse(localStorage.getItem('session'));
-
-    if (localSession) {
-      return data.map((item) =>
-        localSession.communities.includes(item.id)
-          ? { ...item, joined: true }
-          : { ...item, joined: false }
-      );
-    }
-
     return data.map((item) => ({ ...item, joined: false }));
   };
 
-  useEffect(() => {
-    const getCommunities = async () => {
+  useFetch(async () => {
+    if (!communities.length) {
       setIsLoading(true);
       const response = await apiConnect({ url: '/community', method: 'get' });
 
@@ -87,17 +73,17 @@ const useCommunities = () => {
         console.log(response.errorMessage);
       } else {
         setIsLoading(false);
-        setCommunities(verifyJoinedCommunity(response.communities));
+        setCommunities(response.communities);
       }
-    };
-    getCommunities();
+    }
   }, []);
 
-  useEffect(() => {
-    setCommunities(verifyJoinedCommunity(communities));
-  }, [session]);
-
-  return { communities, isLoading, handleJoinCommunity, handleLeaveCommunity };
+  return {
+    communities: verifyJoinedCommunity(communities),
+    isLoading,
+    handleJoinCommunity,
+    handleLeaveCommunity,
+  };
 };
 
 export default useCommunities;

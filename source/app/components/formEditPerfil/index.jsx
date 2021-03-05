@@ -20,6 +20,7 @@ const FormEditPerfil = () => {
           /* -- Seccion Nombre y foto de perfil-- */
           /*------------------------------------------*/}
           <div className={styles.container}>
+            <PerfilCard />
             <h1>Editar Perfil</h1>
             <div className={styles.wrapper__circle__nickpic}>
               <div className={styles.circle__nickpic}>
