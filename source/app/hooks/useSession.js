@@ -16,7 +16,6 @@ const useSession = () => {
   useEffect(() => {
     const localSession = JSON.parse(localStorage.getItem('session'));
     if (localSession !== null) {
-      console.log(localSession);
       setSession(localSession);
     }
   }, []);
