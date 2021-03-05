@@ -1,5 +1,5 @@
 import apiConnect from 'app/apiConnect';
-import { useEffect, useState } from 'react';
+import { useFetch, useState } from 'react-fetch-ssr';
 import { useHistory } from 'react-router';
 import useSession from './useSession';
 
@@ -63,8 +63,8 @@ const useCommunities = () => {
     return data.map((item) => ({ ...item, joined: false }));
   };
 
-  useEffect(() => {
-    const getCommunities = async () => {
+  useFetch(async () => {
+    if (!communities.length) {
       setIsLoading(true);
       const response = await apiConnect({ url: '/community', method: 'get' });
 
@@ -75,8 +75,7 @@ const useCommunities = () => {
         setIsLoading(false);
         setCommunities(response.communities);
       }
-    };
-    getCommunities();
+    }
   }, []);
 
   return {
