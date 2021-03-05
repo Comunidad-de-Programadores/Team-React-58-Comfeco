@@ -1,38 +1,44 @@
-/* eslint-disable no-underscore-dangle */
 import apiConnect from 'app/apiConnect';
-import sessionContext from 'app/context/session';
-import { useContext, useEffect, useState } from 'react';
+import { useFetch, useState } from 'react-fetch-ssr';
+import { useHistory } from 'react-router';
+import useSession from './useSession';
 
 const useCommunities = () => {
-  const { session } = useContext(sessionContext);
-
-  const [state, setState] = useState({ isLoading: false, data: [] });
+  const { session, refreshSession } = useSession();
+  const [isLoading, setIsLoading] = useState(false);
+  const [communities, setCommunities] = useState([]);
+  const history = useHistory();
 
   const handleJoinCommunity = async (communityId) => {
-    const { token, _id } = session;
-
-    const response = await apiConnect({
-      method: 'post',
-      url: '/user/community',
-      data: { communityId, session: { _id } },
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (response.status === 'error') {
-      console.error(response.errorMessage);
+    if (!session) {
+      history.push('/auth');
     } else {
-      console.log(response);
+      const { token } = session;
+
+      const response = await apiConnect({
+        method: 'post',
+        url: '/user/community',
+        data: { communityId },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 'error') {
+        console.error(response.errorMessage);
+      } else {
+        await refreshSession();
+        console.info(response);
+      }
     }
   };
 
   const handleLeaveCommunity = async (communityId) => {
-    const { token, _id } = session;
+    const { token } = session;
     const response = await apiConnect({
       method: 'delete',
       url: '/user/community',
-      data: { communityId, session: { _id } },
+      data: { communityId },
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,27 +47,43 @@ const useCommunities = () => {
     if (response.status === 'error') {
       console.error(response.errorMessage);
     } else {
-      console.log(response);
+      await refreshSession();
+      console.info(response);
     }
   };
 
-  useEffect(() => {
-    const getCommunities = async () => {
-      setState({ ...state, isLoading: true });
+  const verifyJoinedCommunity = (data) => {
+    if (session) {
+      return data.map((item) =>
+        session.communities.includes(item.id)
+          ? { ...item, joined: true }
+          : { ...item, joined: false }
+      );
+    }
+    return data.map((item) => ({ ...item, joined: false }));
+  };
 
+  useFetch(async () => {
+    if (!communities.length) {
+      setIsLoading(true);
       const response = await apiConnect({ url: '/community', method: 'get' });
 
       if (response.status === 'error') {
+        setIsLoading(false);
         console.log(response.errorMessage);
-        setState({ ...state, isLoading: false });
       } else {
-        setState({ ...state, data: response.communities });
+        setIsLoading(false);
+        setCommunities(response.communities);
       }
-    };
-    getCommunities();
+    }
   }, []);
 
-  return { state, handleJoinCommunity, handleLeaveCommunity, session };
+  return {
+    communities: verifyJoinedCommunity(communities),
+    isLoading,
+    handleJoinCommunity,
+    handleLeaveCommunity,
+  };
 };
 
 export default useCommunities;

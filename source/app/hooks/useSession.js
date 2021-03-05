@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import sessionContext from 'app/context/session';
 
-const useSession = () => {
-  const { session, setSession } = useContext(sessionContext);
-  return { session, setSession };
-};
+/**
+ * @returns {{ session: {}, setSession: function, refreshSession: function }}
+ */
+const useSession = () => useContext(sessionContext);
 
 export default useSession;

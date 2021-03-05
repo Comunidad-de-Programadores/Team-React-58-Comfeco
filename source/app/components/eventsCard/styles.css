@@ -1,0 +1,51 @@
+.eventsCard {
+  box-shadow: 0 0 5px 1px black;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.eventsCard::-webkit-scrollbar {
+  display: none;
+}
+
+.eventsCard__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.eventsCard__title,
+.event__title {
+  font-size: 1.1rem;
+}
+
+.eventsCard__link:hover {
+  text-decoration: underline;
+}
+
+.eventsCard__item {
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.eventsCard__item:last-child {
+  margin-bottom: 0;
+}
+
+.event__logo {
+  margin: 1rem 0;
+  max-height: 6rem;
+}
+
+.event__content {
+  padding: 0.5rem;
+}
+.event__buttons {
+  display: flex;
+  justify-content: space-around;
+}
