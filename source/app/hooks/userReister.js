@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { getEmailError, getFullNameError, getPasswordError, getUserNameError } from 'app/helpers/validators';
+import {
+  getEmailError,
+  getFullNameError,
+  getPasswordError,
+  getUserNameError,
+} from 'app/helpers/validators';
 import { useHistory } from 'react-router';
 import apiConnect from '../apiConnect';
 
@@ -37,7 +42,7 @@ const useRegister = () => {
    */
   const handleRemoveError = (event) => {
     setInputWithErrors(
-      inputWithErrors.filter((currentError) => currentError !== event.target.name),
+      inputWithErrors.filter((currentError) => currentError !== event.target.name)
     );
   };
 
