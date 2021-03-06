@@ -30,8 +30,9 @@ const SessionProvider = ({ children, staticContext = {} }) => {
 
   const handleCloseSession = () => {
     document.cookie = 'session= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
-    setState(null);
     history.replace('/landing');
+
+    setState(null);
   };
 
   return (
