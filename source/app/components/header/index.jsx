@@ -1,16 +1,81 @@
 /* eslint-disable react/self-closing-comp */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import useSession from '../../hooks/useSession';
-import { Link, useLocation } from 'react-router-dom';
 import isotipo from '../../images/Isotipo-brand.png';
 import logo1 from '../../images/logo1.png';
 import styles from './styles.css';
 
+const Dropdown = ({ username }) => {
+  const { closeSession } = useSession();
+  const dropdown = useRef(null);
+  const [showOptions, setShowOptions] = useState(false);
+
+  const handleToggle = () => {
+    setShowOptions(!showOptions);
+  };
+
+  useEffect(() => {
+    const isOutside = (e) => {
+      if (!dropdown.current.contains(e.target)) {
+        setTimeout(() => {
+          setShowOptions(false);
+        }, 200);
+      }
+    };
+
+    if (document) {
+      document.addEventListener('mousedown', isOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', isOutside);
+    };
+  }, []);
+
+  return (
+    <div className={styles.dropdown__wrapper}>
+      <div className={styles.dropdown}>
+        <span className={styles.dropdown__avatar}>
+          {username ? username.charAt(0).toUpperCase() : <i className="fas fa-user fa-2x"></i>}
+        </span>
+        <span className={styles.dropdown__name}>{username || 'invitado'}</span>
+
+        <button ref={dropdown} type="button" onClick={handleToggle}>
+          <i className={`fas fa-chevron-down ${styles.dropdown__icon}`}></i>
+        </button>
+      </div>
+
+      {showOptions && (
+        <ul className={styles.dropdown__options}>
+          <li className={styles.options__item}>
+            <Link to="/my-account">Mi perfil</Link>
+          </li>
+          <li className={styles.options__item}>
+            <button
+              type="button"
+              onClick={() => {
+                setTimeout(() => {
+                  closeSession();
+                }, 200);
+              }}
+            >
+              Cerrar sesión
+            </button>
+          </li>
+        </ul>
+      )}
+    </div>
+  );
+};
+
+Dropdown.propTypes = {
+  username: PropTypes.string.isRequired,
+};
+
 const Header = () => {
   const { session } = useSession();
-  const [showOptions, setShowOptions] = useState(false);
-  const location = useLocation().pathname;
-  const locationToShow = '/recover-account';
 
   return (
     <header className={styles.mainHeader}>
@@ -36,47 +101,12 @@ const Header = () => {
         </nav>
 
         <div className={styles.mainHeader__buttons}>
-          {location !== locationToShow && (
-            <div className={styles.dropdown__wrapper}>
-              <div className={styles.dropdown}>
-                <span className={styles.dropdown__avatar}>
-                  {session ? (
-                    session.username.charAt(0).toUpperCase()
-                  ) : (
-                    <i className="fas fa-user fa-2x"></i>
-                  )}
-                </span>
-                <span className={styles.dropdown__name}>
-                  {session ? session.username : 'invitado'}
-                </span>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowOptions(!showOptions);
-                  }}
-                >
-                  <i className={`fas fa-chevron-down ${styles.dropdown__icon}`}></i>
-                </button>
-              </div>
-
-              {showOptions && (
-                <ul className={styles.dropdown__options}>
-                  <li className={styles.options__item}>
-                    <a href="/">test</a>
-                  </li>
-                  <li className={styles.options__item}>
-                    <a href="/">test</a>
-                  </li>
-                </ul>
-              )}
-            </div>
-          )}
-
-          {location === locationToShow && (
+          {!session ? (
             <Link to="/auth">
               <button type="button">Iniciar Sesión</button>
             </Link>
+          ) : (
+            <Dropdown username={session.username} />
           )}
         </div>
       </div>
