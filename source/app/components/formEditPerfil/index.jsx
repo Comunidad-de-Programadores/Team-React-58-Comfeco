@@ -1,32 +1,30 @@
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable react/self-closing-comp */
+import { Grid } from '@material-ui/core';
 import countries from 'app/helpers/countries';
 import useProfile from 'app/hooks/useProfile';
+import { func } from 'prop-types';
 import React from 'react';
 import Input from '../input';
-import NavBarEditPerfil from '../navBarEditPerfil/index';
-import PerfilCard from '../perfilCard';
 import styles from './styles.css';
 
-const FormEditPerfil = () => {
+const FormEditPerfil = ({ onCancel }) => {
   const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile();
 
   return (
     <>
       <div>
-        <NavBarEditPerfil />
         <div className={styles.wrapper__container}>
           {/*------------------------------------------*/
           /* -- Seccion Nombre y foto de perfil-- */
           /*------------------------------------------*/}
           <div className={styles.container}>
-            <PerfilCard />
             <h1>Editar Perfil</h1>
             <div className={styles.wrapper__circle__nickpic}>
               <div className={styles.circle__nickpic}>
                 item
                 <div className={styles.overlay__nickpic}>
-                  <i className={`${'fas fa-camera'} `}></i>
+                  <i className="fas fa-camera"></i>
                 </div>
               </div>
             </div>
@@ -185,7 +183,16 @@ const FormEditPerfil = () => {
                     ></textarea>
                   </div>
                 </div>
-                <button type="submit">Guardar</button>
+                <Grid container spacing={2}>
+                  <Grid item xs={6} md={3}>
+                    <button type="submit">Guardar</button>
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <button type="button" onClick={onCancel}>
+                      Cancelar
+                    </button>
+                  </Grid>
+                </Grid>
                 {errorMessage && <div>{errorMessage}</div>}
               </form>
             )}
@@ -194,6 +201,10 @@ const FormEditPerfil = () => {
       </div>
     </>
   );
+};
+
+FormEditPerfil.propTypes = {
+  onCancel: func.isRequired,
 };
 
 export default FormEditPerfil;

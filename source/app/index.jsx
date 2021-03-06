@@ -3,23 +3,14 @@ import Header from 'app/components/header';
 import { Switch, Route } from 'react-router';
 import Register from './pages/register';
 import Login from './pages/login';
-import ExapleLogin from './pages/examplelogin';
-import ExampleRegister from './pages/exampleregister';
 import Footer from './components/footer';
 import Auth from './pages/auth';
 import Landing from './pages/landing';
 import SessionProvider from './components/sessionProvider';
 import RecoverAccount from './components/recoverAccount';
-import TermsConditions from './components/termsConditions';
-import PrivacyDataProtection from './components/privacyDataProtection';
 import CreateNewPassword from './pages/createNewPassword';
-import CommunityCard from './components/communityCard';
-import WorkshopCard from './components/workshopCard';
 import style from './style.css';
-import EventsCard from './components/eventsCard';
-import BadgesCard from './components/badgesCard';
-import ActivityCard from './components/activityCard';
-import FormEditPerfil from './components/formEditPerfil';
+import MyAccount from './pages/myAccount';
 
 const App = () => (
   <SessionProvider>
@@ -32,18 +23,9 @@ const App = () => (
         <Route path="/landing" exact component={Landing} />
         <Route path="/recover-account" exact component={RecoverAccount} />
         <Route path="/create-new-password/:token" component={CreateNewPassword} />
+        <Route path="/my-account" component={MyAccount} />
 
         {/* only for examples */}
-        <Route path="/example-login" exact component={ExapleLogin} />
-        <Route path="/example-register" exact component={ExampleRegister} />
-        <Route path="/terms-conditions" exact component={TermsConditions} />
-        <Route path="/privacy-data-protection" exact component={PrivacyDataProtection} />
-        <Route path="/community" exact component={CommunityCard} />
-        <Route path="/workshop" exact component={WorkshopCard} />
-        <Route path="/events" exact component={EventsCard} />
-        <Route path="/badges" exact component={BadgesCard} />
-        <Route path="/activity" exact component={ActivityCard} />
-        <Route path="/edit-perfil" exact component={FormEditPerfil} />
       </Switch>
       <Footer />
     </div>
