@@ -103,6 +103,7 @@
 .options__item a {
   color: #ffffff;
   width: 100%;
+  display: block;
 }
 
 .mainHeader__underline {
