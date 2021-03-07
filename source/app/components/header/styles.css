@@ -93,16 +93,16 @@
 }
 
 .options__item {
-  padding: 0.5rem 3rem;
+  /* padding: 0.5rem 3rem; */
 }
 
 .options__item:hover {
   background-color: rgba(0, 0, 0, 0.438);
-  padding: 0.5rem 3rem;
 }
 
 .options__item a {
   color: #ffffff;
+  width: 100%;
 }
 
 .mainHeader__underline {
