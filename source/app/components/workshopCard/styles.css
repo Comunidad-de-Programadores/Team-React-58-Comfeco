@@ -6,7 +6,8 @@
   box-shadow: 5px 5px 16px #cdcdcd;
   border-radius: 1em;
   border: 1px solid #cdcdcd66;
-  max-height: 20rem;
+  max-height: 25rem;
+  min-width: 17rem;
   overflow-y: auto;
 }
 .workshop::-webkit-scrollbar {
@@ -60,7 +61,7 @@
 .workshop__gridItem {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
@@ -70,7 +71,6 @@
   color: white;
   padding: 0.5rem;
   width: auto;
-  /* height: auto; */
   margin-bottom: auto;
 }
 
@@ -84,7 +84,6 @@
 
 .workshop__link {
   align-self: flex-end;
-  background-color: #fff;
   color: rgb(110, 110, 192);
   font-weight: bold;
   height: inherit;
