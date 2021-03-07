@@ -10,14 +10,14 @@ const WorkshopCard = () => {
   return (
     <div className={styles.workshop}>
       <header className={styles.workshop__header}>
-        <h3 className={styles.workshop__tittle}>Communidades</h3>
+        <h3 className={styles.workshop__tittle}>Talleres</h3>
         <a className={styles.workshop__link} href="/">
           Ver más
         </a>
       </header>
 
-      <select className={styles.workshop__filter} name="select">
-        <option selected disabled>
+      <select defaultValue="1" className={styles.workshop__filter} name="select">
+        <option key="1" value="">
           Talleres por areas de conocimiento
         </option>
         <option value="value1">Value 1</option>
