@@ -1,18 +1,22 @@
 .wrapper {
   display: flex;
   width: 100%;
-  max-width: 1500px;
   margin: auto;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 2em;
+  border: 1px solid red;
 }
 
 .content {
-  width: 70%;
+  width: 50vw;
+  position: relative;
 }
 
 .column {
-  width: 25%;
+  width: 280px;
+  position: absolute;
+  top: 12%;
+  left: -20vw;
 }
 .carrouselWrapper{
   margin-bottom: 3em;

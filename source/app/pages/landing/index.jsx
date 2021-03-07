@@ -8,10 +8,10 @@ import FormEditPerfil from 'app/components/formEditPerfil/index';
 
 const Landing = () => (
   <div className={styles.wrapper}>
-    <div className={styles.column}>
-      <CommunitiesCard />
-    </div>
     <div className={styles.content}>
+      <div className={styles.column}>
+        <CommunitiesCard />
+      </div>
       <h1 className={styles.title}>Bienvenido a Comunidad Fest</h1>
       <div className={styles.carrouselWrapper}>
         <CarouselCreadores />
