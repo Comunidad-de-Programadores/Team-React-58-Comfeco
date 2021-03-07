@@ -11,7 +11,7 @@ const SessionProvider = ({ children, staticContext = {} }) => {
   const history = useHistory();
 
   const handleSetSession = (newSession) => {
-    document.cookie = `session= ${JSON.stringify(newSession)}`;
+    document.cookie = `session= ${encodeURIComponent(JSON.stringify(newSession))}`;
     setState(newSession);
   };
 

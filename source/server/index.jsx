@@ -16,6 +16,7 @@ const handleRequest = async (request, response) => {
   const context = {};
 
   if (request.cookies && request.cookies.session) {
+    console.log('session', request.cookies.session);
     const session = JSON.parse(request.cookies.session);
     context.session = session;
   }
