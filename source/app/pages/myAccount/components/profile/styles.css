@@ -1,0 +1,27 @@
+.profileWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side {
+  width: 25%;
+}
+
+.center {
+  width: 45%;
+}
+@media screen and (max-width:1000px) {
+  .profileWrapper {
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .side {
+    width: 100%;
+  }
+  
+  .center {
+    width: 100%;
+  }
+}

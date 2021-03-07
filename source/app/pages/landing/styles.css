@@ -1,28 +1,72 @@
 .wrapper {
-  display: flex;
   width: 100%;
-  margin: auto;
+
+  position: relative;
+}
+
+.wrapper__content{
+  display: flex;
   justify-content: center;
-  padding-top: 2em;
-  border: 1px solid red;
+  width: 100%;
 }
 
 .content {
-  width: 50vw;
+
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
   position: relative;
 }
 
 .column {
-  width: 280px;
-  position: absolute;
-  top: 12%;
-  left: -20vw;
+  width: 20%;
+
+
 }
 .carrouselWrapper{
   margin-bottom: 3em;
 }
+
+.carrouselCreadoresWrapper{
+  width: 40%;
+  position: absolute;
+  bottom: -15%;
+}
+
 .title {
   text-align: center;
   margin-bottom: 1em;
   margin-top: 1em;
 }
+
+
+.wrapper__center{
+
+  width: 50%;
+}
+
+.svg__header{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+
+  margin-bottom: 10vh;
+  position: relative;
+}
+
+.svg__header > img{
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.header__content{
+  text-align: center;
+  color: white;
+  height: fit-content;
+}
+

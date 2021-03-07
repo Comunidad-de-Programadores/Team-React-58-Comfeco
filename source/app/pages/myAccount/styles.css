@@ -1,0 +1,18 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+.navBarWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+.bodyWrapper {
+  min-height: 80vh;
+}
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 90%;
+    padding: 2em 0em;
+  }
+}

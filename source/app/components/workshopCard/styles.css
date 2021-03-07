@@ -2,11 +2,15 @@
   display: flex;
   flex-direction: column;
   padding: 1rem 1.5rem;
-  width: 23rem;
-  box-shadow: 0 0 5px 1px black;
-  border-radius: 0.5rem;
+  width: 100%;
+  box-shadow: 5px 5px 16px #cdcdcd;
+  border-radius: 1em;
+  border: 1px solid #cdcdcd66;
   max-height: 20rem;
   overflow-y: auto;
+}
+.workshop::-webkit-scrollbar {
+  display: none;
 }
 
 .workshop__header {

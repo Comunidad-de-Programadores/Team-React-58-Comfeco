@@ -4,10 +4,7 @@ import styles from './Button.css';
 
 const Button = ({ children, type }) => (
   <>
-    <button
-      className={styles.basic}
-      type={type === 'button' ? 'button' : 'submit'}
-    >
+    <button className={styles.basic} type={type === 'button' ? 'button' : 'submit'}>
       {children}
     </button>
   </>
