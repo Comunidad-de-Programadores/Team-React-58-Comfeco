@@ -65,6 +65,9 @@ const useProfile = () => {
     if (response.status === 'error') {
       setIsLoading(false);
       console.error(response.errorMessage);
+      if (response.errorMessage === 'the username is already registered') {
+        handleErrorMessage('El nombre de uduario ya esta en uso');
+      }
     } else {
       setIsLoading(false);
       await refreshSession();
