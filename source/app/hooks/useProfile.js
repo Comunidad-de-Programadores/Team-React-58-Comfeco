@@ -4,7 +4,7 @@ import apiConnect from 'app/apiConnect';
 import useSession from './useSession';
 
 const useProfile = () => {
-  const { session, setSession } = useSession();
+  const { session, refreshSession } = useSession();
   const [values, setValues] = useState({});
   const [inputWithErrors, setInputWithErrors] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -67,7 +67,7 @@ const useProfile = () => {
       console.error(response.errorMessage);
     } else {
       setIsLoading(false);
-      setSession({ ...session, ...values });
+      await refreshSession();
       console.info(response);
     }
   };
@@ -86,11 +86,13 @@ const useProfile = () => {
         username: session.username || null,
         email: session.email || null,
         gender: session.gender || null,
+        birthdate: session.birthdate || null,
         country: session.country || null,
         facebook: session.facebook || null,
         twitter: session.twitter || null,
         github: session.github || null,
         linkedin: session.linkedin || null,
+        biography: session.biography || null,
       });
     }
   }, [session]);
