@@ -1,0 +1,105 @@
+.groups__myGroup {
+  padding: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.myGroup__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.myGroup__headeName {
+  font-size: 1.1rem;
+}
+
+.myGroup__headerLink {
+  color: #636bfb;
+}
+
+.myGroup__info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gray;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.myGroup__infoTitle {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.myGroup__infoLanguage {
+  background-color: #f7df1e;
+  font-weight: bold;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  padding: 0.3rem;
+}
+
+.myGroup__grid {
+  margin: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.myGroup__gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  width: 5rem;
+}
+
+.gridItem__avatar {
+  min-width: 2.5rem;
+  max-width: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.gridItem__info {
+  text-align: center;
+}
+.gridItem__infoNick {
+  font-weight: bold;
+}
+.gridItem__infoSkill {
+  color: gray;
+}
+.gridItem__role {
+  color: gray;
+  font-weight: bold;
+}
+
+.myGroup__buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.myGroup__buttonsLeave,
+.myGroup__buttonsChat {
+  margin: 0;
+  padding: 0;
+  min-width: 7rem;
+  border-radius: 0.7rem;
+  background-color: transparent;
+  font-weight: normal;
+}
+
+.myGroup__buttonsLeave {
+  border: 3px solid var(--purple);
+  color: gray;
+  font-weight: bold;
+}
+
+.myGroup__buttonsChat {
+  background-color: var(--purple);
+}

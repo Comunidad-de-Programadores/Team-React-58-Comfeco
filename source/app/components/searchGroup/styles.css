@@ -1,0 +1,46 @@
+.searchGroup {
+  width: 100%;
+}
+
+.searchGroup__filter {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: gray;
+  margin-bottom: 1rem;
+  height: 2.5rem;
+  color: #fff;
+  border-radius: 0.2rem;
+}
+
+.searchGroup__input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.searchGroup__input i {
+  position: absolute;
+  right: 1rem;
+  transform: rotateY(180deg);
+}
+
+.searchGroup__input input {
+  border-radius: 0.2rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .searchGroup {
+    display: flex;
+  }
+
+  .searchGroup__filter {
+    max-width: 35%;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
