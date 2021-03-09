@@ -43,9 +43,9 @@ const CarouselCreadores = () => {
   );
 
 
-  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.disabled}`} onClick={props.onClick} />);
 
-  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.disabled}`} onClick={props.onClick} />);
 
   const settings = {
     className: `${styles.center}`,
@@ -56,12 +56,22 @@ const CarouselCreadores = () => {
     slidesToScroll: 1,
     speed: 100,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     lazyLoad: true,
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     beforeChange: (current, next) => setCurrentSlide({ nextSlide: next }),
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+        }
+      }
+    ]
   };
 
   return (

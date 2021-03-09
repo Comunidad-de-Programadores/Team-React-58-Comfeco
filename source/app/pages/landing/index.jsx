@@ -4,21 +4,21 @@ import CarouselSponsors from 'app/components/carousel/index-sponsors';
 import CommunitiesCard from 'app/components/communityCard';
 import Countdown from '../../components/countdown';
 import styles from './styles.css';
-import semiCircleSvg from '../../images/semiCircleLandingAsset.svg';
+
 
 const Landing = () => (
   <div className={styles.wrapper}>
-    
+
     {/* header */}
     <div className={styles.svg__header}>
 
-      <img src={semiCircleSvg} alt=""/>
+      {/* <img src={semiCircleSvg} alt=""/> */}
 
       <div className={styles.header__content}>
 
         <h1>Bienvenido a Fest And Code</h1>
         <h3>Conoce gente Aprende y Gana</h3>
-
+        <h4>Ellos son nuestros colaboradores:</h4>
       </div>
 
       <div className={styles.carrouselCreadoresWrapper}>
@@ -41,7 +41,7 @@ const Landing = () => (
 
 
         <div className={styles.wrapper__center}>
-          
+
           <div className={styles.carrouselWrapper}>
             <CarouselSponsors />
           </div>

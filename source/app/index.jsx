@@ -11,6 +11,7 @@ import RecoverAccount from './components/recoverAccount';
 import CreateNewPassword from './pages/createNewPassword';
 import style from './style.css';
 import MyAccount from './pages/myAccount';
+import BadgesCardScreen from './components/badgesCardScreen/index';
 
 const App = () => (
   <SessionProvider>
