@@ -7,12 +7,8 @@ const SignUp = () => {
   const { errorMessage, handleSubmit, inputProps, isLoading } = useLogin();
 
   return (
-
     <form className={styles.signUpForm} onSubmit={handleSubmit}>
-
-      {isLoading && (
-        <h3>iniciando session</h3>
-      )}
+      {isLoading && <h3>iniciando session</h3>}
 
       {!isLoading && (
         <>
@@ -21,16 +17,19 @@ const SignUp = () => {
           {errorMessage && (
             <div className={styles.errorMessage}>
               <i className="fas fa-exclamation fa-2x" />
-              {' '}
               {errorMessage}
             </div>
           )}
 
           <div className={styles.signUpForm__content}>
-
             <div className={styles.formGroup}>
               <i className="fas fa-envelope" aria-hidden="true" />
-              <Input placeholder="Correo" {...inputProps} name="usernameoremail" type="email" />
+              <Input
+                placeholder="Usuario o email"
+                {...inputProps}
+                name="usernameoremail"
+                type="text"
+              />
             </div>
 
             <div className={styles.formGroup}>
@@ -39,11 +38,9 @@ const SignUp = () => {
             </div>
 
             <button type="submit">Ingresar</button>
-
           </div>
         </>
       )}
-
     </form>
   );
 };

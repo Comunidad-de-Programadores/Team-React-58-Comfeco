@@ -54,11 +54,13 @@ const useCommunities = () => {
 
   const verifyJoinedCommunity = (data) => {
     if (session) {
-      return data.map((item) =>
-        session.communities.includes(item.id)
-          ? { ...item, joined: true }
-          : { ...item, joined: false }
-      );
+      if (session.communities) {
+        return data.map((item) =>
+          session.communities.includes(item.id)
+            ? { ...item, joined: true }
+            : { ...item, joined: false }
+        );
+      }
     }
     return data.map((item) => ({ ...item, joined: false }));
   };
