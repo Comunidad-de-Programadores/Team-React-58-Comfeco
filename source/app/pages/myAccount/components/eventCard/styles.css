@@ -45,6 +45,12 @@
   color: var(--cyan);
   font-weight: bold;
 }
+.buttonActionLeave {
+  background-color: #f5f3f4!important;
+  min-width: 38%;
+  border: 1px solid red!important;
+  color: red!important;
+}
 
 @media screen and (max-width:1550px) {
   .image {

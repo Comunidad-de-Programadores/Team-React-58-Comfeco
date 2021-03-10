@@ -1,12 +1,14 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Skeleton } from '@material-ui/lab';
+import { func } from 'prop-types';
 import useEvents from '../../../../hooks/useEvents';
 import Eventcard from '../eventCard';
 import styles from './styles.css';
+import withNotifications from '../../../../highOrderComponents/withNotification';
 
-const Evenets = (props) => {
-  const { events, isLoading } = useEvents();
+const Events = ({ setNotification }) => {
+  const { events, isLoading, handleAddEvent, handleEventLeave } = useEvents(setNotification);
   const skeleton = [...new Array(6)];
 
   return (
@@ -14,7 +16,7 @@ const Evenets = (props) => {
       {!isLoading &&
         events.map((event) => (
           <div className={styles.cardWrapper} key={event.id}>
-            <Eventcard {...event} />
+            <Eventcard {...event} onEventAdd={handleAddEvent} onEventLeave={handleEventLeave} />
           </div>
         ))}
 
@@ -32,4 +34,8 @@ const Evenets = (props) => {
   );
 };
 
-export default Evenets;
+Events.propTypes = {
+  setNotification: func.isRequired,
+};
+
+export default withNotifications(Events);
