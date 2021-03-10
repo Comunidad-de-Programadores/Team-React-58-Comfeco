@@ -24,9 +24,9 @@ const CarouselSponsors = () => {
   
   );
 
-  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.black}`} onClick={props.onClick} />);
 
-  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.red}`} onClick={props.onClick} />);
+  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.black}`} onClick={props.onClick} />);
 
 
   const settings = {
@@ -37,6 +37,24 @@ const CarouselSponsors = () => {
     speed: 500,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      }
+    ]
   };
 
   return (
