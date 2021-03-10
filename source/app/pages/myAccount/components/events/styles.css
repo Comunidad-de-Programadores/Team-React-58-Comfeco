@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardWrapper {
+  width: 33.3%;
+  padding: 1em;
+  box-sizing: border-box;
+}

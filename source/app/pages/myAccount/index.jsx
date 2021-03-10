@@ -7,6 +7,7 @@ import Profile from './components/profile';
 import NavBarEditPerfil from './components/navBarEditPerfil';
 import Groups from './components/groups';
 import styles from './styles.css'
+import Evenets from './components/events';
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
@@ -32,7 +33,7 @@ const MyAccount = () => {
           <Groups />
         )}
         {currentView === 'events' && (
-          <h5 style={{ textAlign: 'center' }}>events view here</h5>
+          <Evenets />
         )}
       </div>
     </div>
