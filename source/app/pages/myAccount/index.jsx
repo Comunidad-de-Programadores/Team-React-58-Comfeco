@@ -2,6 +2,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { useState } from 'react-fetch-ssr';
+import useBadges from 'app/hooks/useBadges';
 import styles from './styles.css';
 import Profile from './components/profile';
 import NavBarEditPerfil from './components/navBarEditPerfil';
@@ -9,7 +10,7 @@ import Groups from './components/groups';
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
-
+  useBadges();
   return (
     <div className={styles.container}>
       <div className={styles.navBarWrapper}>
