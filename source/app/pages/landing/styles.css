@@ -46,6 +46,11 @@
   width: 50%;
 }
 
+.title__center{
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
 .svg__header{
   width: 100%;
   display: flex;

@@ -79,30 +79,6 @@
 }
 
 
-.center::before{
-    content: "";
-    top: 0;
-    left: 0;
-    position: absolute;
-    height: 100%;
-    width: 30%;
-    z-index: 9999;
-    /* background: linear-gradient(to right, rgba(255, 255, 255, 0.9)  40%, rgba(255, 255, 255, 0 ) 100%); */
-    
-}
-
-.center::after{
-    content: "";
-    top: 0;
-    right: 0;
-    position: absolute;
-    height: 100%;
-    width: 30%;
-    z-index: 9999;
-    /* background: linear-gradient(to left, rgba(255, 255, 255, 0.9)  40%, rgba(255, 255, 255, 0 ) 100%); */
-    
-}
-
 
 .center{
     border-radius: 15px;

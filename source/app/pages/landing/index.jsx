@@ -41,7 +41,7 @@ const Landing = () => (
 
 
         <div className={styles.wrapper__center}>
-
+          <h4 className={styles.title__center}>Nuestros Sponsors</h4>
           <div className={styles.carrouselWrapper}>
             <CarouselSponsors />
           </div>

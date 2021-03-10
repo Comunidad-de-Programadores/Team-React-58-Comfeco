@@ -2,10 +2,10 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { useState } from 'react-fetch-ssr';
-import styles from './styles.css'
+import BadgesCardScreen from 'app/components/badgesCardScreen';
 import Profile from './components/profile';
 import NavBarEditPerfil from './components/navBarEditPerfil';
-import BadgesCardScreen from 'app/components/badgesCardScreen';
+import styles from './styles.css'
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
