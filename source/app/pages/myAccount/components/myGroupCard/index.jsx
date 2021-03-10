@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/Isotipo-brand.png';
+import logo from 'app/images/Isotipo-brand.png';
 import styles from './styles.css';
 
 const MyGroupCard = () => (
