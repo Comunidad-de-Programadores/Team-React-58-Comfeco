@@ -1,0 +1,131 @@
+.badges__main__wrapper{
+
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badges__card__wrapper{
+
+    margin: 1rem 0;
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    align-items: center;
+}
+
+.badges__Card{
+    border-radius: 0.5rem;
+    width: 20%;
+    height: 30rem;
+    background-color: #fff;
+    box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.28);
+}
+
+.badges__circle__wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+}
+
+.middle__wrapper__circle{
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    background-color: #663399;
+    border-radius: 0.5rem;
+}
+
+.badge__circle{
+    margin-top: 2rem;
+    border: 0.8rem solid #fff;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.badge__circle > img {
+    width: 100%;
+    height: 100%;
+}
+
+.badges__body__Card{
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.badges__body__Card hr{
+    margin-bottom: 0.7rem;
+}
+
+.badges__body__Card > span{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.7rem !important;
+}
+
+.badges__body__Card > p{
+    
+}
+
+@media only screen and (max-width: 1500px) {
+    .badges__Card{
+        
+        width: 24%;
+        
+    }
+    .badges__card__wrapper{
+        
+        width: 83vw;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .badges__Card{
+        
+        width: 32%;
+        
+    }
+    .badges__card__wrapper{
+        
+        width: 83vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .badges__Card{
+        
+        width: 45%;
+        
+    }
+    .badges__card__wrapper{
+        
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .badges__Card{
+        
+        width: 100%;
+        
+    }
+    .badges__card__wrapper{
+        
+        width: 75vw;
+    }
+}

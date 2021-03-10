@@ -2,9 +2,10 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { useState } from 'react-fetch-ssr';
-import styles from './styles.css'
+import BadgesCardScreen from 'app/components/badgesCardScreen';
 import Profile from './components/profile';
 import NavBarEditPerfil from './components/navBarEditPerfil';
+import styles from './styles.css'
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
@@ -22,7 +23,12 @@ const MyAccount = () => {
           <Profile />
         )}
         {currentView === 'badges' && (
-          <h5 style={{ textAlign: 'center' }}>badges view here</h5>
+          <div>
+
+            <h1 style={{ textAlign: 'center' }}>Mis insignias</h1>
+            <BadgesCardScreen />
+
+          </div>
         )}
         {currentView === 'groups' && (
           <h5 style={{ textAlign: 'center' }}>groups view here</h5>

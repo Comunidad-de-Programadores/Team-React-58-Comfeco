@@ -8,11 +8,13 @@
   display: flex;
   justify-content: center;
   width: 100%;
+
+  margin: 8% 0 3% 0;
 }
 
 .content {
 
-  width: 85vw;
+  width: 87vw;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -20,9 +22,8 @@
 
 .column {
   width: 20%;
-
-
 }
+
 .carrouselWrapper{
   margin-bottom: 3em;
 }
@@ -30,7 +31,8 @@
 .carrouselCreadoresWrapper{
   width: 40%;
   position: absolute;
-  bottom: -15%;
+  bottom: -28%;
+  
 }
 
 .title {
@@ -41,32 +43,397 @@
 
 
 .wrapper__center{
-
   width: 50%;
 }
 
+.title__center{
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
 .svg__header{
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35vh;
-
+  height: 350px;
+  background-image: url(../../images/semiCircleLandingAsset.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: 105%;
   margin-bottom: 10vh;
   position: relative;
 }
 
-.svg__header > img{
-  width: 100%;
-  height: inherit;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
 
 .header__content{
   text-align: center;
   color: white;
   height: fit-content;
+  margin-bottom: 5%;
 }
 
+.header__content > h1{
+  font-size: 1.8rem;
+}
+
+.header__content > h3{
+  font-size: 1.2rem;
+}
+
+.header__content > h4{
+  font-size: 0.9rem;
+  margin-top: 15%;
+}
+
+@media only screen and (max-width: 1440px) {
+  .svg__header{
+    height: 265px;
+    background-size: 105%;
+    
+  }
+
+  .wrapper__content{
+    margin: 13% 0 5% 0;
+  }
+
+  .header__content{
+    margin-bottom: 5%;
+  }
+
+  .header__content > h4{
+    margin-top: 10%;
+  }
+
+  .content {
+    
+    width: 91vw;
+    
+  }
+
+  .column {
+    width: 22%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 46%;
+    position: absolute;
+    bottom: -35%;
+  }
+
+
+}
+
+/*------------------------------------------*/
+/*--Query--*/
+/*------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+  .svg__header{
+    height: 220px;
+    background-size: 115%;
+    
+  }
+
+  .column {
+    width: 26%;
+  }
+
+  .content {
+    width: 97vw;
+  }
+
+  .wrapper__center{
+    width: 40%;
+  }
+
+  .header__content{
+    margin-bottom: 7%;
+  }
+
+  .header__content > h4{
+    margin-top: 5%;
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 46%;
+    position: absolute;
+    bottom: -34%;
+  }
+
+  .wrapper__content{
+    margin: 18% 0 5% 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .svg__header{
+    height: 200px;
+    background-size: 125%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 22%;
+    position: absolute;
+    bottom: -45%;
+  }
+
+
+  .content {
+    flex-direction: column;
+    width: 85vw;
+    align-items: center;
+  }
+
+  .column:first-child {
+    margin-top: 1rem;
+    width: 65%;
+    margin-bottom: 1rem;
+    order: 2;
+  }
+
+  .wrapper__center{
+    width: 85%;
+  }
+
+
+}
+
+@media only screen and (max-width: 640px) {
+  .svg__header{
+    height: 150px;
+    background-image: url(../../images/semiCircleLandingAsset.svg);
+    background-size: 140%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 30%;
+    position: absolute;
+    bottom: -58%;
+  }
+
+  .wrapper__content{
+    margin: 25% 0 5% 0;
+  }
+
+  .content {
+    flex-direction: column;
+    width: 85vw;
+    align-items: center;
+  }
+
+  .header__content > h1{
+    font-size: 1.3rem;
+  }
+  
+  .header__content > h3{
+    font-size: 1rem;
+  }
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    margin-top: 6%;
+  }
+
+  .column:first-child {
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    order: 2;
+  }
+
+  .wrapper__center{
+    width: 85%;
+  }
+
+
+}
+
+@media only screen and (max-width: 425px) {
+  .svg__header{
+    height: 125px;
+    background-image: url(../../images/semiCircleLandingAsset.svg);
+    background-size: 140%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 28%;
+    position: absolute;
+    bottom: -65%;
+  }
+
+  .wrapper__content{
+    margin: 30% 0 5% 0;
+  }
+
+  .content {
+    width: 90vw;
+  }
+
+  .header__content > h1{
+    font-size: 1.1rem;
+  }
+
+  .header__content > h3{
+    font-size: 0.9rem;
+  }
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    
+  }
+  
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    margin-top: 5%;
+  }
+
+  
+
+
+}
+
+@media only screen and (max-width: 375px) {
+  .svg__header{
+    height: 120px;
+    background-image: url(../../images/semiCircleLandingAsset.svg);
+    background-size: 145%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 35%;
+    position: absolute;
+    bottom: -65%;
+  }
+
+  .wrapper__content{
+    margin: 35% 0 5% 0;
+  }
+
+  .content {
+    width: 90vw;
+  }
+
+  .header__content > h1{
+    font-size: 1.1rem;
+  }
+
+  .header__content > h3{
+    font-size: 0.9rem;
+  }
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    
+  }
+  
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    margin-top: 5%;
+  }
+
+  
+
+
+}
+
+@media only screen and (max-width: 335px) {
+  .svg__header{
+    height: 110px;
+    background-image: url(../../images/semiCircleLandingAsset.svg);
+    background-size: 149%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 40%;
+    position: absolute;
+    bottom: -75%;
+  }
+
+  .wrapper__content{
+    margin: 40% 0 6% 0;
+  }
+
+  .content {
+    width: 90vw;
+  }
+
+  .header__content > h1{
+    font-size: 1rem;
+  }
+
+  .header__content > h3{
+    font-size: 0.7rem;
+  }
+  
+  .header__content > h4{
+    font-size: 0.6rem;
+    
+  }
+  
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    margin-top: 5%;
+  }
+
+  
+
+
+}
+
+
+@media only screen and (max-width: 300px) {
+  .svg__header{
+    height: 95px;
+    background-image: url(../../images/semiCircleLandingAsset.svg);
+    background-size: 150%;
+    
+  }
+
+  .carrouselCreadoresWrapper{
+    width: 40%;
+    position: absolute;
+    bottom: -95%;
+  }
+
+  .wrapper__content{
+    margin: 40% 0 6% 0;
+  }
+
+  .content {
+    width: 90vw;
+  }
+
+  .header__content > h1{
+    font-size: 1rem;
+  }
+
+  .header__content > h3{
+    font-size: 0.7rem;
+  }
+  
+  .header__content > h4{
+    font-size: 0.6rem;
+    
+  }
+  
+  
+  .header__content > h4{
+    font-size: 0.8rem;
+    margin-top: 5%;
+  }
+
+  
+
+
+}

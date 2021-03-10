@@ -1,0 +1,133 @@
+.pageNotFound__wrapper__main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageNotFound__wrapper__card{
+    margin: 1vh 1vw 0 1vw;
+    display: flex;
+    box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.28);
+    height: 50vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pageNotFound__card__divider__message{
+    width: 50%;
+    order: 2;
+    background-color: #5c62c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pageNotFound__card__title{
+    color: #fff;
+    text-align: center;
+}
+
+.PageNotFoundCard__card__button{
+    background-color: transparent;
+    border: 3px solid #fff;
+    
+}
+
+.PageNotFoundCard__card__button > a{
+    color: #fff;
+}
+
+.PageNotFoundCard__card__button:hover{
+    background-color: #fff;
+    
+}
+
+.PageNotFoundCard__card__button:hover > a{
+    color: #5c62c5;
+    
+}
+
+.pageNotFound__card__divider__image{
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageNotFound__card__divider__image > img{
+    width: 80%;
+}
+
+@media only screen and (max-width: 768px){
+
+    .pageNotFound__wrapper__card{
+        
+        height: 40vh;
+        
+    }
+
+    .pageNotFound__card__title{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 650px){
+
+    .pageNotFound__wrapper__card{
+        flex-direction: column;
+        height: 600px;
+        
+    }
+
+    .pageNotFound__card__title{
+        font-size: 1.5rem;
+        
+    }
+
+    .pageNotFound__card__divider__message{
+        width: 100%;
+        height: 50%;
+    }
+
+    .pageNotFound__card__divider__image{
+        width: 100%;
+        height: 50%;
+        order: 2;
+    }
+
+}
+
+@media only screen and (max-width: 425px){
+
+    .pageNotFound__wrapper__card{
+        flex-direction: column;
+        height: 600px;
+        
+    }
+
+    .pageNotFound__card__title{
+        font-size: 1.6rem;
+        
+    }
+
+
+}
+
+@media only screen and (max-width: 320px){
+
+    .pageNotFound__wrapper__card{
+        flex-direction: column;
+        height: 550px;
+        
+    }
+
+    .pageNotFound__card__title{
+        font-size: 1.4rem;
+        
+    }
+
+
+}
