@@ -11,7 +11,7 @@
 }
 .title {
   font-size: 1.3em;
-  padding: .5em 0em;
+  padding: .5em 0em 0.3em 0em;
 }
 
 .description {
@@ -38,6 +38,12 @@
   font-size: 1em;
   font-weight: normal;
   color: #fff!important;
+}
+.date {
+  font-size: 1em;
+  margin-bottom: 1em;
+  color: var(--cyan);
+  font-weight: bold;
 }
 
 @media screen and (max-width:1550px) {
