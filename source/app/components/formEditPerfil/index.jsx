@@ -20,6 +20,7 @@ const FormEditPerfil = ({ onCancel }) => {
           /*------------------------------------------*/}
           <div className={styles.container}>
             <h1>Editar Perfil</h1>
+            <div className={styles.overlay__headerCard} />
             <div className={styles.wrapper__circle__nickpic}>
               <div className={styles.circle__nickpic}>
                 item
@@ -42,6 +43,7 @@ const FormEditPerfil = ({ onCancel }) => {
                   <div className={`${styles.form__group} ${styles.form__twoItems}`}>
                     <h4>Nick</h4>
                     <Input
+                      className={styles.form__editPerdil_input}
                       name="username"
                       placeholder="Nick del usuario"
                       type="text"
@@ -52,6 +54,7 @@ const FormEditPerfil = ({ onCancel }) => {
                   <div className={`${styles.form__group} ${styles.form__twoItems}`}>
                     <h4>Correo</h4>
                     <Input
+                      className={styles.form__editPerdil_input}
                       name="email"
                       placeholder="example.email.com"
                       type="email"
@@ -67,6 +70,7 @@ const FormEditPerfil = ({ onCancel }) => {
                   <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                     <h4>Genero</h4>
                     <select
+                      className={styles.FormEditPerfil__select}
                       name="gender"
                       {...inputProps}
                       value={values.gender ? `${values.gender}` : '1'}
@@ -85,11 +89,12 @@ const FormEditPerfil = ({ onCancel }) => {
                   </div>
                   <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                     <h4>Fecha de Nacimiento</h4>
-                    <Input name="birthdate" type="date" values={values} {...inputProps} />
+                    <Input className={styles.form__editPerdil_input} name="birthdate" type="date" values={values} {...inputProps} />
                   </div>
                   <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                     <h4>Pais</h4>
                     <select
+                      className={styles.FormEditPerfil__select}
                       name="country"
                       {...inputProps}
                       value={values.country ? `${values.country}` : ''}
@@ -113,6 +118,7 @@ const FormEditPerfil = ({ onCancel }) => {
                   <div className={`${styles.form__group} ${styles.form__twoItems}`}>
                     <h4>Contraseña</h4>
                     <Input
+                      className={styles.form__editPerdil_input}
                       name="password"
                       placeholder="*********"
                       type="password"
@@ -123,6 +129,7 @@ const FormEditPerfil = ({ onCancel }) => {
                   <div className={`${styles.form__group} ${styles.form__twoItems}`}>
                     <h4>Repetir Contraseña</h4>
                     <Input
+                      className={styles.form__editPerdil_input}
                       name="confirmPassword"
                       placeholder="*********"
                       type="password"
@@ -140,14 +147,14 @@ const FormEditPerfil = ({ onCancel }) => {
                       <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
                       <h4>facebook.com/</h4>
                     </div>
-                    <Input name="facebook" type="text" values={values} {...inputProps} />
+                    <Input className={styles.form__editPerdil_input} name="facebook" type="text" values={values} {...inputProps} />
                   </div>
                   <div className={`${styles.social__media} ${styles.form__twoItems}`}>
                     <div className={styles.wrapper__social__media__icon}>
                       <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
                       <h4>twitter.com/</h4>
                     </div>
-                    <Input name="twitter" type="text" values={values} {...inputProps} />
+                    <Input className={styles.form__editPerdil_input} name="twitter" type="text" values={values} {...inputProps} />
                   </div>
                 </div>
                 {/*------------------------------------------*/
@@ -159,14 +166,14 @@ const FormEditPerfil = ({ onCancel }) => {
                       <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
                       <h4>github.com/</h4>
                     </div>
-                    <Input name="github" type="text" values={values} {...inputProps} />
+                    <Input className={styles.form__editPerdil_input} name="github" type="text" values={values} {...inputProps} />
                   </div>
                   <div className={`${styles.social__media} ${styles.form__twoItems}`}>
                     <div className={styles.wrapper__social__media__icon}>
                       <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
                       <h4>linkedin.com/</h4>
                     </div>
-                    <Input name="linkedin" type="text" values={values} {...inputProps} />
+                    <Input className={styles.form__editPerdil_input} name="linkedin" type="text" values={values} {...inputProps} />
                   </div>
                 </div>
                 {/*------------------------------------------*/
@@ -185,10 +192,19 @@ const FormEditPerfil = ({ onCancel }) => {
                 </div>
                 <Grid container spacing={2}>
                   <Grid item xs={6} md={3}>
-                    <button type="submit">Guardar</button>
+                    <button 
+                      className={styles.form__editPerfil_button} 
+                      type="submit"
+                      >
+                        Guardar
+                        </button>
                   </Grid>
                   <Grid item xs={6} md={3}>
-                    <button type="button" onClick={onCancel}>
+                    <button
+                      className={styles.form__editPerfil_button}
+                      type="button"
+                      onClick={onCancel}
+                    >
                       Cancelar
                     </button>
                   </Grid>
