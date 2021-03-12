@@ -40,7 +40,7 @@ const Dropdown = ({ username }) => {
         <span className={styles.dropdown__avatar}>
           {username ? username.charAt(0).toUpperCase() : <i className="fas fa-user fa-2x"></i>}
         </span>
-        <span className={styles.dropdown__name}>{username || 'invitado'}</span>
+        <span className={styles.dropdown__name}>{username}</span>
 
         <button ref={dropdown} type="button" onClick={handleToggle}>
           <i className={`fas fa-chevron-down ${styles.dropdown__icon}`}></i>
