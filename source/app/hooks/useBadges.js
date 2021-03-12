@@ -1,22 +1,23 @@
 import apiConnect from 'app/apiConnect';
-import { useState } from 'react';
+import { useState, useFetch } from 'react-fetch-ssr';
 
 const useBadges = () => {
-    const [badges, setBadges] = useState([]);
+  const [badges, setBadges] = useState([]);
+  const [isLoading, setLoading] = useState(true);
 
-  const handleBadges = async () => {
-
+  useFetch(async () => {
     const response = await apiConnect({
       method: 'get',
       url: '/badge',
       data: { badges },
     });
-
-    return response;
-  };
+    setBadges(response.badges);
+    setLoading(false);
+  }, []);
 
   return {
-    handleBadges,
+    isLoading,
+    badges,
   };
 };
 
