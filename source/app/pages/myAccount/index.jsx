@@ -10,7 +10,7 @@ import styles from './styles.css';
 import Evenets from './components/events';
 
 const MyAccount = () => {
-  const [currentView, setView] = useState('profile');
+  const [currentView, setView] = useState('groups');
   return (
     <div className={styles.container}>
       <div className={styles.navBarWrapper}>

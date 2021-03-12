@@ -21,7 +21,7 @@ const GroupsGrid = ({ errorMessage, groups }) => (
 
             <h3 className={styles.group__name}>{group.name}</h3>
 
-            <p>{group.description}</p>
+            <p className={styles.group__description}>{group.description}</p>
 
             <button className={styles.group__button} type="button">
               Unirse
@@ -38,11 +38,11 @@ const GroupsGrid = ({ errorMessage, groups }) => (
 
             <img className={styles.group__img} src={group.image} alt={group.name} />
 
-            <div className={styles.group__language}>{group.tag || group.tags}</div>
+            <div className={styles.group__language}>{group.tag}</div>
 
             <h3 className={styles.group__name}>{group.name}</h3>
 
-            <p>{group.description}</p>
+            <p className={styles.group__description}>{group.description}</p>
 
             <button className={styles.group__button} type="button">
               Unirse
