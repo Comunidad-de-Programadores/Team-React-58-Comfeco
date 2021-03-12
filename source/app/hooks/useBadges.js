@@ -12,7 +12,7 @@ const useBadges = () => {
       data: { badges },
     });
 
-    return response;
+    return setBadges(response.badges);
   };
 
   return {

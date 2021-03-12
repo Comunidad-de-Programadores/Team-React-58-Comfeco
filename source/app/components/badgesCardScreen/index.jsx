@@ -5,7 +5,7 @@ import useBadges from 'app/hooks/useBadges'
 
 const BadgesCardScreen = () => {
 
-  
+  console.log(useBadges());
 
   return (
   
