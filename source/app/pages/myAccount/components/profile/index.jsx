@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import WorkshopCard from 'app/components/workshopCard';
 import ActivityCard from 'app/components/activityCard';
 import BadgesCard from 'app/components/badgesCard';
 import PerfilCard from 'app/components/perfilCard';
 import { useState } from 'react-fetch-ssr';
 import FormEditPerfil from 'app/components/formEditPerfil'
 import styles from './styles.css'
+import EventsCard from '../../../../components/eventsCard';
 
 const MyAccount = () => {
   const [isEditProfileActive, setEditProfile] = useState(false); 
@@ -30,7 +30,7 @@ const MyAccount = () => {
             <BadgesCard />
           </div>
           <div className={styles.side}>
-            <WorkshopCard />
+            <EventsCard />
           </div>
         </div>
       )}

@@ -73,8 +73,3 @@ div.slick-slider {
   border: 1px solid red;
 }
 
-.wrapper {
-  display: grid;
-  height: 100%;
-  grid-template-rows: auto 1fr auto;
-}

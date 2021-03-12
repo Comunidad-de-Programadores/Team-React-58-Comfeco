@@ -2,15 +2,15 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { useState } from 'react-fetch-ssr';
-import useBadges from 'app/hooks/useBadges';
-import styles from './styles.css';
+import BadgesCardScreen from 'app/components/badgesCardScreen';
 import Profile from './components/profile';
 import NavBarEditPerfil from './components/navBarEditPerfil';
 import Groups from './components/groups';
+import styles from './styles.css';
+import Evenets from './components/events';
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
-  useBadges();
   return (
     <div className={styles.container}>
       <div className={styles.navBarWrapper}>
@@ -18,9 +18,14 @@ const MyAccount = () => {
       </div>
       <div className={styles.bodyWrapper}>
         {currentView === 'profile' && <Profile />}
-        {currentView === 'badges' && <h5 style={{ textAlign: 'center' }}>badges view here</h5>}
+        {currentView === 'badges' && (
+          <div>
+            <h1 style={{ textAlign: 'center' }}>Mis insignias</h1>
+            <BadgesCardScreen />
+          </div>
+        )}
         {currentView === 'groups' && <Groups />}
-        {currentView === 'events' && <h5 style={{ textAlign: 'center' }}>events view here</h5>}
+        {currentView === 'events' && <Evenets />}
       </div>
     </div>
   );

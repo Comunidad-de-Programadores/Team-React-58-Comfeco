@@ -1,6 +1,9 @@
 .countdown {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.28);
+  padding: 0.5rem 0;
 }
 
 .countdown__title {
@@ -22,4 +25,55 @@
   font-size: 1.5rem;
   /* font-weight: 600; */
   text-align: center;
+}
+
+/*------------------------------------------*/
+/*--Query--*/
+/*------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+  .time__value {
+    font-size: 1.8rem;
+  }
+  
+
+  .time__description {
+    font-size: 1rem;
+  }
+
+  .countdown__title {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .time__value {
+    font-size: 1.8rem;
+
+  }
+  
+
+  .time__description {
+    font-size: 1rem;
+  }
+
+  .countdown__title {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .time__value {
+    font-size: 1.5em;
+
+  }
+  
+
+  .time__description {
+    font-size: 1rem;
+  }
+
+  .countdown__title {
+    font-size: 1.1rem;
+  }
 }
