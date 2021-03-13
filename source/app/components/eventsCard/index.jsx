@@ -1,9 +1,9 @@
 import { ButtonBase, Grid } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 import React from 'react';
+import limitText from 'app/helpers/limitText';
 import useEvents from '../../hooks/useEvents';
 import styles from './styles.css';
-import limitText from 'app/helpers/limitText';
 
 const EventsCard = () => {
   const { events, isLoading } = useEvents();
