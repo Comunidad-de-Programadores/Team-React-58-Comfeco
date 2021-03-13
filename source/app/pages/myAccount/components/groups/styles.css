@@ -15,6 +15,24 @@
 .title {
   text-align: center;
 }
+.emptyResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  color:#c2a2e2;
+  text-align: center;
+  line-height: 1.5em;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 1em;
+  height: 100%;
+  min-height: 200px;
+}
+.emptyResult svg {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
 
 @media (min-width: 1024px) {
   .groups {

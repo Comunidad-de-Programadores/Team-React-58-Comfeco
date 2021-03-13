@@ -1,8 +1,8 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 import { arrayOf, string } from 'prop-types';
-import styles from './styles.css';
 import { Check } from '@material-ui/icons';
+import styles from './styles.css';
 
 const GroupsGrid = ({ groups }) => (
   <>

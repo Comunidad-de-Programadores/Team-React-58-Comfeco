@@ -10,10 +10,12 @@ const useGroups = () => {
   const [search, setSearch] = useState('');
 
   const handleFilterChange = (e) => {
+    if (search !== '') setSearch('')
     setFilter(e.target.value);
   };
 
   const handleSearchChange = (e) => {
+    if (filter !== 'all') setFilter('all')
     setSearch(e.target.value.trim());
   };
 
