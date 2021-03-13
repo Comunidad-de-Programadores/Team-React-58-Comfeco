@@ -11,13 +11,17 @@ import Evenets from './components/events';
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
+
+  const handleViewChange = (newView) => setView(newView)
+  const handleSearchEventClick = () => setView('events')
+
   return (
     <div className={styles.container}>
       <div className={styles.navBarWrapper}>
-        <NavBarEditPerfil currentView={currentView} onViewChange={setView} />
+        <NavBarEditPerfil currentView={currentView} onViewChange={handleViewChange} />
       </div>
       <div className={styles.bodyWrapper}>
-        {currentView === 'profile' && <Profile />}
+        {currentView === 'profile' && <Profile onSearchEventClick={handleSearchEventClick} />}
         {currentView === 'badges' && (
           <div>
             <h1 style={{ textAlign: 'center' }}>Mis insignias</h1>

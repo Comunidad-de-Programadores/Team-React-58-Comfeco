@@ -6,10 +6,11 @@ import BadgesCard from 'app/components/badgesCard';
 import PerfilCard from 'app/components/perfilCard';
 import { useState } from 'react-fetch-ssr';
 import FormEditPerfil from 'app/components/formEditPerfil'
+import { func } from 'prop-types';
 import styles from './styles.css'
 import EventsCard from '../../../../components/eventsCard';
 
-const MyAccount = () => {
+const MyProfile = ({ onSearchEventClick }) => {
   const [isEditProfileActive, setEditProfile] = useState(false); 
 
   const handleEditProfileActive = () => setEditProfile(true);
@@ -30,7 +31,7 @@ const MyAccount = () => {
             <BadgesCard />
           </div>
           <div className={styles.side}>
-            <EventsCard />
+            <EventsCard onSearchEventClick={onSearchEventClick} />
           </div>
         </div>
       )}
@@ -38,4 +39,8 @@ const MyAccount = () => {
   )
 }
 
-export default MyAccount;
+MyProfile.propTypes = {
+  onSearchEventClick: func.isRequired,
+}
+
+export default MyProfile;
