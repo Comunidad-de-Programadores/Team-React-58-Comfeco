@@ -45,6 +45,11 @@
     border-radius: 0.5rem;
 }
 
+.card__loading{
+    display: block;
+    text-align: center;
+}
+
 .badge__circle{
     margin-top: 2rem;
     border: 0.8rem solid #fff;
