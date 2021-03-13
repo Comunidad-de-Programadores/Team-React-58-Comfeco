@@ -9,8 +9,6 @@ const EventsCard = () => {
   const { events, isLoading } = useEvents();
   const myEvents = events.filter((event) => event.joined);
 
-  console.log('myEvent', myEvents);
-
   if (isLoading)
     return (
       <div className={styles.eventsCard}>
@@ -23,7 +21,7 @@ const EventsCard = () => {
   return (
     <div className={styles.eventsCard}>
       {myEvents.map((myEvent) => (
-        <div className={styles.eventWrapper}>
+        <div key={myEvent.id} className={styles.eventWrapper}>
           <Grid container alignItems="center" justify="space-between">
             <div className={styles.eventTitle}>{myEvent.name}</div>
             <div className={styles.eventDate}>{new Date(myEvent.date).toLocaleDateString()}</div>

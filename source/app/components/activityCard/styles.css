@@ -26,6 +26,9 @@
 .activity__message {
   font-size: 0.9rem;
 }
+.activity__date {
+  margin-left: auto;
+}
 
 .activity__img {
   min-width: 3rem;
