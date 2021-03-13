@@ -1,5 +1,6 @@
 import React from 'react';
 import useLogin from 'app/hooks/useLogin';
+import { Link } from 'react-router-dom';
 import Input from '../input';
 import styles from './styles.css';
 
@@ -31,12 +32,11 @@ const SignUp = () => {
                 type="text"
               />
             </div>
-
             <div className={styles.formGroup}>
               <i className="fas fa-lock" aria-hidden="true" />
               <Input placeholder="Contraseña" {...inputProps} name="password" type="password" />
             </div>
-
+            <Link to="/recover-account">¿Olvidaste la contraseña?</Link>
             <button type="submit">Ingresar</button>
           </div>
         </>
