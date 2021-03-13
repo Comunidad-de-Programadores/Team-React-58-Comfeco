@@ -1,48 +1,39 @@
+import { ButtonBase, Grid } from '@material-ui/core';
+import { Skeleton } from '@material-ui/lab';
 import React from 'react';
-import logo from '../../images/logo.svg';
+import useEvents from '../../hooks/useEvents';
 import styles from './styles.css';
+import limitText from 'app/helpers/limitText';
 
-const EventsCard = () => (
-  <div className={styles.eventsCard}>
-    <header className={styles.eventsCard__header}>
-      <h4 className={styles.eventsCard__title}>Eventos de tu interes</h4>
-      <a className={styles.eventsCard__link} href="/">
-        Ver más
-      </a>
-    </header>
-    <ul className={styles.eventsCard__wrapper}>
-      <li className={styles.eventsCard__item}>
-        <img className={styles.event__logo} src={logo} alt="" />
-        <div className={styles.event__content}>
-          <h5 className={styles.event__title}>Community Fest and Code</h5>
-          <div className={styles.event__buttons}>
-            <button type="button">Abandonar</button>
-            <button type="button">Más informacion</button>
-          </div>
+const EventsCard = () => {
+  const { events, isLoading } = useEvents();
+  const myEvents = events.filter((event) => event.joined);
+
+  console.log('myEvent', myEvents);
+
+  if (isLoading)
+    return (
+      <div className={styles.eventsCard}>
+        <Skeleton variant="rect" height={80} />
+        <Skeleton variant="text" height={25} />
+        <Skeleton variant="text" height={25} />
+      </div>
+    );
+
+  return (
+    <div className={styles.eventsCard}>
+      {myEvents.map((myEvent) => (
+        <div className={styles.eventWrapper}>
+          <Grid container alignItems="center" justify="space-between">
+            <div className={styles.eventTitle}>{myEvent.name}</div>
+            <div className={styles.eventDate}>{new Date(myEvent.date).toLocaleDateString()}</div>
+          </Grid>
+          <div className={styles.description}>{limitText(myEvent.description, 100)}</div>
+          <ButtonBase className={styles.button}>Abandonar</ButtonBase>
         </div>
-      </li>
-      <li className={styles.eventsCard__item}>
-        <img className={styles.event__logo} src={logo} alt="" />
-        <div className={styles.event__content}>
-          <h5 className={styles.event__title}>Community Fest and Code</h5>
-          <div className={styles.event__buttons}>
-            <button type="button">Abandonar</button>
-            <button type="button">Más informacion</button>
-          </div>
-        </div>
-      </li>
-      <li className={styles.eventsCard__item}>
-        <img className={styles.event__logo} src={logo} alt="" />
-        <div className={styles.event__content}>
-          <h5 className={styles.event__title}>Community Fest and Code</h5>
-          <div className={styles.event__buttons}>
-            <button type="button">Abandonar</button>
-            <button type="button">Más informacion</button>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 export default EventsCard;
