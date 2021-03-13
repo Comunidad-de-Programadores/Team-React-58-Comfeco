@@ -33,6 +33,8 @@ const handleRequest = async (request, response) => {
 
 server.all('*', handleRequest);
 
+export default server;
+
 server.listen(3000, () => {
   console.log('server render stared at port 3000');
 });

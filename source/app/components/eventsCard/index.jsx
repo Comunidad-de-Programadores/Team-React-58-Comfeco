@@ -25,7 +25,7 @@ const EventsCard = ({ setNotification, onSearchEventClick }) => {
       <div className={styles.eventsCard}>
         <div className={styles.title}>Mis Eventos</div>
         {myEvents.map((myEvent) => (
-          <div className={styles.eventWrapper}>
+          <div className={styles.eventWrapper} key={myEvent.id}>
             <Grid container alignItems="center" justify="space-between">
               <div className={styles.eventTitle}>{myEvent.name}</div>
               <div className={styles.eventDate}>{new Date(myEvent.date).toLocaleDateString()}</div>
