@@ -1,13 +1,13 @@
+/* eslint-disable prettier/prettier */
 import apiConnect from 'app/apiConnect';
-import { useEffect } from 'react';
 import { useFetch, useState } from 'react-fetch-ssr';
+import useSession from './useSession';
 
 const useGroups = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [groups, setGroups] = useState({ default: [], search: [] });
+  const { session } = useSession()
+  const [groups, setGroups] = useState({ isLoading: true, items: [] });
   const [filter, setFilter] = useState('');
   const [search, setSearch] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
@@ -17,85 +17,37 @@ const useGroups = () => {
     setSearch(e.target.value.trim());
   };
 
-  const handleErrorMessage = (errorText = '') => {
-    setErrorMessage(errorText);
-  };
-
-  const searching = () => {
-    let finded = [];
-    if (!!filter && !!search) {
-      finded = groups.default.filter(
-        (group) => group.name.toLowerCase().startsWith(search) && group.tag === filter
-      );
-
-      if (finded.length === 0) {
-        handleErrorMessage('No se ha encontrado ningún resultado');
-      } else {
-        handleErrorMessage();
-      }
-      return finded;
-    }
-
-    if (filter) {
-      finded = groups.default.filter((group) => group.tag === filter);
-      if (finded.length === 0) {
-        handleErrorMessage('No se ha encontrado ningún resultado');
-      } else {
-        handleErrorMessage();
-      }
-
-      return finded;
-    }
-
-    if (search) {
-      finded = groups.default.filter((group) => group.name.toLowerCase().startsWith(search));
-      if (finded.length === 0) {
-        handleErrorMessage('No se ha encontrado ningún resultado');
-      } else {
-        handleErrorMessage();
-      }
-      return finded;
-    }
-
-    return [];
-  };
-
-  const selectFilters = (data) => {
-    let values = [];
-
-    data.forEach((item) => {
-      if (item.tag && !values.includes(item.tag)) values = [...values, item.tag];
-      if (item.tags && !values.includes(item.tags)) values = [...values, item.tags];
-    });
-    return values;
-  };
-
   useFetch(async () => {
     if (!groups.length) {
-      setIsLoading(true);
       const response = await apiConnect({ method: 'get', url: '/group' });
-
-      if (response.status === 'error') {
-        setIsLoading(false);
-        console.error(response.errorMessage);
-      } else {
-        setGroups({ ...groups, default: response.groups });
-        setIsLoading(false);
-      }
+      setGroups({ isLoading: false, items: response.groups });
     }
   }, []);
 
-  useEffect(() => {
-    setGroups({ ...groups, search: searching() });
-  }, [search, filter]);
+  // get tag list and delete tag repeated
+  let avalilableFilterList = groups.items.map((currentGroup) => currentGroup.tag); 
+  avalilableFilterList = avalilableFilterList.filter((currentTag, index, self) => self.indexOf (currentTag) === index)
+
+  // apply Filter
+  let itemsFiltered = groups.items;
+  if (filter && filter !== 'all') itemsFiltered = itemsFiltered.filter(({ tag }) => tag === filter)
+
+  // apply search
+  if (search) {
+    itemsFiltered = itemsFiltered.filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
+  }
+
+  // check if user is joined into group 
+  itemsFiltered = itemsFiltered.map(( group ) => session.group === group.id ? {...group, joined: true } : {...group, joined: false })
 
   return {
-    groups,
-    errorMessage,
-    isLoading,
+    filter,
+    search,
+    isLoading: groups.isLoading,
+    groups: itemsFiltered,
+    avalilableFilterList,
     handleSearchChange,
     handleFilterChange,
-    selectFilters: selectFilters(groups.default),
   };
 };
 

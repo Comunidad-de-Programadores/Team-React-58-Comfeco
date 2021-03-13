@@ -1,31 +1,39 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
-import PropTypes, { string } from 'prop-types';
+import PropTypes, { arrayOf, string } from 'prop-types';
 import styles from './styles.css';
 
-const SearchGroup = ({ selectFilters, handleFilterChange, handleSearchChange }) => (
+const SearchGroup = ({ avalilableFilterList, onFilterChange, onSearchChange, search, filter }) => (
   <div className={styles.searchGroup}>
-    <select onChange={handleFilterChange} className={styles.searchGroup__filter} defaultValue="1">
-      <option key="1" value="">
-        Filtrar por lenguaje
-      </option>
-      {selectFilters.map((filter) => (
-        <option key={filter} value={filter}>
-          {filter}
+    <select onChange={onFilterChange} className={styles.searchGroup__filter} value={filter}>
+      <option disabled>Filtrar por lenguaje</option>
+      <option value="all">Todos</option>
+      {avalilableFilterList.map((currentFilter) => (
+        <option key={currentFilter} value={currentFilter}>
+          {currentFilter}
         </option>
       ))}
     </select>
 
     <div className={styles.searchGroup__input}>
-      <input onChange={handleSearchChange} type="text" name="search" placeholder="Buscar grupo" />
+      <input
+        onChange={onSearchChange}
+        type="text"
+        name="search"
+        placeholder="Buscar grupo"
+        value={search}
+      />
       <i className="fas fa-search"></i>
     </div>
   </div>
 );
+
 SearchGroup.propTypes = {
-  selectFilters: PropTypes.arrayOf(string).isRequired,
-  handleFilterChange: PropTypes.func.isRequired,
-  handleSearchChange: PropTypes.func.isRequired,
+  filter: string.isRequired,
+  search: string.isRequired,
+  avalilableFilterList: arrayOf(string).isRequired,
+  onFilterChange: PropTypes.func.isRequired,
+  onSearchChange: PropTypes.func.isRequired,
 };
 
 export default SearchGroup;

@@ -7,12 +7,13 @@ import styles from './styles.css';
 
 const Groups = () => {
   const {
-    groups,
-    errorMessage,
-    isLoading,
+    filter,
+    search,
     handleFilterChange,
     handleSearchChange,
-    selectFilters,
+    avalilableFilterList,
+    isLoading,
+    groups,
   } = useGroups();
 
   return (
@@ -24,15 +25,17 @@ const Groups = () => {
 
       <div className={styles.searchGroup__wrapper}>
         <SearchGroup
-          selectFilters={selectFilters}
-          handleFilterChange={handleFilterChange}
-          handleSearchChange={handleSearchChange}
+          filter={filter}
+          search={search}
+          avalilableFilterList={avalilableFilterList}
+          onFilterChange={handleFilterChange}
+          onSearchChange={handleSearchChange}
         />
       </div>
 
       <div className={styles.groupsGrid__wrapper}>
         {isLoading && <div>Cargando</div>}
-        {!isLoading && <GroupsGrid errorMessage={errorMessage} groups={groups} />}
+        {!isLoading && <GroupsGrid groups={groups} />}
       </div>
     </div>
   );

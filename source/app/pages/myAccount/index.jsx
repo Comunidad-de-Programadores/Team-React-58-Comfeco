@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable arrow-body-style */
 import React from 'react';
 import { useState } from 'react-fetch-ssr';
 import BadgesCardScreen from 'app/components/badgesCardScreen';
@@ -12,8 +10,8 @@ import Evenets from './components/events';
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
 
-  const handleViewChange = (newView) => setView(newView)
-  const handleSearchEventClick = () => setView('events')
+  const handleViewChange = (newView) => setView(newView);
+  const handleSearchEventClick = () => setView('events');
 
   return (
     <div className={styles.container}>
