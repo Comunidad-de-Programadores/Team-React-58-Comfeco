@@ -6,7 +6,14 @@ import MyGroupCard from '../myGroupCard';
 import styles from './styles.css';
 
 const Groups = () => {
-  const { groups, isLoading, handleFilterChange, handleSearchChange, selectFilters } = useGroups();
+  const {
+    groups,
+    errorMessage,
+    isLoading,
+    handleFilterChange,
+    handleSearchChange,
+    selectFilters,
+  } = useGroups();
 
   return (
     <div className={styles.groups}>
@@ -25,7 +32,7 @@ const Groups = () => {
 
       <div className={styles.groupsGrid__wrapper}>
         {isLoading && <div>Cargando</div>}
-        {!isLoading && <GroupsGrid groups={groups} />}
+        {!isLoading && <GroupsGrid errorMessage={errorMessage} groups={groups} />}
       </div>
     </div>
   );

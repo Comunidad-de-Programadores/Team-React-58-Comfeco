@@ -10,9 +10,8 @@ import SessionProvider from './components/sessionProvider';
 import RecoverAccount from './components/recoverAccount';
 import CreateNewPassword from './pages/createNewPassword';
 import style from './style.css';
-import MyAccount from './pages/myAccount'
-import PageNotFoundScreen from './Pages/404/index';
-
+import MyAccount from './pages/myAccount';
+import PageNotFoundScreen from './pages/404/index';
 
 const App = () => (
   <SessionProvider>
@@ -29,7 +28,7 @@ const App = () => (
         <Route path="/recover-account" exact component={RecoverAccount} />
         <Route path="/create-new-password/:token" component={CreateNewPassword} />
         <Route path="/my-account" component={MyAccount} />
-        <Route path="/page-not-found" component={PageNotFoundScreen}/>
+        <Route path="/page-not-found" component={PageNotFoundScreen} />
 
         <Redirect to="/page-not-found" />
 

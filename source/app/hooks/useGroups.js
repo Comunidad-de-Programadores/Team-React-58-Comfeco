@@ -7,6 +7,7 @@ const useGroups = () => {
   const [groups, setGroups] = useState({ default: [], search: [] });
   const [filter, setFilter] = useState('');
   const [search, setSearch] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
@@ -16,21 +17,46 @@ const useGroups = () => {
     setSearch(e.target.value.trim());
   };
 
+  const handleErrorMessage = (errorText = '') => {
+    setErrorMessage(errorText);
+  };
+
   const searching = () => {
+    let finded = [];
     if (!!filter && !!search) {
-      return groups.default.filter(
-        (group) =>
-          group.name.toLowerCase().startsWith(search) &&
-          (group.tag === filter || group.tags === filter)
+      finded = groups.default.filter(
+        (group) => group.name.toLowerCase().startsWith(search) && group.tag === filter
       );
+
+      if (finded.length === 0) {
+        handleErrorMessage('No se ha encontrado ningún resultado');
+      } else {
+        handleErrorMessage();
+      }
+      return finded;
     }
 
     if (filter) {
-      return groups.default.filter((group) => group.tag === filter || group.tags === filter);
+      finded = groups.default.filter((group) => group.tag === filter);
+      if (finded.length === 0) {
+        handleErrorMessage('No se ha encontrado ningún resultado');
+      } else {
+        handleErrorMessage();
+      }
+
+      return finded;
     }
+
     if (search) {
-      return groups.default.filter((group) => group.name.toLowerCase().startsWith(search));
+      finded = groups.default.filter((group) => group.name.toLowerCase().startsWith(search));
+      if (finded.length === 0) {
+        handleErrorMessage('No se ha encontrado ningún resultado');
+      } else {
+        handleErrorMessage();
+      }
+      return finded;
     }
+
     return [];
   };
 
@@ -65,6 +91,7 @@ const useGroups = () => {
 
   return {
     groups,
+    errorMessage,
     isLoading,
     handleSearchChange,
     handleFilterChange,

@@ -5,13 +5,7 @@ import styles from './styles.css';
 
 const SearchGroup = ({ selectFilters, handleFilterChange, handleSearchChange }) => (
   <div className={styles.searchGroup}>
-    <select
-      onChange={handleFilterChange}
-      className={styles.searchGroup__filter}
-      defaultValue="1"
-      name=""
-      id=""
-    >
+    <select onChange={handleFilterChange} className={styles.searchGroup__filter} defaultValue="1">
       <option key="1" value="">
         Filtrar por lenguaje
       </option>

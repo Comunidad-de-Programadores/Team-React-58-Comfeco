@@ -31,19 +31,23 @@
 .mainHeader__buttons button {
   margin: 0;
   font-size: 0.8rem;
+  height: 10%;
 }
 
 .dropdown__wrapper {
+  --height: 2.5rem;
+  max-height: var(--height);
+  height: auto;
   position: relative;
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  background-color: rebeccapurple;
 }
 
 .dropdown {
   color: #ffffff;
-  background-color: rebeccapurple;
-  border-top-left-radius: 10rem;
-  border-bottom-left-radius: 10rem;
-  height: 3rem;
-  width: 12rem;
+  height: inherit;
+  min-width: 10rem;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -52,12 +56,12 @@
 .dropdown__avatar {
   border-radius: 100%;
   display: inline-flex;
+  height: calc(var(--height) - 0.2rem);
+  width: calc(var(--height) - 0.2rem);
+  margin: 0.1rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 2.8rem;
-  width: 2.8rem;
-  margin-left: 0.2rem;
   background-color: rgba(0, 0, 0, 0.438);
 }
 
@@ -74,6 +78,7 @@
   background-color: transparent;
   cursor: pointer;
 }
+
 .dropdown__icon {
   padding: 0.5rem;
   border-radius: 100%;
@@ -88,12 +93,18 @@
   position: absolute;
   right: 0;
   background-color: blueviolet;
-  width: calc(100% - 3rem);
   text-align: center;
+  z-index: 1;
+  width: 80%;
 }
 
-.options__item {
-  /* padding: 0.5rem 3rem; */
+.options__item a,
+.options__item button {
+  padding: 0;
+  margin: 0;
+  padding: 0.5rem 0;
+  width: 100%;
+  font-size: 0.9rem;
 }
 
 .options__item:hover {
@@ -121,6 +132,10 @@
 
 @media (min-width: 768px) {
   .mainHeader__buttons button {
+    font-size: 1rem;
+  }
+  .options__item a,
+  .options__item button {
     font-size: 1rem;
   }
 
