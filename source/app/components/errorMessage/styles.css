@@ -1,0 +1,18 @@
+.errorMessage p {
+  margin: 0;
+}
+.errorMessage i {
+  margin: 0 1rem;
+}
+.errorMessage {
+  align-items: center;
+  background-color: var(--purple);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px 2px var(--dark-blue);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  padding: 0.5rem;
+  text-align: center;
+}

@@ -1,11 +1,12 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 import PropTypes from 'prop-types';
+import ErrorMessage from 'app/components/errorMessage';
 import styles from './styles.css';
 
 const GroupsGrid = ({ errorMessage, groups }) => (
   <>
-    {errorMessage && <div>{errorMessage}</div>}
+    {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
 
     <div className={styles.groupsGrid}>
       {groups.search.length > 0 &&
