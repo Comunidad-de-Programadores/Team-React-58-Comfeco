@@ -1,114 +1,50 @@
 import React from 'react';
 import useBadges from 'app/hooks/useBadges';
 import styles from './styles.css';
-import img1 from '../../images/Isotipo-brand.png';
+
 
 const BadgesCardScreen = () => {
   const { isLoading, badges } = useBadges();
-  console.log('isLoading', isLoading, 'badges', badges);
+
 
   return (
     <div className={styles.badges__main__wrapper}>
       <div className={styles.badges__card__wrapper}>
-        {/* card 1 */}
-        <div className={styles.badges__Card}>
-          {/* header card */}
+
+        {
+          (isLoading)
+          ? <h1 className={styles.card__loading}>Cargando</h1>
+          : badges.map(badge => (
+            
+        
+        <div key={ badge.id } className={styles.badges__Card}>
+          
           <div className={styles.badges__circle__wrapper}>
             <div className={styles.middle__wrapper__circle} />
             <div className={styles.badge__circle}>
-              <img src={img1} alt="" />
+              <img src={badge.image} alt="" />
             </div>
           </div>
 
-          {/* body card */}
+          
           <div className={styles.badges__body__Card}>
-            <span>Sociable</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quas.</p>
+            <span>{badge.name}</span>
+            <p>{badge.description}</p>
 
             <hr />
 
             <span>¿Como Ganarla?</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque unde nulla iste
-              laboriosam ad cupiditate.
+              {badge.howToGetIt}
             </p>
           </div>
         </div>
+          )) 
 
-        {/* card 2 */}
-        <div className={styles.badges__Card}>
-          {/* header card */}
-          <div className={styles.badges__circle__wrapper}>
-            <div className={styles.middle__wrapper__circle} />
-            <div className={styles.badge__circle}>
-              <img src={img1} alt="" />
-            </div>
-          </div>
+        }
+        
 
-          {/* body card */}
-          <div className={styles.badges__body__Card}>
-            <span>Sociable</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quas.</p>
 
-            <hr />
-
-            <span>¿Como Ganarla?</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque unde nulla iste
-              laboriosam ad cupiditate.
-            </p>
-          </div>
-        </div>
-
-        {/* card 3 */}
-        <div className={styles.badges__Card}>
-          {/* header card */}
-          <div className={styles.badges__circle__wrapper}>
-            <div className={styles.middle__wrapper__circle} />
-            <div className={styles.badge__circle}>
-              <img src={img1} alt="" />
-            </div>
-          </div>
-
-          {/* body card */}
-          <div className={styles.badges__body__Card}>
-            <span>Sociable</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quas.</p>
-
-            <hr />
-
-            <span>¿Como Ganarla?</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque unde nulla iste
-              laboriosam ad cupiditate.
-            </p>
-          </div>
-        </div>
-
-        {/* card 4 */}
-        <div className={styles.badges__Card}>
-          {/* header card */}
-          <div className={styles.badges__circle__wrapper}>
-            <div className={styles.middle__wrapper__circle} />
-            <div className={styles.badge__circle}>
-              <img src={img1} alt="" />
-            </div>
-          </div>
-
-          {/* body card */}
-          <div className={styles.badges__body__Card}>
-            <span>Sociable</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quas.</p>
-
-            <hr />
-
-            <span>¿Como Ganarla?</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque unde nulla iste
-              laboriosam ad cupiditate.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
