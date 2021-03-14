@@ -17,9 +17,7 @@ const ActivityCard = () => {
           {activities.map((activity) => (
             <li key={activity._id} className={styles.activityCard__item}>
               <p className={styles.activity__message}>{activity.message}</p>
-              <span className={styles.activity__date}>
-                {new Date(activity.date).toLocaleDateString()}
-              </span>
+              <span className={styles.activity__date}>{activity.date}</span>
               <img className={styles.activity__img} src={img} alt="activity" />
             </li>
           ))}
