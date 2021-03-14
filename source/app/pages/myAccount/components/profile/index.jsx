@@ -18,17 +18,15 @@ const MyProfile = ({ onSearchEventClick }) => {
 
   return (
     <>
-      {isEditProfileActive && (
-        <FormEditPerfil onCancel={handleEditProfileClose} />
-      )}
+      {isEditProfileActive && <FormEditPerfil onCancel={handleEditProfileClose} />}
       {!isEditProfileActive && (
         <div className={styles.profileWrapper}>
           <div className={styles.side}>
             <PerfilCard onEditProfile={handleEditProfileActive} />
           </div>
           <div className={styles.center}>
-            <ActivityCard />
             <BadgesCard />
+            <ActivityCard />
           </div>
           <div className={styles.side}>
             <EventsCard onSearchEventClick={onSearchEventClick} />
@@ -36,8 +34,8 @@ const MyProfile = ({ onSearchEventClick }) => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 MyProfile.propTypes = {
   onSearchEventClick: func.isRequired,

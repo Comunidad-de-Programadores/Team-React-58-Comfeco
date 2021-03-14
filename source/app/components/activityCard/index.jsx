@@ -1,22 +1,32 @@
+/* eslint-disable no-underscore-dangle */
+import useActivities from 'app/hooks/useActivities';
 import React from 'react';
 import img from '../../images/activity.svg';
 import styles from './styles.css';
 
-const ActivityCard = () => (
-  <div className={styles.activityCard}>
-    <h3 className={styles.activityCard__title}>Actividad reciente</h3>
-    <ul className={styles.activityCard__wrapper}>
-      <li className={styles.activityCard__item}>
-        <p className={styles.activity__message}>Te has unido al evento Community Fest and Code</p>
-        <img className={styles.activity__img} src={img} alt="activity" />
-      </li>
+const ActivityCard = () => {
+  const { activities, isLoading } = useActivities();
+  return (
+    <div className={styles.activityCard}>
+      <h3 className={styles.activityCard__title}>Actividad reciente</h3>
 
-      <li className={styles.activityCard__item}>
-        <p className={styles.activity__message}>Te has unido al evento Community Fest and Code</p>
-        <img className={styles.activity__img} src={img} alt="activity" />
-      </li>
-    </ul>
-  </div>
-);
+      {isLoading && <div>Cargando...</div>}
+
+      {!isLoading && (
+        <ul className={styles.activityCard__wrapper}>
+          {activities.map((activity) => (
+            <li key={activity._id} className={styles.activityCard__item}>
+              <p className={styles.activity__message}>{activity.message}</p>
+              <span className={styles.activity__date}>
+                {new Date(activity.date).toLocaleDateString()}
+              </span>
+              <img className={styles.activity__img} src={img} alt="activity" />
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 export default ActivityCard;
