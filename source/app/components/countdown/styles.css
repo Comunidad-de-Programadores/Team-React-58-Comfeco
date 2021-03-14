@@ -2,17 +2,22 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 1px 4px 7px 0px rgba(0,0,0,0.28);
+  box-shadow: 1px 4px 7px 0px rgba(0, 0, 0, 0.28);
   padding: 0.5rem 0;
 }
 
 .countdown__title {
   text-align: center;
+  margin-bottom: 1rem;
 }
+
 .countdown__content {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.countdown__time {
+  margin-bottom: 1rem;
 }
 
 .time__value {
@@ -23,7 +28,6 @@
 
 .time__description {
   font-size: 1.5rem;
-  /* font-weight: 600; */
   text-align: center;
 }
 
@@ -31,11 +35,18 @@
 /*--Query--*/
 /*------------------------------------------*/
 
+@media only screen and (min-width: 640px) {
+  .countdown__content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .time__value {
     font-size: 1.8rem;
   }
-  
 
   .time__description {
     font-size: 1rem;
@@ -49,9 +60,7 @@
 @media only screen and (max-width: 768px) {
   .time__value {
     font-size: 1.8rem;
-
   }
-  
 
   .time__description {
     font-size: 1rem;
@@ -65,9 +74,7 @@
 @media only screen and (max-width: 640px) {
   .time__value {
     font-size: 1.5em;
-
   }
-  
 
   .time__description {
     font-size: 1rem;
