@@ -24,9 +24,7 @@ const useRestorePassword = () => {
 
   const handleRemoveError = (event) => {
     setInputWithErrors(
-      inputWithErrors.filter(
-        (currentError) => currentError !== event.target.name,
-      ),
+      inputWithErrors.filter((currentError) => currentError !== event.target.name)
     );
   };
 

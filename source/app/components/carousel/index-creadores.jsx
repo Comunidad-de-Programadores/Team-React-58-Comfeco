@@ -10,7 +10,6 @@ import img6 from '../../images/carouselCreadores/img-6.png';
 import img7 from '../../images/carouselCreadores/img-7.png';
 import img8 from '../../images/carouselCreadores/img-8.png';
 
-
 const CarouselCreadores = () => {
   const [currentSlide, setCurrentSlide] = useState({
     nextSlide: 0,
@@ -18,11 +17,11 @@ const CarouselCreadores = () => {
 
   const { nextSlide } = currentSlide;
 
-  const CarouselCard = ({index, nextSlide, imgCardSlide, twitter = "#", github = "#"}) => (
-
+  const CarouselCard = ({ index, nextSlide, imgCardSlide, twitter = '#', github = '#' }) => (
     <div className={styles.card__cotainer}>
-  
-      <div className={`${styles.wrapper__imgCard} ${nextSlide === index ? styles.centerActivate : ''}`}>
+      <div
+        className={`${styles.wrapper__imgCard} ${nextSlide === index ? styles.centerActivate : ''}`}
+      >
         <div className={styles.overlay__img}>
           <div className={styles.box__rrss__overlay__img}>
             <a href={twitter} target="blank">
@@ -37,15 +36,16 @@ const CarouselCreadores = () => {
         </div>
         <img className={styles.img__carousel} src={imgCardSlide} alt="" />
       </div>
-  
     </div>
-  
   );
 
+  const SampleNextArrow = (props) => (
+    <div className={`${props.className} ${styles.disabled}`} onClick={props.onClick} />
+  );
 
-  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.disabled}`} onClick={props.onClick} />);
-
-  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.disabled}`} onClick={props.onClick} />);
+  const SamplePrevArrow = (props) => (
+    <div className={`${props.className} ${styles.disabled}`} onClick={props.onClick} />
+  );
 
   const settings = {
     className: `${styles.center}`,
@@ -69,16 +69,14 @@ const CarouselCreadores = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
   return (
-
     <div className={styles.wrapper__carousel}>
       <Slider {...settings}>
-
         <CarouselCard index={0} nextSlide={nextSlide} imgCardSlide={img1} />
         <CarouselCard index={1} nextSlide={nextSlide} imgCardSlide={img2} />
         <CarouselCard index={2} nextSlide={nextSlide} imgCardSlide={img3} />
@@ -87,10 +85,8 @@ const CarouselCreadores = () => {
         <CarouselCard index={5} nextSlide={nextSlide} imgCardSlide={img6} />
         <CarouselCard index={6} nextSlide={nextSlide} imgCardSlide={img7} />
         <CarouselCard index={7} nextSlide={nextSlide} imgCardSlide={img8} />
-
       </Slider>
     </div>
-
   );
 };
 

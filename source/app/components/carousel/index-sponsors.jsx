@@ -13,21 +13,20 @@ import img9 from '../../images/carouselSponsors/img-9.png';
 import img10 from '../../images/carouselSponsors/img-10.png';
 import img11 from '../../images/carouselSponsors/img-11.png';
 
-
 const CarouselSponsors = () => {
-
-  const CarouselCard = ({index, nextSlide, imgCardSlide, twitter = "#", github = "#"}) => (
-
+  const CarouselCard = ({ index, nextSlide, imgCardSlide, twitter = '#', github = '#' }) => (
     <div className={styles.card__cotainer}>
-      <img className={styles.img__carousel} src={imgCardSlide} alt=""/>
+      <img className={styles.img__carousel} src={imgCardSlide} alt="" />
     </div>
-  
   );
 
-  const SampleNextArrow = (props) => (<div className={`${props.className} ${styles.black}`} onClick={props.onClick} />);
+  const SampleNextArrow = (props) => (
+    <div className={`${props.className} ${styles.black}`} onClick={props.onClick} />
+  );
 
-  const SamplePrevArrow = (props) => (<div className={`${props.className} ${styles.black}`} onClick={props.onClick} />);
-
+  const SamplePrevArrow = (props) => (
+    <div className={`${props.className} ${styles.black}`} onClick={props.onClick} />
+  );
 
   const settings = {
     dots: true,
@@ -45,36 +44,34 @@ const CarouselSponsors = () => {
           slidesToScroll: 3,
           infinite: true,
           dots: true,
-        }
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
   return (
-
     <div className={styles.wrapper__carousel__sponsors}>
       <Slider {...settings}>
-        <CarouselCard imgCardSlide={img1}/>
-        <CarouselCard imgCardSlide={img2}/>
-        <CarouselCard imgCardSlide={img3}/>
-        <CarouselCard imgCardSlide={img4}/>
-        <CarouselCard imgCardSlide={img5}/>
-        <CarouselCard imgCardSlide={img6}/>
-        <CarouselCard imgCardSlide={img7}/>
-        <CarouselCard imgCardSlide={img8}/>
-        <CarouselCard imgCardSlide={img9}/>
-        <CarouselCard imgCardSlide={img10}/>
-        <CarouselCard imgCardSlide={img11}/>
+        <CarouselCard imgCardSlide={img1} />
+        <CarouselCard imgCardSlide={img2} />
+        <CarouselCard imgCardSlide={img3} />
+        <CarouselCard imgCardSlide={img4} />
+        <CarouselCard imgCardSlide={img5} />
+        <CarouselCard imgCardSlide={img6} />
+        <CarouselCard imgCardSlide={img7} />
+        <CarouselCard imgCardSlide={img8} />
+        <CarouselCard imgCardSlide={img9} />
+        <CarouselCard imgCardSlide={img10} />
+        <CarouselCard imgCardSlide={img11} />
       </Slider>
     </div>
-
   );
 };
 

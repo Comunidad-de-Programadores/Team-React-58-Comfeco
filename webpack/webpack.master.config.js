@@ -16,7 +16,7 @@ const configMaster = {
         ? 'https://comunidad-fest.vercel.app/public/'
         : 'http://localhost:8080/public/',
   },
-  mode: env,
+  mode: env === 'production' ? 'production' : 'development',
   module: {
     rules: [
       {

@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "watch:server": "set NODE_ENV=development&& webpack --config webpack/webpack.server.config.js",
+    "build:server": "set NODE_ENV=test && webpack --config webpack/webpack.server.config.js",
     "watch:client": "set NODE_ENV=development&& webpack-dev-server --config webpack/webpack.client.config.js",
     "serverRender": "set NODE_ENV=development&& nodemon api/server.js --watch api/server.js",
-    "start": "concurrently \"npm run watch:server\" \"npm run watch:client\" \"npm run serverRender\"",
+    "start": "npm run build:server && concurrently \"npm run watch:server\" \"npm run watch:client\" \"npm run serverRender\"",
     "deploy": "set NODE_ENV=production&& webpack --config webpack/webpack.server.config.js && webpack --config webpack/webpack.client.config.js && vercel --prod",
-    "local": "set NODE_ENV=production&& webpack --config webpack/webpack.server.config.js && webpack --config webpack/webpack.client.config.js && npm run serverRender"
+    "eslint:fix": "eslint . --fix --ext .jsx --ext .js"
   },
   "author": "react-team-58",
   "license": "ISC",

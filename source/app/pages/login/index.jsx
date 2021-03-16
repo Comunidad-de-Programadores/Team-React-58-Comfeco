@@ -5,7 +5,6 @@ import styles from './styles.css';
 const Login = () => (
   <main className={styles.mainContent}>
     <SignUp />
-
   </main>
 );
 

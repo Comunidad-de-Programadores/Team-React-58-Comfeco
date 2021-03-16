@@ -8,16 +8,11 @@ const Form = () => {
 
   return (
     <div className={styles.wrapper}>
-
-      {isLoading && (
-        <h3>iniciando session</h3>
-      )}
+      {isLoading && <h3>iniciando session</h3>}
 
       {!isLoading && (
         <form className={styles.form} onSubmit={handleSubmit}>
-          {errorMessage && (
-            <div className={styles.errorMessage}>{errorMessage}</div>
-          )}
+          {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
           <Input name="usernameoremail" {...inputProps} placeholder="correo o nombre de usuario" />
           <Input name="password" {...inputProps} placeholder="contraseña" />
           <button type="submit">Entrar</button>
