@@ -3,7 +3,7 @@ import { useFetch, useState } from 'react-fetch-ssr';
 import { useHistory } from 'react-router';
 import useSession from './useSession';
 
-const useCommunities = () => {
+const useCommunities = (setNotification) => {
   const { session, refreshSession } = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const [communities, setCommunities] = useState([]);
@@ -28,6 +28,7 @@ const useCommunities = () => {
         console.error(response.errorMessage);
       } else {
         await refreshSession();
+        setNotification({ type: 'success', message: 'Te uniste a la comunidad correctamente' });
         console.info(response);
       }
     }
@@ -47,6 +48,7 @@ const useCommunities = () => {
     if (response.status === 'error') {
       console.error(response.errorMessage);
     } else {
+      setNotification({ type: 'success', message: 'Saliste de la comunidad!' });
       await refreshSession();
       console.info(response);
     }

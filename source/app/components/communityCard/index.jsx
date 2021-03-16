@@ -1,10 +1,14 @@
 import React from 'react';
 import useCommunities from 'app/hooks/useCommunities';
+import { func } from 'prop-types';
 import logo from '../../images/Isotipo-brand.png';
 import styles from './styles.css';
+import withNotifications from '../../highOrderComponents/withNotification';
 
-const CommunityCard = () => {
-  const { communities, isLoading, handleJoinCommunity, handleLeaveCommunity } = useCommunities();
+const CommunityCard = ({ setNotification }) => {
+  const { communities, isLoading, handleJoinCommunity, handleLeaveCommunity } = useCommunities(
+    setNotification
+  );
 
   return (
     <div className={styles.community}>
@@ -60,4 +64,8 @@ const CommunityCard = () => {
   );
 };
 
-export default CommunityCard;
+CommunityCard.propTypes = {
+  setNotification: func.isRequired,
+};
+
+export default withNotifications(CommunityCard);
