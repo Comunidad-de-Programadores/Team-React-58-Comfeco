@@ -6,20 +6,8 @@ import useSession from './useSession';
 const useEvents = (setNotification) => {
   const [events, setEvents] = useState([]);
   const [myEvents, setMyEvents] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { session } = useSession();
-
-  const handleFetch = async () => {
-    const responseEvents = await apiConnect({ method: 'get', url: '/event' });
-    const responseMyEvents = await apiConnect({
-      method: 'get',
-      url: '/user/event',
-      headers: { Authorization: `Bearer ${session.token}` },
-    });
-    setIsLoading(false);
-    setMyEvents(responseMyEvents.events);
-    setEvents(responseEvents.events);
-  };
 
   const handleAddEvent = async (eventId) => {
     setMyEvents([...myEvents, { id: eventId }]); // optimistic update
@@ -44,7 +32,20 @@ const useEvents = (setNotification) => {
   };
 
   // fetch initial data
-  useFetch(handleFetch, []);
+  useFetch(async () => {
+    if (!events.length) {
+      setIsLoading(true);
+      const responseEvents = await apiConnect({ method: 'get', url: '/event' });
+      const responseMyEvents = await apiConnect({
+        method: 'get',
+        url: '/user/event',
+        headers: { Authorization: `Bearer ${session.token}` },
+      });
+      setIsLoading(false);
+      setMyEvents(responseMyEvents.events);
+      setEvents(responseEvents.events);
+    }
+  }, []);
 
   const composedIventsWithMyEvents = events.map((event) => {
     const myEventsId = myEvents.map((myEvent) => myEvent.id);
