@@ -10,7 +10,6 @@ const apiConnect = async (config) => {
     });
     return response.data;
   } catch (error) {
-    console.log('apiConnectError', error.toString());
     try {
       return error.response.data;
     } catch (e) {

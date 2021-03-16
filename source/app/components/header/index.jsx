@@ -19,19 +19,12 @@ const Dropdown = ({ username }) => {
   useEffect(() => {
     const isOutside = (e) => {
       if (!dropdown.current.contains(e.target)) {
-        setTimeout(() => {
-          setShowOptions(false);
-        }, 200);
+        setTimeout(() => setShowOptions(false), 200);
       }
     };
 
-    if (document) {
-      document.addEventListener('mousedown', isOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', isOutside);
-    };
+    document.addEventListener('mousedown', isOutside);
+    return () => document.removeEventListener('mousedown', isOutside);
   }, []);
 
   return (

@@ -72,7 +72,6 @@ const useCommunities = () => {
 
       if (response.status === 'error') {
         setIsLoading(false);
-        console.log(response.errorMessage);
       } else {
         setIsLoading(false);
         setCommunities(response.communities);
