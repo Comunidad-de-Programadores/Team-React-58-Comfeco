@@ -7,7 +7,8 @@ const Markup = ({ content, states }) => (
   <html lang="es">
     <head>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, user-scalable=no" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="description" content="Bienvenido a Fest And Code Conoce gente Aprende y Gana" />
       <link rel="stylesheet" href={`${__webpack_public_path__}/styles.css`} />
       <link
         rel="stylesheet"

@@ -15,21 +15,21 @@ const Footer = () => (
     <div className={styles.footer__social}>
       <ul className={styles.social__grid}>
         <li className={styles.social__item}>
-          <a href="/">
+          <div>
             <i className={`${'fab fa-facebook-square fa-3x'} ${styles.facebook}`}></i>
-          </a>
+          </div>
         </li>
 
         <li className={styles.social__item}>
-          <a href="/">
+          <div>
             <i className={`${'fab fa-twitter-square fa-3x'} ${styles.twitter}`}></i>
-          </a>
+          </div>
         </li>
 
         <li className={styles.social__item}>
-          <a href="/">
+          <div>
             <i className={`${'fab fa-github fa-3x'} ${styles.github}`}></i>
-          </a>
+          </div>
         </li>
       </ul>
     </div>

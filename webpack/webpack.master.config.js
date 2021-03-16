@@ -1,11 +1,19 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 
 const configMaster = {
+  optimization: {
+    minimize: env === 'production',
+    minimizer: [new TerserPlugin()],
+  },
   output: {
-    publicPath: env === 'production' ? 'https://comunidad-fest.vercel.app/public/' : 'http://localhost:8080/public/',
+    publicPath:
+      env === 'production'
+        ? 'https://comunidad-fest.vercel.app/public/'
+        : 'http://localhost:8080/public/',
   },
   mode: env,
   module: {
@@ -15,10 +23,7 @@ const configMaster = {
         loader: 'babel-loader',
         exclude: '/(node_modules)/',
         options: {
-          presets: [
-            '@babel/preset-env',
-            '@babel/preset-react',
-          ],
+          presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
       {
@@ -41,9 +46,7 @@ const configMaster = {
       },
     ],
   },
-  plugins: [
-    new MiniCssExtractPlugin({ filename: 'styles.css'}),
-  ],
+  plugins: [new MiniCssExtractPlugin({ filename: 'styles.css' })],
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
     alias: {
