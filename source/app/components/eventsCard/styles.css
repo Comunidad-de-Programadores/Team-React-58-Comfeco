@@ -11,6 +11,7 @@
   padding: 1rem;
   overflow-y: scroll;
   max-height: 500px;
+  background-color: #fff;
 }
 
 .eventsCard::-webkit-scrollbar {
@@ -28,7 +29,7 @@
 }
 .eventTitle {
   font-size: 1.1em;
-  color: var(--cyan);
+  color: rebeccapurple;
   font-weight: bold;
 }
 
@@ -48,7 +49,7 @@
 .description {
   margin: 1em 0em;
   line-height: 1.3em;
-  color: gray;
+
 }
 .emptyWrapper {
   min-height: 200px;
