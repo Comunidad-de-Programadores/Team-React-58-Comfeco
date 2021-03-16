@@ -20,12 +20,7 @@ const MyAccount = () => {
       </div>
       <div className={styles.bodyWrapper}>
         {currentView === 'profile' && <Profile onSearchEventClick={handleSearchEventClick} />}
-        {currentView === 'badges' && (
-          <div>
-            <h1 style={{ textAlign: 'center' }}>Mis insignias</h1>
-            <BadgesCardScreen />
-          </div>
-        )}
+        {currentView === 'badges' && <BadgesCardScreen />}
         {currentView === 'groups' && <Groups />}
         {currentView === 'events' && <Evenets />}
       </div>
