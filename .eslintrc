@@ -1,4 +1,5 @@
 {
+  "ignorePatterns": ["api/*.js", "pubic/*.js"],
   "extends": [
     "airbnb",
     "prettier"

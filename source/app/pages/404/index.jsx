@@ -1,5 +1,5 @@
 import React from 'react';
-import PageNotFoundCard from 'app/components/pageNotFound/index.jsx';
+import PageNotFoundCard from 'app/components/pageNotFound/index';
 import styles from './styles.css';
 
 const PageNotFoundScreen = () => (

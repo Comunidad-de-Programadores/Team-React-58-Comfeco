@@ -17,9 +17,8 @@ const CreateNewPassword = () => {
             <h3 className={styles.title}>Crear nueva contraseña</h3>
             {errorMessage && (
               <div className={styles.errorMessage}>
-                <i className="fas fa-exclamation fa-2x" /> 
-{' '}
-{errorMessage}
+                <i className="fas fa-exclamation fa-2x" />
+                {errorMessage}
               </div>
             )}
             <div className={styles.formGroup}>
