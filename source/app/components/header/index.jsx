@@ -79,18 +79,18 @@ const Header = () => {
         </picture>
 
         <nav className={styles.mainHeader__navigation}>
-          <a className={styles.navigation__link} href="/">
+          <Link className={styles.navigation__link} to="/">
             Inicio
-          </a>
-          <a className={styles.navigation__link} href="/">
+          </Link>
+          <Link className={styles.navigation__link} to="/">
             Comunidades
-          </a>
-          <a className={styles.navigation__link} href="/">
+          </Link>
+          <Link className={styles.navigation__link} to="/">
             Talleres
-          </a>
-          <a className={styles.navigation__link} href="/">
+          </Link>
+          <Link className={styles.navigation__link} to="/">
             Creadores de contenido
-          </a>
+          </Link>
         </nav>
 
         <div className={styles.mainHeader__buttons}>
