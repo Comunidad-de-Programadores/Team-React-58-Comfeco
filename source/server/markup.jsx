@@ -24,12 +24,12 @@ const Markup = ({ content, states }) => (
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      <title>React</title>
+      <title>Team react 58</title>
     </head>
     <body>
       <div id="render_target" dangerouslySetInnerHTML={{ __html: content }} />
       <script dangerouslySetInnerHTML={{ __html: states }} />
-      <script src={`${__webpack_public_path__}app.js`} />
+      <script src={`${__webpack_public_path__}app.js`} defer />
     </body>
   </html>
 );
