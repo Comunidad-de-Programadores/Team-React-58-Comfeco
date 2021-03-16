@@ -6,16 +6,32 @@
 
 .wapper__container{
     margin: 0;
-    top: 0;
-    left: -33%;
     padding: 1em;
     box-shadow: 5px 5px 16px #cdcdcd;
     border-radius: 1em;
     border: 1px solid #cdcdcd66;
+    background-color: #fff;
+    position: relative;
+}
+
+.header__card__background{
+    border-radius: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 38%;
+    z-index: 1;
+    width: 100%;
+    background-color: #663399;
+    border: 1px solid #663399;
 }
 
 .wapper__container > div > h6 {
     text-align: right;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    color: #fff;
 }
 
 .wrapper__circle__nickpic{
@@ -25,8 +41,8 @@
 }
 
 .circle__nickpic{
-    border: 3px solid gray;
-    background-color: gray;
+    border: 8px solid #fff;
+    background-color: #663399;
     border-radius: 50%;
     height: 100px;
     width: 100px;
@@ -34,6 +50,8 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    z-index: 99;
 }
 
 .description__wrapper{
@@ -62,6 +80,28 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 1px solid gray;
-    background-color: gray;
+    border: 3px solid #663399;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle__insinia > a{
+    color: #663399;
+    font-size: 1.5rem;
+    text-shadow: none;
+}
+
+.circle__insinia:hover{
+    border: 3px solid #663399;
+    background-color: #663399;
+}
+
+.circle__insinia:hover > a{
+    color: #fff;
+}
+
+.message__profileCard__biograpfy{
+    color: #cdcdcd;
 }

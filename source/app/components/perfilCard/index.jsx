@@ -7,33 +7,59 @@ import styles from './styles.css';
 
 const PerfilCard = ({ onEditProfile }) => {
   const {
-    session: { username, biography },
+    session: { username, biography, facebook, twitter, github, linkedin },
   } = useSession();
+
+  console.log(useSession());
 
   return (
     <div className={styles.wapper__container}>
+      <div className={styles.header__card__background} />
       <div>
         <h6 onClick={onEditProfile}>Editar Perfil</h6>
       </div>
       <div className={styles.wrapper__circle__nickpic}>
-        <div className={styles.circle__nickpic}>item</div>
+        <div className={styles.circle__nickpic}></div>
       </div>
       <div className={styles.description__wrapper}>
         <h4>{username}</h4>
-        <h5>Fronted Developer / UI/UX</h5>
+        
       </div>
       <div className={styles.biography__wrapper}>
         <p>
-          {biography ||
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quisquam esse hic eaque, nostrum iusto, porro non ratione ex ipsa'}
+          {biography || (
+            <p className={styles.message__profileCard__biograpfy}>"Coloca aqui tu biografia"</p>
+          )}
         </p>
       </div>
       <div className={styles.wrapper__insignias}>
-        <div className={styles.circle__insinia} />
-        <div className={styles.circle__insinia} />
-        <div className={styles.circle__insinia} />
-        <div className={styles.circle__insinia} />
+        <div className={styles.circle__insinia} >
+          <a href={`${'https://www.facebook.com/'}${!facebook ? '' : facebook}`} target="blank">
+            <i className={`${'fab fa-facebook-f'} `}></i>
+          </a>
+        </div>
+        
+        <div className={styles.circle__insinia} >
+          <a href={`${'https://www.twitter.com/'}${!twitter ? '' : twitter}`} target="blank">
+            <i className={`${'fab fa-twitter'} `}></i>
+          </a>
+        </div>
+        
+        <div className={styles.circle__insinia} >
+          <a href={`${'https://www.github.com/'}${!github ? '' : github}`} target="blank">
+            <i className={`${'fab fa-github'} `}></i>
+          </a>
+        </div>
+        
+        <div className={styles.circle__insinia}>
+          <a href={`${'https://www.linkedin.com/'}${!linkedin ? '' : linkedin}`} target="blank">
+            <i className={`${'fab fa-linkedin'} `}></i>
+          </a>
+        </div>
+        
+        
       </div>
+
     </div>
   );
 };
