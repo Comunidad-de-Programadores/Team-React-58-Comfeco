@@ -14,7 +14,6 @@ const config = merge(master, {
     headers: { 'Access-Control-Allow-Origin': '*' },
     port: 8080,
     disableHostCheck: true,
-    // hot: true,
     hotOnly: true,
   },
   module: {
