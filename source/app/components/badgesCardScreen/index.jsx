@@ -5,7 +5,9 @@ import { Skeleton } from '@material-ui/lab';
 import styles from './styles.css';
 
 const BadgesCardScreen = () => {
-  const { isLoading, badges } = useBadges();
+  const {
+    state: { isLoading, badges },
+  } = useBadges();
   return (
     <>
       <h1 className={styles.title}>Insignias</h1>
