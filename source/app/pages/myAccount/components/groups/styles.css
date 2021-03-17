@@ -48,7 +48,7 @@
   .myGroupCard__wrapper {
     margin-bottom: auto;
     position: sticky;
-    top: 1rem;
+    top: 5rem;
     grid-column: 1 / span 4;
     grid-row: 2 / span 12;
   }

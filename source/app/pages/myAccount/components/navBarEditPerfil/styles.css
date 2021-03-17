@@ -18,15 +18,15 @@
 }
 
 .button {
-    border: 1px solid var(--cyan);
-    color: var(--cyan);
+    border: 1px solid #663399;
+    color: #663399;
     background: none;
 }
 
 .buttonSelected {
-    border: 1px solid var(--cyan);
+    border: 1px solid #663399;
     color: #fff;
-    background: var(--cyan);
+    background: #663399;
 }
 
 @media screen and (max-width: 1000px) {

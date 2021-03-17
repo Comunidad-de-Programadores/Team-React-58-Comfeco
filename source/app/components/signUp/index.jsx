@@ -1,6 +1,7 @@
 import React from 'react';
 import useLogin from 'app/hooks/useLogin';
 import { Link } from 'react-router-dom';
+import { CircularProgress } from '@material-ui/core';
 import Input from '../input';
 import styles from './styles.css';
 
@@ -9,7 +10,7 @@ const SignUp = () => {
 
   return (
     <form className={styles.signUpForm} onSubmit={handleSubmit}>
-      {isLoading && <h3>iniciando session</h3>}
+      {isLoading && <CircularProgress />}
 
       {!isLoading && (
         <>

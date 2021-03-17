@@ -1,20 +1,14 @@
 .title {
   font-size: 1.1em;
   font-weight: bold;
-  margin-bottom: 1em;
 }
 .eventsCard {
-  box-shadow: 5px 5px 16px #cdcdcd;
+  box-shadow: 5px 5px 20px #cdcdcd;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  overflow-y: scroll;
-  max-height: 500px;
-}
-
-.eventsCard::-webkit-scrollbar {
-  display: none;
+  background-color: #fff;
 }
 
 .eventWrapper {
@@ -28,7 +22,7 @@
 }
 .eventTitle {
   font-size: 1.1em;
-  color: var(--cyan);
+  color: rebeccapurple;
   font-weight: bold;
 }
 
@@ -48,7 +42,7 @@
 .description {
   margin: 1em 0em;
   line-height: 1.3em;
-  color: gray;
+
 }
 .emptyWrapper {
   min-height: 200px;
@@ -59,6 +53,8 @@
   color: #6633997a;
   font-weight: bold;
   font-size: 1em;
+  box-shadow: 5px 5px 20px #cdcdcd;
+  background-color: #fff;
 }
 .buttonAddEvent {
   display: block;
@@ -70,4 +66,19 @@
   height: auto;
   border-radius: 5px!important;
   margin-top: 2em!important;
+}
+.listContainer {
+  max-height: 400px;
+  overflow-y: scroll;
+  margin-top: 1em;
+}
+.listContainer::-webkit-scrollbar {
+  display: none;
+}
+.buttonMore {
+  color: #663399;
+  cursor: pointer;
+  border: 1px solid #663399;
+  border-radius: 5px;
+  padding: .3em .6em;
 }

@@ -4,7 +4,7 @@
   padding: 1.5rem;
   /* min-width: 13rem; */
   width: 100%;
-  box-shadow: 0 0 5px 1px black;
+  box-shadow: 5px 5px 20px #cdcdcd;
   border-radius: 0.5rem;
   max-height: 20rem;
   overflow-y: scroll;
@@ -56,7 +56,7 @@
 .community__link {
   align-self: flex-end;
   background-color: inherit;
-  color: rgb(110, 110, 192);
+  color: #663399;
   font-weight: bold;
   font-size: 0.9rem;
   height: inherit;

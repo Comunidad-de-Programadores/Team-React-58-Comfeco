@@ -17,67 +17,65 @@ const TermsConditions = () => (
           <li className={styles.termsConditions__item}>
             <h2>Subtitulo</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
 
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
           </li>
 
           <li className={styles.termsConditions__item}>
             <h2>Subtitulo</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
 
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
           </li>
 
           <li className={styles.termsConditions__item}>
             <h2>Subtitulo</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
 
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
           </li>
 
           <li className={styles.termsConditions__item}>
             <h2>Subtitulo</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
 
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore,
-              odit impedit harum eius excepturi nobis autem porro quasi doloremque
-              nemo ad! Odio cumque quibusdam saepe commodi. Dolorem accusamus commodi error!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, odit impedit
+              harum eius excepturi nobis autem porro quasi doloremque nemo ad! Odio cumque quibusdam
+              saepe commodi. Dolorem accusamus commodi error!
             </p>
           </li>
-
         </ul>
       </div>
     </div>
-
   </main>
 );
 
