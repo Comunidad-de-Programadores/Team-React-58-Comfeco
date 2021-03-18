@@ -1,8 +1,5 @@
-/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable arrow-body-style */
 import { Fade } from '@material-ui/core';
 import { Check, ErrorOutline } from '@material-ui/icons';
 import React, { useState } from 'react';
@@ -10,7 +7,7 @@ import styles from './styles.module.css';
 
 const Notification = (props) => {
   const inlineStyles = {
-    background: props.type === 'success' ? 'var(--cyan)' : 'red',
+    background: props.type === 'success' ? '#663399' : 'red',
   };
 
   return (

@@ -14,7 +14,6 @@ const config = merge(master, {
     headers: { 'Access-Control-Allow-Origin': '*' },
     port: 8080,
     disableHostCheck: true,
-    // hot: true,
     hotOnly: true,
   },
   module: {
@@ -31,10 +30,7 @@ const config = merge(master, {
         loader: 'babel-loader',
         exclude: '/(node_modules)/',
         options: {
-          presets: [
-            '@babel/preset-env',
-            '@babel/preset-react',
-          ],
+          presets: ['@babel/preset-env', '@babel/preset-react'],
           plugins: [
             process.env.NODE_ENV === 'development' && require.resolve('react-refresh/babel'),
           ].filter(Boolean),
@@ -42,9 +38,9 @@ const config = merge(master, {
       },
     ],
   },
-  plugins: [
-    process.env.NODE_ENV === 'development' && new ReactRefreshWebpackPlugin(),
-  ].filter(Boolean),
+  plugins: [process.env.NODE_ENV === 'development' && new ReactRefreshWebpackPlugin()].filter(
+    Boolean
+  ),
   target: 'web',
 });
 

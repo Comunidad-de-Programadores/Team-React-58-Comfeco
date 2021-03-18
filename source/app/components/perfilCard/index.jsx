@@ -11,7 +11,6 @@ const PerfilCard = ({ onEditProfile }) => {
     session: { username, biography, facebook, twitter, github, linkedin },
   } = useSession();
 
-
   return (
     <div className={styles.wapper__container}>
       <div className={styles.header__card__background} />
@@ -23,7 +22,6 @@ const PerfilCard = ({ onEditProfile }) => {
       </div>
       <div className={styles.description__wrapper}>
         <h4>{username}</h4>
-        
       </div>
       <div className={styles.biography__wrapper}>
         <p>
@@ -60,10 +58,7 @@ const PerfilCard = ({ onEditProfile }) => {
             <i className={`${'fab fa-linkedin'} `} />
           </a>
         </div>
-        
-        
       </div>
-
     </div>
   );
 };

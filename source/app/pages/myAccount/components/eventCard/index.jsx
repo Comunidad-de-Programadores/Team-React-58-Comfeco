@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { ButtonBase } from '@material-ui/core';
-import { string, instanceOf, bool, func } from 'prop-types';
+import { string, bool, func } from 'prop-types';
 import React from 'react';
 import limitText from '../../../../helpers/limitText';
 import styles from './styles.css';
@@ -29,7 +29,7 @@ Eventcard.propTypes = {
   image: string.isRequired,
   name: string.isRequired,
   description: string.isRequired,
-  date: instanceOf(Date).isRequired,
+  date: string.isRequired,
   joined: bool,
   onEventAdd: func.isRequired,
   onEventLeave: func.isRequired,

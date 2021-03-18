@@ -19,19 +19,12 @@ const Dropdown = ({ username }) => {
   useEffect(() => {
     const isOutside = (e) => {
       if (!dropdown.current.contains(e.target)) {
-        setTimeout(() => {
-          setShowOptions(false);
-        }, 200);
+        setTimeout(() => setShowOptions(false), 200);
       }
     };
 
-    if (document) {
-      document.addEventListener('mousedown', isOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', isOutside);
-    };
+    document.addEventListener('mousedown', isOutside);
+    return () => document.removeEventListener('mousedown', isOutside);
   }, []);
 
   return (
@@ -86,18 +79,18 @@ const Header = () => {
         </picture>
 
         <nav className={styles.mainHeader__navigation}>
-          <a className={styles.navigation__link} href="/">
+          <Link className={styles.navigation__link} to="/">
             Inicio
-          </a>
-          <a className={styles.navigation__link} href="/">
+          </Link>
+          <Link className={styles.navigation__link} to="/">
             Comunidades
-          </a>
-          <a className={styles.navigation__link} href="/">
+          </Link>
+          <Link className={styles.navigation__link} to="/">
             Talleres
-          </a>
-          <a className={styles.navigation__link} href="/">
+          </Link>
+          <Link className={styles.navigation__link} to="/">
             Creadores de contenido
-          </a>
+          </Link>
         </nav>
 
         <div className={styles.mainHeader__buttons}>

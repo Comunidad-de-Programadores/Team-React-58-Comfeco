@@ -7,7 +7,8 @@ const Markup = ({ content, states }) => (
   <html lang="es">
     <head>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, user-scalable=no" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="description" content="Bienvenido a Fest And Code Conoce gente Aprende y Gana" />
       <link rel="stylesheet" href={`${__webpack_public_path__}/styles.css`} />
       <link
         rel="stylesheet"
@@ -24,12 +25,12 @@ const Markup = ({ content, states }) => (
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      <title>React</title>
+      <title>Team react 58</title>
     </head>
     <body>
       <div id="render_target" dangerouslySetInnerHTML={{ __html: content }} />
       <script dangerouslySetInnerHTML={{ __html: states }} />
-      <script src={`${__webpack_public_path__}app.js`} />
+      <script src={`${__webpack_public_path__}app.js`} defer />
     </body>
   </html>
 );
