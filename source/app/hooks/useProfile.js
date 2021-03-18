@@ -11,7 +11,7 @@ const useProfile = (onSuccess) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value.trim() });
+    setValues({ ...values, [e.target.name]: e.target.value });
 
     if (
       (e.target.name === 'github' && e.target.value === '') ||

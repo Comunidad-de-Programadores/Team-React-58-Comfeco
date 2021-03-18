@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable react/self-closing-comp */
 import { Grid } from '@material-ui/core';
 import countries from 'app/helpers/countries';
 import knowledges from 'app/helpers/knowledges';
@@ -31,7 +28,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
               <div className={styles.circle__nickpic}>
                 item
                 <div className={styles.overlay__nickpic}>
-                  <i className="fas fa-camera"></i>
+                  <i className="fas fa-camera" />
                 </div>
               </div>
             </div>
@@ -174,7 +171,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                 <div className={styles.wrapper__form__row}>
                   <div className={`${styles.social__media} ${styles.form__twoItems}`}>
                     <div className={styles.wrapper__social__media__icon}>
-                      <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
+                      <i className={`${'fab fa-facebook-square fa-3x'} `} />
                       <h4>facebook.com/</h4>
                     </div>
                     <Input
@@ -187,7 +184,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                   </div>
                   <div className={`${styles.social__media} ${styles.form__twoItems}`}>
                     <div className={styles.wrapper__social__media__icon}>
-                      <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
+                      <i className={`${'fab fa-facebook-square fa-3x'} `} />
                       <h4>twitter.com/</h4>
                     </div>
                     <Input
@@ -205,7 +202,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                 <div className={styles.wrapper__form__row}>
                   <div className={`${styles.social__media} ${styles.form__twoItems}`}>
                     <div className={styles.wrapper__social__media__icon}>
-                      <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
+                      <i className={`${'fab fa-facebook-square fa-3x'} `} />
                       <h4>github.com/</h4>
                     </div>
                     <Input
@@ -218,7 +215,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                   </div>
                   <div className={`${styles.social__media} ${styles.form__twoItems}`}>
                     <div className={styles.wrapper__social__media__icon}>
-                      <i className={`${'fab fa-facebook-square fa-3x'} `}></i>
+                      <i className={`${'fab fa-facebook-square fa-3x'} `} />
                       <h4>linkedin.com/</h4>
                     </div>
                     <Input
@@ -237,11 +234,12 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                   <div className={`${styles.biography} ${styles.completeItem}`}>
                     <h4>Biografia</h4>
                     <textarea
+                      value={values.biography || ''}
                       name="biography"
                       placeholder="Escribe aqui su Biografia"
                       maxLength="140"
                       {...inputProps}
-                    ></textarea>
+                    />
                   </div>
                 </div>
 
@@ -274,6 +272,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
 
 FormEditPerfil.propTypes = {
   onCancel: func.isRequired,
+  onSuccess: func.isRequired,
 };
 
 export default FormEditPerfil;
