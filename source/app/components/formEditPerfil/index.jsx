@@ -2,7 +2,9 @@
 /* eslint-disable react/self-closing-comp */
 import { Grid } from '@material-ui/core';
 import countries from 'app/helpers/countries';
+import knowledges from 'app/helpers/knowledges';
 import useProfile from 'app/hooks/useProfile';
+import useSession from 'app/hooks/useSession';
 import { func } from 'prop-types';
 import React from 'react';
 import ErrorMessage from '../errorMessage';
@@ -11,6 +13,8 @@ import styles from './styles.css';
 
 const FormEditPerfil = ({ onCancel }) => {
   const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile();
+
+  console.log(useSession());
 
   return (
     <>
@@ -122,7 +126,26 @@ const FormEditPerfil = ({ onCancel }) => {
                 /* --Tercer Row--*/
                 /*------------------------------------------*/}
                 <div className={styles.wrapper__form__row}>
-                  <div className={`${styles.form__group} ${styles.form__twoItems}`}>
+                  <div className={`${styles.form__group} ${styles.form__threeItems}`}>
+                    <h4>Area de Conocimiento</h4>
+                    <select
+                      className={styles.FormEditPerfil__select}
+                      name="knowledgesArea"
+                      {...inputProps}
+                      value={values.knowledgesArea ? `${values.knowledgesArea}` : ''}
+                    >
+                      <option key="1" value="">
+                        Selecciona una Opcion
+                      </option>
+
+                      {knowledges.map((knowledgesArea) => (
+                        <option key={knowledgesArea} value={knowledgesArea}>
+                          {knowledgesArea}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                     <h4>Contraseña</h4>
                     <Input
                       className={styles.form__editPerdil_input}
@@ -133,7 +156,7 @@ const FormEditPerfil = ({ onCancel }) => {
                       {...inputProps}
                     />
                   </div>
-                  <div className={`${styles.form__group} ${styles.form__twoItems}`}>
+                  <div className={`${styles.form__group} ${styles.form__threeItems}`}>
                     <h4>Repetir Contraseña</h4>
                     <Input
                       className={styles.form__editPerdil_input}
