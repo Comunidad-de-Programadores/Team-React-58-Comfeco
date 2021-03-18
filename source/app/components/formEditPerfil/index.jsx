@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable react/self-closing-comp */
 import { Grid } from '@material-ui/core';
@@ -11,8 +12,8 @@ import ErrorMessage from '../errorMessage';
 import Input from '../input';
 import styles from './styles.css';
 
-const FormEditPerfil = ({ onCancel }) => {
-  const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile();
+const FormEditPerfil = ({ onCancel, onSuccess }) => {
+  const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile(onSuccess);
 
   console.log(useSession());
 
