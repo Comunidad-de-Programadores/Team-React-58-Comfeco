@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   getEmailError,
   getFullNameError,
@@ -7,6 +7,7 @@ import {
 } from 'app/helpers/validators';
 import { useHistory } from 'react-router';
 import apiConnect from '../apiConnect';
+import sessionContext from '../context/session';
 
 const useRegister = () => {
   const [values, setValues] = useState({}); // state of form
@@ -14,6 +15,7 @@ const useRegister = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const history = useHistory();
+  const { setSession } = useContext(sessionContext);
 
   /**
    * set error message and hides after five seconds
@@ -99,6 +101,7 @@ const useRegister = () => {
       handleErrorMessage(response.errorMessage);
       setLoading(false);
     } else {
+      setSession({ ...response });
       history.replace('/landing');
     }
   };
