@@ -7,6 +7,7 @@ import NavBarEditPerfil from './components/navBarEditPerfil';
 import Groups from './components/groups';
 import styles from './styles.css';
 import Evenets from './components/events';
+import withNotifications from '../../highOrderComponents/withNotification';
 
 const MyAccount = () => {
   const [currentView, setView] = useState('profile');
@@ -29,4 +30,4 @@ const MyAccount = () => {
   );
 };
 
-export default withAuth(MyAccount);
+export default withNotifications(withAuth(MyAccount));

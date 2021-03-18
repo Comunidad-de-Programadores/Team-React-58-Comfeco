@@ -3,7 +3,7 @@ import { getPasswordError } from 'app/helpers/validators';
 import apiConnect from 'app/apiConnect';
 import useSession from './useSession';
 
-const useProfile = () => {
+const useProfile = (onSuccess) => {
   const { session, refreshSession } = useSession();
   const [values, setValues] = useState({});
   const [inputWithErrors, setInputWithErrors] = useState([]);
@@ -69,6 +69,7 @@ const useProfile = () => {
         handleErrorMessage('El nombre de uduario ya esta en uso');
       }
     } else {
+      onSuccess();
       setIsLoading(false);
       await refreshSession();
       console.info(response);

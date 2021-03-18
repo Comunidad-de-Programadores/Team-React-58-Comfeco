@@ -9,8 +9,8 @@ import ErrorMessage from '../errorMessage';
 import Input from '../input';
 import styles from './styles.css';
 
-const FormEditPerfil = ({ onCancel }) => {
-  const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile();
+const FormEditPerfil = ({ onCancel, onSuccess }) => {
+  const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile(onSuccess);
 
   if (isLoading)
     return (
@@ -255,6 +255,7 @@ const FormEditPerfil = ({ onCancel }) => {
 
 FormEditPerfil.propTypes = {
   onCancel: func.isRequired,
+  onSuccess: func.isRequired,
 };
 
 export default FormEditPerfil;

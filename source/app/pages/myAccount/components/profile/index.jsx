@@ -9,16 +9,25 @@ import FormEditPerfil from 'app/components/formEditPerfil'
 import { func } from 'prop-types';
 import styles from './styles.css'
 import EventsCard from '../../../../components/eventsCard';
+import withNotifications from '../../../../highOrderComponents/withNotification';
 
-const MyProfile = ({ onSearchEventClick }) => {
+const MyProfile = ({ onSearchEventClick, setNotification }) => {
   const [isEditProfileActive, setEditProfile] = useState(false); 
 
   const handleEditProfileActive = () => setEditProfile(true);
   const handleEditProfileClose = () => setEditProfile(false);
 
+  const handleSuccessEditProfile = () => {
+    setNotification({
+      type: 'success',
+      message: 'Datos del perfil actualizado correctamente'
+    })
+    setEditProfile(false);
+  }
+
   return (
     <>
-      {isEditProfileActive && <FormEditPerfil onCancel={handleEditProfileClose} />}
+      {isEditProfileActive && <FormEditPerfil onCancel={handleEditProfileClose} onSuccess={handleSuccessEditProfile} />}
       {!isEditProfileActive && (
         <div className={styles.profileWrapper}>
           <div className={styles.side}>
@@ -39,6 +48,7 @@ const MyProfile = ({ onSearchEventClick }) => {
 
 MyProfile.propTypes = {
   onSearchEventClick: func.isRequired,
+  setNotification: func.isRequired
 }
 
-export default MyProfile;
+export default withNotifications(MyProfile);
