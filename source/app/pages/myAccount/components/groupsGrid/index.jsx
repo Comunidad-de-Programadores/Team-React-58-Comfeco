@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
-import { arrayOf, string } from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 import { Check } from '@material-ui/icons';
 import styles from './styles.css';
 
@@ -34,7 +34,7 @@ const GroupsGrid = ({ groups }) => (
 );
 
 GroupsGrid.propTypes = {
-  groups: arrayOf([string]).isRequired,
+  groups: arrayOf(object).isRequired,
 };
 
 export default GroupsGrid;
