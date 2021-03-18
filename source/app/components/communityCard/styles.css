@@ -4,11 +4,7 @@
   padding: 1.5rem;
   /* min-width: 13rem; */
   width: 100%;
-<<<<<<< HEAD
-  box-shadow: 0 0 5px 1px rgba(155, 155, 155, 0.295);
-=======
   box-shadow: 5px 5px 20px #cdcdcd;
->>>>>>> 1ab4b1bd6c33d66e740d0e25a3cf3a16d40ea9a6
   border-radius: 0.5rem;
   max-height: 20rem;
   overflow-y: scroll;
