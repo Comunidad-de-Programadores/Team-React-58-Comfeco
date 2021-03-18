@@ -221,7 +221,6 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                     name="biography"
                     placeholder="Escribe aqui su Biografia"
                     maxLength="140"
-                    value={values.biography}
                     {...inputProps}
                   ></textarea>
                 </div>
