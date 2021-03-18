@@ -13,7 +13,14 @@ const useProfile = (onSuccess) => {
   const handleInputChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value.trim() });
 
-    if (e.target.value === '') {
+    if (
+      (e.target.name === 'github' && e.target.value === '') ||
+      (e.target.name === 'facebook' && e.target.value === '') ||
+      (e.target.name === 'twitter' && e.target.value === '') ||
+      (e.target.name === 'linkedin' && e.target.value === '')
+    ) {
+      setValues({ ...values, [e.target.name]: null });
+    } else if (e.target.value === '') {
       delete values[e.target.name];
       setValues({ ...values });
     }

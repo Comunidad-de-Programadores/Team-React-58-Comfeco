@@ -98,7 +98,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                     className={styles.form__editPerdil_input}
                     name="birthdate"
                     type="date"
-                    values={values}
+                    values={new Date(values.birthdate).toLocaleDateString()}
                     {...inputProps}
                   />
                 </div>
