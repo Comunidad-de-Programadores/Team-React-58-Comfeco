@@ -4,10 +4,12 @@
   padding: 1.5rem;
   /* min-width: 13rem; */
   width: 100%;
-  box-shadow: 0 0 5px 1px black;
+  box-shadow: 0 0 5px 1px rgba(155, 155, 155, 0.295);
   border-radius: 0.5rem;
   max-height: 20rem;
   overflow-y: scroll;
+  background-color: #fff;
+  
 }
 
 .community::-webkit-scrollbar {
