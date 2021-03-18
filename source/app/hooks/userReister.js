@@ -102,7 +102,9 @@ const useRegister = () => {
       setLoading(false);
     } else {
       setSession({ ...response });
-      history.replace('/landing');
+      setTimeout(() => {
+        history.replace('/landing');
+      }, 200);
     }
   };
 
