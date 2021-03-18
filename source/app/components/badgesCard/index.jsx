@@ -12,7 +12,7 @@ const BadgesCard = () => {
       <h3 className={styles.badgesCard__title}>Insignias</h3>
       <div className={styles.badgesCard__wrapper}>
         {userBadges.map((badge) => (
-          <span className={styles.badgesCard__item}>
+          <span className={styles.badgesCard__item} key={badge.name}>
             <img
               key={badge._id}
               className={styles.badgesCard__logo}
