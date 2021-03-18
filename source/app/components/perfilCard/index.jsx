@@ -6,6 +6,7 @@ import React from 'react';
 import styles from './styles.css';
 
 const PerfilCard = ({ onEditProfile }) => {
+
   const {
     session: { username, biography, facebook, twitter, github, linkedin },
   } = useSession();
@@ -30,25 +31,29 @@ const PerfilCard = ({ onEditProfile }) => {
         </p>
       </div>
       <div className={styles.wrapper__insignias}>
-        <div className={styles.circle__insinia}>
+        <div className={`${!facebook ? styles.circle__insinia__disabled : styles.circle__insinia}`} >
+          <p className={styles.tooltip_info}>Debes añadir una red social en tu perfil para mostrarla aqui</p>
           <a href={`${'https://www.facebook.com/'}${!facebook ? '' : facebook}`} target="blank">
             <i className={`${'fab fa-facebook-f'} `} />
           </a>
         </div>
-
-        <div className={styles.circle__insinia}>
+        
+        <div className={`${!twitter ? styles.circle__insinia__disabled : styles.circle__insinia}`} >
+          <p className={styles.tooltip_info}>Debes añadir una red social en tu perfil para mostrarla aqui</p>
           <a href={`${'https://www.twitter.com/'}${!twitter ? '' : twitter}`} target="blank">
             <i className={`${'fab fa-twitter'} `} />
           </a>
         </div>
-
-        <div className={styles.circle__insinia}>
+        
+        <div className={`${!github ? styles.circle__insinia__disabled : styles.circle__insinia}`} >
+          <p className={styles.tooltip_info}>Debes añadir una red social en tu perfil para mostrarla aqui</p>
           <a href={`${'https://www.github.com/'}${!github ? '' : github}`} target="blank">
             <i className={`${'fab fa-github'} `} />
           </a>
         </div>
-
-        <div className={styles.circle__insinia}>
+        
+        <div className={`${!linkedin ? styles.circle__insinia__disabled : styles.circle__insinia}`}>
+          <p className={styles.tooltip_info}>Debes añadir una red social en tu perfil para mostrarla aqui</p>
           <a href={`${'https://www.linkedin.com/'}${!linkedin ? '' : linkedin}`} target="blank">
             <i className={`${'fab fa-linkedin'} `} />
           </a>
