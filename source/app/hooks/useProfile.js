@@ -104,6 +104,7 @@ const useProfile = (onSuccess) => {
         github: session.github || null,
         linkedin: session.linkedin || null,
         biography: session.biography || null,
+        knowledgeArea: session.knowledgeArea || null,
       });
     }
   }, [session]);

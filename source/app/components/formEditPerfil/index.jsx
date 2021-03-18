@@ -78,7 +78,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                     className={styles.FormEditPerfil__select}
                     name="gender"
                     {...inputProps}
-                    value={values.gender ? `${values.gender}` : '1'}
+                    value={values.gender || '1'}
                   >
                     <option key="1" value="">
                       Selecciona un Genero
@@ -108,7 +108,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                     className={styles.FormEditPerfil__select}
                     name="country"
                     {...inputProps}
-                    value={values.country ? `${values.country}` : ''}
+                    value={values.country || ''}
                   >
                     <option key="1" value="">
                       Selecciona un Pais
@@ -132,6 +132,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                     className={styles.FormEditPerfil__select}
                     name="knowledgeArea"
                     {...inputProps}
+                    value={values.knowledgeArea || ''}
                   >
                     <option key="1" value="">
                       Selecciona una Opcion
