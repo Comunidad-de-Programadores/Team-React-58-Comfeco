@@ -305,7 +305,7 @@
     
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 850px) {
     .cotainer__Form{
         width: 100%;
         height: 80vh;
@@ -363,6 +363,7 @@
 
     .form__Section{
         width: 100%;
+        margin-top: -7em;
     }
     
 }
