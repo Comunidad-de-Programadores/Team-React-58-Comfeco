@@ -130,9 +130,9 @@ const FormEditPerfil = ({ onCancel }) => {
                     <h4>Area de Conocimiento</h4>
                     <select
                       className={styles.FormEditPerfil__select}
-                      name="knowledgesArea"
+                      name="knowledgeArea"
                       {...inputProps}
-                      value={values.knowledgesArea ? `${values.knowledgesArea}` : ''}
+                      // value={values.knowledgesArea ? `${values.knowledgesArea}` : ''}
                     >
                       <option key="1" value="">
                         Selecciona una Opcion
