@@ -1,6 +1,8 @@
+/* eslint-disable import/no-named-as-default-member */
 import { CircularProgress, Grid } from '@material-ui/core';
 import countries from 'app/helpers/countries';
 import knowledges from 'app/helpers/knowledges';
+import dateFunction from 'app/helpers/date';
 import useProfile from 'app/hooks/useProfile';
 import { func } from 'prop-types';
 import React from 'react';
@@ -10,6 +12,7 @@ import styles from './styles.css';
 
 const FormEditPerfil = ({ onCancel, onSuccess }) => {
   const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile(onSuccess);
+  const birthdateFormated = dateFunction.toString(values.birthdate);
 
   if (isLoading)
     return (
@@ -100,6 +103,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                     type="date"
                     values={values}
                     {...inputProps}
+                    value={birthdateFormated}
                   />
                 </div>
                 <div className={`${styles.form__group} ${styles.form__threeItems}`}>
