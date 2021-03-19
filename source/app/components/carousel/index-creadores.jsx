@@ -22,7 +22,9 @@ const CarouselCreadores = () => {
       <div
         className={`${styles.wrapper__imgCard} ${nextSlide === index ? styles.centerActivate : ''}`}
       >
+
         <div className={styles.overlay__img}>
+          
           <div className={styles.box__rrss__overlay__img}>
             <a href={twitter} target="blank">
               <i className={`${'fab fa-github fa-3x'} ${styles.github}`} />
