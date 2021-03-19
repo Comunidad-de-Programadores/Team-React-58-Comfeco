@@ -1,0 +1,17 @@
+.wrapper{
+  min-height: 80vh;
+  padding: 2em 0em;
+}
+.card {
+  height: 200px;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 5px 5px 20px #cdcdcd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 1.3em;
+  flex-direction: column;
+}
