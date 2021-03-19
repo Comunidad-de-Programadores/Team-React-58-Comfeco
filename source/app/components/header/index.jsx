@@ -82,7 +82,7 @@ const Header = () => {
           <Link className={styles.navigation__link} to="/">
             Inicio
           </Link>
-          <Link className={styles.navigation__link} to="/">
+          <Link className={styles.navigation__link} to="/communities">
             Comunidades
           </Link>
           <Link className={styles.navigation__link} to="/">
