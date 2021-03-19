@@ -3,7 +3,7 @@
   padding: 2em 0em;
 }
 .card {
-  height: 200px;
+  height: 250px;
   background-color: #fff;
   padding: 1em;
   border-radius: 1em;
@@ -14,4 +14,45 @@
   text-align: center;
   font-size: 1.3em;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-x: right;
+  background-blend-mode: color;
+}
+.title {
+  text-align: center;
+  margin: 2em auto 1em auto;
+}
+
+.button {
+  border: 1px solid rebeccapurple;
+  width: 80%;
+  color: rebeccapurple;
+  font-size: .8em;
+  font-weight: normal;
+  border-radius: 1em;
+  outline: none!important;
+  background-color: #fff;
+}
+
+.butonleave {
+  border: 1px solid #ff7373;
+  width: 80%;
+  color: #ff7373;
+  font-size: .8em;
+  font-weight: normal;
+  border-radius: 1em;
+  outline: none!important;
+  background-color: #fff;
+}
+
+.icon {
+  color: #663399bf;
+  font-size: 2.5em!important;
+}
+@media screen and (max-width:1200px) {
+  .title {
+    font-size: 1.5em;
+    margin: 1em auto .5em auto;
+  }
 }
