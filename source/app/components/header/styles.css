@@ -47,6 +47,16 @@
   background-color: rebeccapurple;
 }
 
+.bell_dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.bell_dropdown_icon {
+  color: #e76f51;
+  margin-right: 1rem;
+}
+
 .dropdown {
   color: #ffffff;
   height: inherit;
