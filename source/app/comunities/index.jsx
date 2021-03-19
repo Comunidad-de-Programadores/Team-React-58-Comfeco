@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { Container, Grid } from '@material-ui/core';
+import { CircularProgress, Container, Grid } from '@material-ui/core';
 import { Group } from '@material-ui/icons';
 import { Skeleton } from '@material-ui/lab';
 import { func } from 'prop-types';
@@ -9,9 +9,13 @@ import useCommunities from '../hooks/useCommunities';
 import styles from './styles.css';
 
 const Communities = ({ setNotification }) => {
-  const { communities, isLoading, handleJoinCommunity, handleLeaveCommunity } = useCommunities(
-    setNotification
-  );
+  const {
+    communities,
+    isLoading,
+    handleJoinCommunity,
+    handleLeaveCommunity,
+    communityIdLoading,
+  } = useCommunities(setNotification);
   const skeletonNumber = [...new Array(4)];
 
   return (
@@ -34,26 +38,31 @@ const Communities = ({ setNotification }) => {
             {communities.map((value, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <div className={styles.card}>
-                  <Group className={styles.icon} />
-                  {value.name}
-                  {value.joined && (
-                    <button
-                      type="button"
-                      className={styles.butonleave}
-                      onClick={() => handleLeaveCommunity(value.id)}
-                    >
-                      Salir
-                    </button>
+                  {communityIdLoading !== value.id && (
+                    <>
+                      <Group className={styles.icon} />
+                      {value.name}
+                      {value.joined && (
+                        <button
+                          type="button"
+                          className={styles.butonleave}
+                          onClick={() => handleLeaveCommunity(value.id)}
+                        >
+                          Salir
+                        </button>
+                      )}
+                      {!value.joined && (
+                        <button
+                          type="button"
+                          className={styles.button}
+                          onClick={() => handleJoinCommunity(value.id)}
+                        >
+                          Unirme
+                        </button>
+                      )}
+                    </>
                   )}
-                  {!value.joined && (
-                    <button
-                      type="button"
-                      className={styles.button}
-                      onClick={() => handleJoinCommunity(value.id)}
-                    >
-                      Unirme
-                    </button>
-                  )}
+                  {communityIdLoading === value.id && <CircularProgress />}
                 </div>
               </Grid>
             ))}
