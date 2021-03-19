@@ -76,6 +76,27 @@ const PrivacyDataProtection = () => (
               </li>
             </ul>
           </li>
+
+          <li className={styles.privacyDataProtection__item}>
+            <h2>Subtitulo 4</h2>
+            <ul className={styles.privacyDataProtection__subList}>
+              <li className={styles.privacyDataProtection__subListItem}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, nobis.
+              </li>
+              <li className={styles.privacyDataProtection__subListItem}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              </li>
+              <li className={styles.privacyDataProtection__subListItem}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, nobis.
+              </li>
+              <li className={styles.privacyDataProtection__subListItem}>
+                Lorem ipsum dolor sit amet.
+              </li>
+              <li className={styles.privacyDataProtection__subListItem}>
+                Lorem ipsum dolor sit amet consectetur.
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
