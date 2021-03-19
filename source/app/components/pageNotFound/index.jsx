@@ -9,7 +9,7 @@ const PageNotFoundCard = () => (
       {/* card */}
       <div className={styles.pageNotFound__card__divider__message}>
         <h1 className={styles.pageNotFound__card__title}>Pagina no Encontrada</h1>
-        <button className={styles.PageNotFoundCard__card__button}>
+        <button type="button" className={styles.PageNotFoundCard__card__button}>
           <Link to="/landing">Home</Link>
         </button>
       </div>

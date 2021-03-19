@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import useCommunities from 'app/hooks/useCommunities';
 import { func } from 'prop-types';
@@ -7,9 +8,7 @@ import styles from './styles.css';
 import withNotifications from '../../highOrderComponents/withNotification';
 
 const CommunityCard = ({ setNotification }) => {
-  const { communities, isLoading, handleJoinCommunity, handleLeaveCommunity } = useCommunities(
-    setNotification
-  );
+  const { communities, isLoading, handleJoinCommunity, handleLeaveCommunity } = useCommunities(setNotification);
 
   return (
     <div className={styles.community}>
