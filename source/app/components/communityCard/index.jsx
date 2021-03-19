@@ -1,6 +1,7 @@
 import React from 'react';
 import useCommunities from 'app/hooks/useCommunities';
 import { func } from 'prop-types';
+import { Link } from 'react-router-dom';
 import logo from '../../images/Isotipo-brand.png';
 import styles from './styles.css';
 import withNotifications from '../../highOrderComponents/withNotification';
@@ -18,9 +19,9 @@ const CommunityCard = ({ setNotification }) => {
         <>
           <header className={styles.community__header}>
             <h3 className={styles.community__tittle}>Comunidades</h3>
-            <a className={styles.community__link} href="/">
+            <Link className={styles.community__link} to="/communities">
               Ver más
-            </a>
+            </Link>
           </header>
 
           <ul className={styles.community__grid}>
