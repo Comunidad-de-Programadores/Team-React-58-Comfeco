@@ -15,7 +15,7 @@ import styles from './styles.css';
 const FormEditPerfil = ({ onCancel, onSuccess }) => {
   const { handleSubmit, isLoading, errorMessage, values, inputProps } = useProfile(onSuccess);
 
-  console.log(useSession());
+  console.log(values);
 
   return (
     <>
@@ -133,6 +133,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                       className={styles.FormEditPerfil__select}
                       name="knowledgeArea"
                       {...inputProps}
+                      value={values.knowledgeArea ? `${values.knowledgeArea}` : ''}
                     >
                       <option key="1" value="">
                         Selecciona una Opcion
@@ -241,6 +242,7 @@ const FormEditPerfil = ({ onCancel, onSuccess }) => {
                       placeholder="Escribe aqui su Biografia"
                       maxLength="140"
                       {...inputProps}
+                      value={values.biography ? `${values.biography}` : ''}
                     ></textarea>
                   </div>
                 </div>

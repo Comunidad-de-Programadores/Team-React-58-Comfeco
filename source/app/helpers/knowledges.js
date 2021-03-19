@@ -3,7 +3,7 @@ const knowledges = [
   'Backend',
   'DevOps',
   'Video Game Developer',
-  'UI/UX',
+  'UI/UX Design',
   'Data Base Developer',
   'Cloud Computing',
 ];
