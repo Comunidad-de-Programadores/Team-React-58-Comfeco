@@ -8,7 +8,7 @@ import styles from './styles.css';
 const PerfilCard = ({ onEditProfile }) => {
 
   const {
-    session: { username, biography, facebook, twitter, github, linkedin },
+    session: { username, biography, facebook, twitter, github, linkedin, knowledgeArea },
   } = useSession();
 
   return (
@@ -22,6 +22,7 @@ const PerfilCard = ({ onEditProfile }) => {
       </div>
       <div className={styles.description__wrapper}>
         <h4>{username}</h4>
+        <h5>{knowledgeArea}</h5>
       </div>
       <div className={styles.biography__wrapper}>
         <p>
