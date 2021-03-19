@@ -100,7 +100,7 @@ const Header = () => {
             </Link>
           ) : (
             <div className={styles.bell_dropdown}>
-              <i className="far fa-bell fa-2x"></i>
+              <i className={`far fa-bell fa-2x ${styles.bell_dropdown_icon}`}></i>
               <Dropdown username={session.username} />
             </div>
           )}
