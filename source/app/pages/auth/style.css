@@ -311,6 +311,7 @@
         height: 80vh;
         transition-delay: 0.5s;
         transition-timing-function: ease-in-out;
+        min-height: 600px;
     }
 
     .cotainer__Form.signUp__mode{
