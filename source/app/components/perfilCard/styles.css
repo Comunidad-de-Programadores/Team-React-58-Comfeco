@@ -12,7 +12,7 @@
     border: 1px solid #cdcdcd66;
     background-color: #fff;
     position: relative;
-    overflow: hidden !important;
+    margin-bottom: 10px;
 }
 
 .header__card__background{
@@ -103,6 +103,10 @@
 }
 
 .message__profileCard__biograpfy{
+    color: #cdcdcd;
+}
+
+.message__profileCard__knowledge{
     color: #cdcdcd;
 }
 

@@ -239,6 +239,12 @@ form{
     .social__media > .wrapper__social__media__icon{
         width: 50%;
     }
+
+    .overlay__headerCard{
+        
+        height: 14%;
+        
+    }
 }
 
 .loadingWrapper {

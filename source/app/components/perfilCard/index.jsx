@@ -22,7 +22,13 @@ const PerfilCard = ({ onEditProfile }) => {
       </div>
       <div className={styles.description__wrapper}>
         <h4>{username}</h4>
-        <h5>{knowledgeArea}</h5>
+        <h5>
+          {knowledgeArea ||(
+            <p className={styles.message__profileCard__knowledge}>"Especiadlidad"</p>
+
+          )}
+          
+          </h5>
       </div>
       <div className={styles.biography__wrapper}>
         <p>
