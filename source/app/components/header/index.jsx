@@ -31,7 +31,7 @@ const Dropdown = ({ username }) => {
     <div className={styles.dropdown__wrapper}>
       <div className={styles.dropdown}>
         <span className={styles.dropdown__avatar}>
-          {username ? username.charAt(0).toUpperCase() : <i className="fas fa-user fa-2x"></i>}
+          <i className="fas fa-user"></i>
         </span>
         <span className={styles.dropdown__name}>{username}</span>
 
