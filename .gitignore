@@ -4,3 +4,5 @@
 /node_modules
 /api
 .vercel
+temp_auto_push.bat
+temp_interactive_push.bat
