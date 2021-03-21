@@ -17,7 +17,7 @@ const CarouselCreadores = () => {
 
   const { nextSlide } = currentSlide;
 
-  const CarouselCard = ({ index, nextSlide, imgCardSlide, twitter = '#', github = '#' }) => (
+  const CarouselCard = ({ index, nextSlide, imgCardSlide, twitter = '#', github = '#', nameCreador}) => (
     <div className={styles.card__cotainer}>
       <div
         className={`${styles.wrapper__imgCard} ${nextSlide === index ? styles.centerActivate : ''}`}
@@ -36,7 +36,12 @@ const CarouselCreadores = () => {
             </a>
           </div>
         </div>
+        
         <img className={styles.img__carousel} src={imgCardSlide} alt="" />
+
+        <div className={styles.overlay__name}>
+          <span className={styles.name__creador__carousel}>{nameCreador}</span>
+        </div>
       </div>
     </div>
   );
@@ -79,14 +84,14 @@ const CarouselCreadores = () => {
   return (
     <div className={styles.wrapper__carousel}>
       <Slider {...settings}>
-        <CarouselCard index={0} nextSlide={nextSlide} imgCardSlide={img1} />
-        <CarouselCard index={1} nextSlide={nextSlide} imgCardSlide={img2} />
-        <CarouselCard index={2} nextSlide={nextSlide} imgCardSlide={img3} />
-        <CarouselCard index={3} nextSlide={nextSlide} imgCardSlide={img4} />
-        <CarouselCard index={4} nextSlide={nextSlide} imgCardSlide={img5} />
-        <CarouselCard index={5} nextSlide={nextSlide} imgCardSlide={img6} />
-        <CarouselCard index={6} nextSlide={nextSlide} imgCardSlide={img7} />
-        <CarouselCard index={7} nextSlide={nextSlide} imgCardSlide={img8} />
+        <CarouselCard index={0} nextSlide={nextSlide} imgCardSlide={img1} nameCreador={'Silvestre Vivo'}/>
+        <CarouselCard index={1} nextSlide={nextSlide} imgCardSlide={img2} nameCreador={'Oscar Barajas'}/>
+        <CarouselCard index={2} nextSlide={nextSlide} imgCardSlide={img3} nameCreador={'Noemi Leon'}/>
+        <CarouselCard index={3} nextSlide={nextSlide} imgCardSlide={img4} nameCreador={'Nicolas Molina'}/>
+        <CarouselCard index={4} nextSlide={nextSlide} imgCardSlide={img5} nameCreador={'Mayra Rodriguez'}/>
+        <CarouselCard index={5} nextSlide={nextSlide} imgCardSlide={img6} nameCreador={'Diego Plascencia'}/>
+        <CarouselCard index={6} nextSlide={nextSlide} imgCardSlide={img7} nameCreador={'Cristopher Paniagua'}/>
+        <CarouselCard index={7} nextSlide={nextSlide} imgCardSlide={img8} nameCreador={'Bezael Perez'}/>
       </Slider>
     </div>
   );
