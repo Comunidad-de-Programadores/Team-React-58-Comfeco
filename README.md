@@ -1,11 +1,11 @@
 # Team-React-58-Comfeco
 
 ### Caracteristicas del proyecto
-configuracion custom de webpack
-estructura de carpetas featureFirst
-manejo de session con Json Web Tokens
-render del lado del servidor (isomorphic app)
-APIRest creado con express y mongoDB
+- configuracion custom de webpack   
+- estructura de carpetas featureFirst   
+- manejo de session con Json Web Tokens   
+- render del lado del servidor (isomorphic app)   
+- APIRest creado con express y mongoDB   
 
 
 ### instrucciones para correr el proyecto
