@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useSession from '../../hooks/useSession';
 import isotipo from '../../images/Isotipo-brand.png';
-import logo1 from '../../images/logo1.png';
+import logo1 from '../../images/logoComunityCode.png';
 import styles from './styles.css';
 
 const Dropdown = ({ username }) => {
